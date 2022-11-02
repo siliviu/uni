@@ -21,7 +21,7 @@ segment data use32 class=data
     twow dw 2
     twob db 2
     r resd 1
-    format db "%ld", 0xD, 0xA
+    format db "%d", 0xD, 0xA
 
 segment code use32 class=code
     start:

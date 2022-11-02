@@ -27,7 +27,7 @@ segment code use32 class=code
 
         cwde
         sub eax, [c]
-        cdq ; edx eax = (b+b-c)
+        cdq ; edx eax = (b+b)-c
         mov ecx, edx
         mov ebx, eax ; ecx ebx = (b+b)-c
 
