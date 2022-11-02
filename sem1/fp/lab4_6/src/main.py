@@ -1,4 +1,4 @@
-# PB 2 https://www.cs.ubbcluj.ro/~istvanc/fp/lab/Lab4-6.pdf
+# pb 2 from https://www.cs.ubbcluj.ro/~istvanc/fp/lab/Lab4-6.pdf
 
 from ui.util import *
 from ui.add import *
