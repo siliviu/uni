@@ -35,11 +35,9 @@ def change_score(lst, nr, task, score, change):
     """
     el = lst[-1].copy()
     el[nr - 1] = lst[-1][nr - 1].copy()
-    prev_score = get_score(el[nr - 1], task)
-    if not((prev_score != 0) == change):
+    if not ((el[nr - 1].get_score(task) != 0) == change):
         raise ValueError
-    set_score(el[nr - 1], 0, score + get_score(el[nr - 1], 0) - prev_score)
-    set_score(el[nr - 1], task, score)
+    el[nr - 1].set_score(task, score)
     push_change(lst, el)
 
 
@@ -68,11 +66,9 @@ def change_scores(lst, left, right, task, score, change):
     el = lst[-1].copy()
     for nr in range(left, right + 1):
         el[nr - 1] = lst[-1][nr - 1].copy()
-        prev_score = get_score(el[nr - 1], task)
-        if not((prev_score != 0) == change):
+        if not ((el[nr - 1].get_score(task) != 0) == change):
             raise ValueError
-        set_score(el[nr - 1], 0, score + get_score(el[nr - 1], 0) - prev_score)
-        set_score(el[nr - 1], task, score)
+        el[nr - 1].set_score(task, score)
     push_change(lst, el)
 
 
@@ -89,9 +85,7 @@ def push_score(lst, task, score):
     * an int representing the score
 
     """
-    c = get_new_score()
-    set_score(c, 0, score)
-    set_score(c, task, score)
+    c = scores(task, score)
     el = lst[-1].copy()
     el.append(c)
     push_change(lst, el)

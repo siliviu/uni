@@ -8,7 +8,6 @@ import exit msvcrt.dll
 extern printf
 import printf msvcrt.dll
 
-
 ;(a*2+b/2+e)/(c-d)+x/a
 ; a-word; b,c,d-byte; e-dword; x-qword SIGNED
 segment data use32 class=data

@@ -24,7 +24,7 @@ def get_current_scores(lst, task=0):
     * `0 <= task <= 10`
     * `0` = sum of scores from all tasks, otherwise scores from task `i`
     """
-    return [get_score(x, task) for x in lst[-1]]
+    return [participant.get_score(task) for participant in lst[-1]]
 
 
 def get_current_participant(lst, nr):
@@ -37,7 +37,7 @@ def get_current_participant(lst, nr):
     `nr`:
     * an int representing the number of the participant
     """
-    return [get_score(lst[-1][nr - 1], i) for i in range(NR_TASKS + 1)]
+    return lst[-1][nr - 1].get_scores()
 
 
 def get_current_length(lst):
@@ -70,7 +70,7 @@ def get_ordered_participants(lst, mode, task, score=None):
     """
     n = get_current_length(lst)
     nlst = get_current_scores(lst, task)
-    plst = [int(i) for i in range(1, n + 1)]
+    plst = [i + 1 for i in range(n)]
 
     if mode == 2 or mode == 3:
 
@@ -109,7 +109,7 @@ def get_filtered_participants(lst, mode, task, score=None):
 
     n = get_current_length(lst)
     nlst = get_current_scores(lst, task)
-    plst = [int(i) for i in range(1, n + 1)]
+    plst = [i + 1 for i in range(n)]
 
     def criteria(x):
         if mode == 1:

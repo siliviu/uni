@@ -28,7 +28,7 @@ segment code use32 class=code
         or eax, 0b_1111_1111 ; 0 - 7
 
         mov ebx, [a]
-        and ebx, 0b1111_0000
+        and ebx, 0b_1111_0000
         shl ebx, 4
         or eax, ebx ; 8 - 11
 
@@ -43,7 +43,7 @@ segment code use32 class=code
         or eax, ebx ; 20 - 23
 
         mov ebx, [b]
-        and ebx, 0b1111_1111__0000__0000
+        and ebx, 0b_1111_1111_0000_0000
         shl ebx, 16
         or eax, ebx ; 24 - 31
 

@@ -92,7 +92,6 @@ def test_change():
         assert False
     except ValueError:
         pass
-    
 
 
 def test_undo():
