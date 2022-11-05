@@ -13,8 +13,8 @@ from tests import *
 def main():
     """Main menu of the app"""
     test_all()
-    scorelist = get_test_list()
-    # scorelist = [[]]
+    # scorelist = get_test_list()
+    scorelist = [[]]
     print("Welcome to the score management app!\n")
     create_menu(
         "Choose a command to execute",

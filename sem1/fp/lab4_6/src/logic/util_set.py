@@ -1,17 +1,6 @@
 from logic.scores import *
-
-
-def push_change(lst, el):
-    """
-    Adds a new version of the scores list to the list of all versions
-
-    `lst`:
-    * the list containing lists with scores from all versions
-
-    `el`
-    * current list of scores to be added
-    """
-    lst.append(el)
+from logic.history import *
+from logic.participants import *
 
 
 def change_score(lst, nr, task, score, change):
@@ -33,12 +22,13 @@ def change_score(lst, nr, task, score, change):
     `change`:
     * boolean representing whether we want to add or modify a score
     """
-    el = lst[-1].copy()
-    el[nr - 1] = lst[-1][nr - 1].copy()
-    if not ((el[nr - 1].get_score(task) != 0) == change):
+    participants = get_current_version(lst).copy()
+    if not ((get_participant(participants, nr).get_score(task) != 0) == change):
         raise ValueError
-    el[nr - 1].set_score(task, score)
-    push_change(lst, el)
+    scores = get_participant(participants, nr).copy()
+    scores.set_score(task, score)
+    set_participant(participants, nr, scores)
+    add_new_version(lst, participants)
 
 
 def change_scores(lst, left, right, task, score, change):
@@ -50,6 +40,7 @@ def change_scores(lst, left, right, task, score, change):
 
     `left`:
     * an int representing the left endpoint of the interval of participants
+    * left <= right
 
     `right`:
     * an int representing the right endpoint of the interval of participants
@@ -63,13 +54,14 @@ def change_scores(lst, left, right, task, score, change):
     `change`:
     * boolean representing whether we want to add or modify a score
     """
-    el = lst[-1].copy()
+    participants = get_current_version(lst).copy()
     for nr in range(left, right + 1):
-        el[nr - 1] = lst[-1][nr - 1].copy()
-        if not ((el[nr - 1].get_score(task) != 0) == change):
+        if not ((get_participant(participants, nr).get_score(task) != 0) == change):
             raise ValueError
-        el[nr - 1].set_score(task, score)
-    push_change(lst, el)
+        scores = get_participant(participants, nr).copy()
+        scores.set_score(task, score)
+        set_participant(participants, nr, scores)
+    add_new_version(lst, participants)
 
 
 def push_score(lst, task, score):
@@ -85,10 +77,9 @@ def push_score(lst, task, score):
     * an int representing the score
 
     """
-    c = scores(task, score)
-    el = lst[-1].copy()
-    el.append(c)
-    push_change(lst, el)
+    participants = get_current_version(lst).copy()
+    add_participant(participants, scores(task, score))
+    add_new_version(lst, participants)
 
 
 def undo(lst):
@@ -98,6 +89,4 @@ def undo(lst):
     `lst`:
     * the list containing lists with scores from all versions
     """
-    if len(lst) <= 1:
-        raise ValueError
-    lst.pop()
+    pop_version(lst)

@@ -1,14 +1,16 @@
 from logic.scores import *
+from logic.history import *
+from logic.participants import *
 
 
-def validate_participant(nr):
+def validate_participant(lst, nr):
     """
     Throws a ValueError exception if the participant is invalid
 
     `nr`:
     * participant number
     """
-    if nr < 0 or nr > get_current_length():
+    if nr < 0 or nr > get_current_length(lst):
         raise ValueError
 
 
@@ -24,7 +26,10 @@ def get_current_scores(lst, task=0):
     * `0 <= task <= 10`
     * `0` = sum of scores from all tasks, otherwise scores from task `i`
     """
-    return [participant.get_score(task) for participant in lst[-1]]
+    return [
+        participant.get_score(task)
+        for participant in get_all_participants(get_current_version(lst))
+    ]
 
 
 def get_current_participant(lst, nr):
@@ -37,7 +42,7 @@ def get_current_participant(lst, nr):
     `nr`:
     * an int representing the number of the participant
     """
-    return lst[-1][nr - 1].get_scores()
+    return get_participant(get_current_version(lst), nr).get_scores()
 
 
 def get_current_length(lst):
@@ -47,7 +52,7 @@ def get_current_length(lst):
     `lst`:
     * a list containing lists with 11 items containing the scores from all versions
     """
-    return len(lst[-1])
+    return get_number_participants(get_current_version(lst))
 
 
 def get_ordered_participants(lst, mode, task, score=None):

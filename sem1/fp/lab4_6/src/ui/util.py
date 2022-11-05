@@ -1,5 +1,5 @@
 from termcolor import colored
-from logic.get import *
+from logic.util_get import *
 
 
 def print_list(lst):
@@ -34,7 +34,7 @@ def input_participant(lst):
             s = "Enter the participant number ("
             s += f"{colored('1', 'blue')} - {colored(str(get_current_length(lst)), 'blue')})\n"
             nr = int(input(s))
-            validate_participant(nr)
+            validate_participant(lst, nr)
             return nr
         except:
             print(colored("Invalid input\n", "red"))

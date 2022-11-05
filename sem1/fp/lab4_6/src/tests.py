@@ -1,17 +1,16 @@
-from logic.get import *
-from logic.set import *
+from logic.util_get import *
+from logic.util_set import *
 
 
 def get_test_list():
     """Starting list"""
-    return [
-        [
-            get_score_list([16, 2, 10, 4, 0, 0, 0, 0, 0, 0, 0]),
-            get_score_list([24, 7, 9, 8, 0, 0, 0, 0, 0, 0, 0]),
-            get_score_list([19, 5, 6, 0, 0, 0, 0, 0, 8, 0, 0]),
-        ]
-    ]
-
+    history = []
+    participants = []
+    add_participant(participants, get_score_list([16, 2, 10, 4, 0, 0, 0, 0, 0, 0, 0]))
+    add_participant(participants, get_score_list([24, 7, 9, 8, 0, 0, 0, 0, 0, 0, 0]))
+    add_participant(participants, get_score_list([19, 5, 6, 0, 0, 0, 0, 0, 8, 0, 0]))
+    add_new_version(history, participants)
+    return history
 
 def test_util():
     """Test helper"""
@@ -22,7 +21,7 @@ def test_util():
     assert get_current_participant(lst, 1) == [16, 2, 10, 4, 0, 0, 0, 0, 0, 0, 0]
     assert get_current_participant(lst, 2) == [24, 7, 9, 8, 0, 0, 0, 0, 0, 0, 0]
 
-    push_change(
+    add_new_version(
         lst,
         [
             get_score_list([16, 2, 10, 4, 0, 0, 0, 0, 0, 0, 0]),
@@ -30,7 +29,7 @@ def test_util():
             get_score_list([19, 5, 6, 0, 0, 0, 0, 0, 8, 0, 0]),
         ],
     )
-    assert lst[-1] == [
+    assert get_current_version(lst) == [
         get_score_list([16, 2, 10, 4, 0, 0, 0, 0, 0, 0, 0]),
         get_score_list([24, 7, 9, 8, 0, 0, 0, 0, 0, 0, 0]),
         get_score_list([19, 5, 6, 0, 0, 0, 0, 0, 8, 0, 0]),

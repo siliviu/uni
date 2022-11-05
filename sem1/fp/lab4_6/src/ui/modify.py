@@ -1,5 +1,5 @@
 from ui.util import *
-from logic.set import *
+from logic.util_set import *
 
 
 def modify_score(mode, lst):
@@ -16,7 +16,7 @@ def modify_score(mode, lst):
     """
     if get_current_length(lst) == 0:
         print(colored("Error! The list is empty\n", "red"))
-    return
+        return
     nr = input_participant(lst)
     nr2 = nr
     if mode == 2:

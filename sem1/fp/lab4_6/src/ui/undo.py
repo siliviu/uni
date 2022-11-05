@@ -1,5 +1,5 @@
 from ui.util import *
-from logic.set import *
+from logic.util_set import *
 
 
 def undo_menu(lst):
