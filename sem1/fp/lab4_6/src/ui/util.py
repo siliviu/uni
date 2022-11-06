@@ -18,9 +18,9 @@ def print_participant_scores(lst):
     lst - given list of scores for a participant
     """
     s = "Scores: "
-    s += colored(f"{lst[1:]}, ", "blue")
-    s += "sum of scores: "
-    s += colored(f"{lst[0]}", "blue")
+    s += colored(str(lst[1:]), "blue")
+    s += ", sum of scores: "
+    s += colored(str(lst[0]), "blue")
     print(s)
 
 
@@ -39,6 +39,16 @@ def input_participant(lst):
         except:
             print(colored("Invalid input\n", "red"))
 
+
+def bail(lst):
+    """
+    Returns True if the list is empty and prints an error, false otherwise
+    lst - list of all scores
+    """
+    if get_current_length(lst):
+        print(colored("Error! The list is empty\n", "red"))
+        return True
+    return False
 
 def input_task(all=True):
     """

@@ -13,8 +13,7 @@ def add_score(mode, lst):
     """
     nr = 0
     if mode == 1:
-        if get_current_length(lst) == 0:
-            print(colored("Error! The list is empty\n", "red"))
+        if bail(lst):
             return
         nr = input_participant(lst)
         task = input_task(False)

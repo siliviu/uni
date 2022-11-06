@@ -14,8 +14,7 @@ def modify_score(mode, lst):
     `lst`:
     * list containing the scores
     """
-    if get_current_length(lst) == 0:
-        print(colored("Error! The list is empty\n", "red"))
+    if bail(lst):
         return
     nr = input_participant(lst)
     nr2 = nr
