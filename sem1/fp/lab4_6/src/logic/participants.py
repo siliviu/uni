@@ -1,3 +1,5 @@
+from logic.scores import scores
+
 def get_number_participants(lst):
     """
     Returns number of participants
@@ -8,7 +10,7 @@ def get_number_participants(lst):
     return len(lst)
 
 
-def add_participant(lst, scores):
+def add_participant(lst, scores:scores):
     """
     Add a new participant to the list of participants
 
@@ -34,7 +36,7 @@ def get_participant(lst, nr):
     return lst[nr - 1]
 
 
-def set_participant(lst, nr, scores):
+def set_participant(lst, nr, scores:scores):
     """
     Sets the scores object of a participant
 

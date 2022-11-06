@@ -22,14 +22,7 @@ def change_score(lst, nr, task, score, change):
     `change`:
     * boolean representing whether we want to add or modify a score
     """
-    participants = get_current_version(lst).copy()
-    if not ((get_participant(participants, nr).get_score(task) != 0) == change):
-        raise ValueError
-    scores = get_participant(participants, nr).copy()
-    scores.set_score(task, score)
-    set_participant(participants, nr, scores)
-    add_new_version(lst, participants)
-
+    change_scores(lst,nr,nr,task,score,change)
 
 def change_scores(lst, left, right, task, score, change):
     """

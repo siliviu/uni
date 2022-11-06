@@ -21,6 +21,7 @@ def test_util():
     assert get_current_participant(lst, 1) == [16, 2, 10, 4, 0, 0, 0, 0, 0, 0, 0]
     assert get_current_participant(lst, 2) == [24, 7, 9, 8, 0, 0, 0, 0, 0, 0, 0]
 
+    """History"""
     add_new_version(
         lst,
         [
