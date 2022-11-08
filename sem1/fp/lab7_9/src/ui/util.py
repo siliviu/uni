@@ -1,4 +1,11 @@
 from termcolor import colored
+from domain.book import *
+
+def bad_input():
+    print(colored("Bad input","red"))
+
+def print_book(book:book):
+    print(book)
 
 def create_menu(text, options, exit, bad_input, lst):
     """

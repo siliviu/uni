@@ -1,23 +1,26 @@
 # 4 from https://www.cs.ubbcluj.ro/~istvanc/fp/lab/Lab7-9.pdf
 
 from ui.util import *
+from ui.modify_book import *
+from domain.data import *
 
 def main():
-    lst = []
+    db = data()
     print("Welcome to the library app!\n")
     create_menu(
         "Choose a command to execute",
         [
-            ("Modify the book collection", ),
+            ("Modify the book collection", modify_book_menu),
             ("Modify the client list", ),
             ("Search for book", ),
             ("Search for client", ),
-            ("Borrow/return book", ),
-            ("Reports")
+            ("Borrow book", ),
+            ("Return book", ),
+            ("Reports", )
         ],
         "Exit",
         "Unknown command. Please try again\n",
-        lst,
+        db,
     )
     print("You have closed the app. Goodbye!\n")
 

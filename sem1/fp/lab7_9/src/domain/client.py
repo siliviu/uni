@@ -3,6 +3,7 @@ class client:
         self.set_id(id)
         self.set_name(name)
         self.set_uid(uid)
+        self.__borrowed={}
 
     def get_id(self):
         return self._id
@@ -10,11 +11,19 @@ class client:
     def set_id(self, id):
         self._id = id
 
+    def validate_id(id):
+        if id < 0:
+            raise TypeError("Id must be a natural number")
+
     def get_name(self):
         return self._name
 
     def set_name(self, name):
         self._name = name
+
+    def validate_name(title):
+        if len(title) == 0:
+            raise TypeError("Title must have at least a character")
 
     def get_uid(self):
         return self._uid
