@@ -5,7 +5,7 @@ class book:
         self.set_desc(desc)
         self.set_author(author)
         self.set_copies(copies)
-        self._borrowed={}
+        self._borrowed = {}
 
     def get_id(self):
         return self._id
@@ -50,13 +50,13 @@ class book:
     def validate_author(author):
         if len(author) == 0:
             raise TypeError("Author name must have at least a character")
-    
+
     def get_copies(self):
         return self._copies
 
-    def set_copies(self,copies):
+    def set_copies(self, copies):
         book.validate_copies(copies)
-        self._copies=copies
+        self._copies = copies
 
     def validate_copies(copies):
         if copies <= 0:
@@ -73,4 +73,3 @@ class book:
         s += f"Author : {self.get_author()}, "
         s += f"Copies : {self.get_copies()}"
         return s
-

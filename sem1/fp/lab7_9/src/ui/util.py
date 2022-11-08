@@ -1,13 +1,12 @@
 from termcolor import colored
 from domain.book import *
 
+
 def bad_input():
-    print(colored("Bad input","red"))
+    print(colored("Bad input", "red"))
 
-def print_book(book:book):
-    print(book)
 
-def create_menu(text, options, exit, bad_input, lst):
+def create_menu(text, options, exit, bad_input, *args, persistent=True):
     """
     Helper function to create a console user menu with `len(options)+1` options, indexed from `1`. Last option is for quitting the menu.
 
@@ -26,8 +25,8 @@ def create_menu(text, options, exit, bad_input, lst):
     `bad_input`:
     * string to display if the input is wrong
 
-    `lst`:
-    * list containing the scores
+    `args`:
+    * all other arguments to be passed on
     """
     command = ""
     nr = len(options)
@@ -41,8 +40,10 @@ def create_menu(text, options, exit, bad_input, lst):
         ok = False
         for x in range(1, nr + 1):
             if command == str(x):
-                options[x - 1][1](lst)
+                options[x - 1][1](*args)
                 ok = True
                 break
         if ok == False and command != str(nr + 1):
             print(colored(bad_input, "red"))
+        if not persistent:
+            return

@@ -2,6 +2,7 @@
 
 from ui.util import *
 from ui.modify_book import *
+from ui.modify_client import *
 from domain.data import *
 
 def main():
@@ -11,7 +12,7 @@ def main():
         "Choose a command to execute",
         [
             ("Modify the book collection", modify_book_menu),
-            ("Modify the client list", ),
+            ("Modify the client list", modify_client_menu),
             ("Search for book", ),
             ("Search for client", ),
             ("Borrow book", ),
@@ -23,6 +24,7 @@ def main():
         db,
     )
     print("You have closed the app. Goodbye!\n")
+
 
 if __name__ == "__main__":
     main()
