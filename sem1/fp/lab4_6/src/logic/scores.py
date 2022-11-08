@@ -8,8 +8,9 @@ class scores:
         """
         Initialise scores object
         """
-        self.__score = {i: 0 for i in range(0, NR_TASKS + 1)}
-        # self.__score = [0] * (NR_TASKS + 1)
+        'Change the data structure used to represent scores (lab 5)'
+        # self.__score = {i: 0 for i in range(0, NR_TASKS + 1)}
+        self.__score = [0] * (NR_TASKS + 1)
         if score != -1:
             self.set_score(nr, score)
 

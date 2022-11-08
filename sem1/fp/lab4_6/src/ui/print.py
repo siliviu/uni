@@ -2,6 +2,7 @@ from ui.util import *
 from logic.util_get import *
 
 
+
 def print_menu(lst):
     """Handles the menu for printing a score"""
     create_menu(

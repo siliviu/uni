@@ -8,7 +8,7 @@ def print_list(lst):
     lst - given list
     """
     print(
-        f"The requested list has length {colored(str(len(lst))), 'blue'} and is: {colored(lst, 'blue')}\n"
+        f"The requested list has length {colored(str(len(lst)), 'blue')} and is: {colored(lst, 'blue')}\n"
     )
 
 
@@ -45,7 +45,7 @@ def bail(lst):
     Returns True if the list is empty and prints an error, false otherwise
     lst - list of all scores
     """
-    if get_current_length(lst):
+    if get_current_length(lst) == 0:
         print(colored("Error! The list is empty\n", "red"))
         return True
     return False

@@ -7,6 +7,7 @@ from ui.filter import *
 from ui.modify import *
 from ui.undo import *
 from ui.op import *
+from ui.start_menu import *
 from tests import *
 
 
@@ -14,8 +15,11 @@ def main():
     """Main menu of the app"""
     test_all()
     scorelist = get_test_list()
-    # scorelist = [[]]
+    'test if initial list is empty'
+    # scorelist = [[]] 
     print("Welcome to the score management app!\n")
+    'run commands from string menu (lab 6)'
+    # run_menu(scorelist)
     create_menu(
         "Choose a command to execute",
         [
