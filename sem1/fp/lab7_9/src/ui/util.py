@@ -2,7 +2,14 @@ from termcolor import colored
 from domain.book import *
 
 
+def print_results(lst):
+    print(f"There are {colored(str(len(lst)),'blue')} search results:")
+    for x in lst:
+        print(x)
+
+
 def bad_input():
+    """Helper function to print bad input"""
     print(colored("Bad input", "red"))
 
 
@@ -37,6 +44,7 @@ def create_menu(text, options, exit, bad_input, *args, persistent=True):
             print(str(x) + ". " + options[x - 1][0])
         print(str(nr + 1) + ". " + exit + "\n")
         command = input()
+        print()
         ok = False
         for x in range(1, nr + 1):
             if command == str(x):

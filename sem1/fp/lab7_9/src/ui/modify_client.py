@@ -1,14 +1,22 @@
 from ui.util import *
-from domain.data import *
+from repo.data import *
+from domain.book import *
+from domain.client import *
 
 
 def print_clients(data):
+    """Prints all clients
+    * data: data class representing all the data
+    """
     print("The clients in the list are: \n")
     for client in data.get_client_list():
         print(client)
 
 
 def add_client(data):
+    """Handles the input & adding of a client
+    * data: data class representing all the data
+    """
     try:
         id = int(input("Input client id: "))
         name = input("Input name: ")
@@ -20,44 +28,51 @@ def add_client(data):
         print(data.get_client(id))
     except ValueError:
         bad_input()
-    except TypeError as e:
+    except ConstraintException as e:
         print(colored(e, "red"))
     finally:
         print()
 
 
-def modify_client(data):
+def modify_client(data: Data):
+    """Handles the input & modifying of a client
+    * data: data class representing all the data
+    """
     try:
         id = int(input("Enter the id of the client you want to modify: "))
-        client = data.get_client(id)
-        ok = True
+        crt_client = data.get_client(id)
+
+        def handle_name():
+            crt_client.name = input("Input name: ")
+
+        def handle_uid():
+            crt_client.uid = int(input("Input UID: "))
+
         create_menu(
             "Choose what to modify:",
             [
-                ("Name of the client", lambda: client.set_name(input("Input name: "))),
-                (
-                    "UID of the client",
-                    lambda: client.set_uid(input("Input UID: ")),
-                ),
+                ("Name of the client", handle_name),
+                ("UID of the client", handle_uid),
             ],
             "Go back\n",
             "Bad option. Please try again\n",
             persistent=False,
         )
-        if not ok:
-            return
-        data.set_client(id, client)
+        data.set_client(id, crt_client)
         print("The client has been modified: ")
         print(data.get_client(id))
     except ValueError:
         bad_input()
-    except TypeError as e:
+    except ConstraintException as e:
         print(colored(e, "red"))
     finally:
         print()
 
 
 def remove_client(data):
+    """Handles the input & removing of a client
+    * data: data class representing all the data
+    """
     try:
         id = int(input("Enter the id of the client you want to remove: "))
         print()
@@ -65,13 +80,13 @@ def remove_client(data):
         print("The client has been removed")
     except ValueError:
         bad_input()
-    except TypeError as e:
+    except ConstraintException as e:
         print(colored(e, "red"))
     finally:
         print()
 
 
-def modify_client_menu(lst):
+def modify_client_menu(db):
     """Handles the menu for modifying clients"""
     create_menu(
         "Choose what to do with the client list:",
@@ -83,5 +98,5 @@ def modify_client_menu(lst):
         ],
         "Go back\n",
         "Bad option. Please try again\n",
-        lst,
+        db,
     )
