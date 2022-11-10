@@ -16,10 +16,10 @@ import printf msvcrt.dll
 ; 24 - 31 C = 8 - 15 B
 
 segment data use32 class=data
-    a db 0b1010_1100
-    b dw 0b1100_1101_1101_0011
-    c resd 1
-    format db "%d", 0xD, 0xA
+    a db 0x9F;0b1010_1100
+    b dw 0xAF9A;0b1100_1101_1101_0011
+    c resd 1 ; 0xAFFE 69FF
+    format db "%u", 0xD, 0xA
 
 segment code use32 class=code
     start:
@@ -52,6 +52,7 @@ segment code use32 class=code
         push dword [c]
         push format
         call [printf]
-
+        add esp, 8
+        
         push    dword 0   
         call    [exit]    

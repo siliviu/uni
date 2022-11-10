@@ -4,9 +4,9 @@ from domain.client_validator import *
 
 class client:
     def __init__(self, id, name, uid):
-        self.id=id
-        self.name=name
-        self.uid=uid
+        self.id = id
+        self.name = name
+        self.uid = uid
         self.__borrowed = {}
 
     @property

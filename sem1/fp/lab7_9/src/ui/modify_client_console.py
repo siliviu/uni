@@ -1,9 +1,9 @@
 from ui.util import *
-from service.controller import *
+from service.client_controller import *
 
 
 class ModifyClientConsole:
-    def __init__(self, ctrl: Controller):
+    def __init__(self, ctrl: ClientController):
         """Handles the menu for modifying clients"""
         self.__ctrl = ctrl
         create_menu(
@@ -41,7 +41,7 @@ class ModifyClientConsole:
             print(self.__ctrl.get_client(id))
         except ValueError:
             bad_input()
-        except ConstraintException as e:
+        except Exception as e:
             print(colored(e, "red"))
         finally:
             print()
@@ -76,7 +76,7 @@ class ModifyClientConsole:
             print(self.__ctrl.get_client(id))
         except ValueError:
             bad_input()
-        except ConstraintException as e:
+        except Exception as e:
             print(colored(e, "red"))
         finally:
             print()
@@ -92,7 +92,7 @@ class ModifyClientConsole:
             print("The client has been removed")
         except ValueError:
             bad_input()
-        except ConstraintException as e:
+        except Exception as e:
             print(colored(e, "red"))
         finally:
             print()

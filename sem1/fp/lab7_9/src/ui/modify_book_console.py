@@ -1,9 +1,9 @@
 from ui.util import *
-from service.controller import *
+from service.book_controller import *
 
 
 class ModifyBookConsole:
-    def __init__(self, ctrl: Controller):
+    def __init__(self, ctrl: BookController):
         """Handles the menu for modifying books
         * db: data class representing all the data
         """

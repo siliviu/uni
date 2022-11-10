@@ -1,15 +1,13 @@
 from ui.util import *
-from ui.modify_client import *
-from ui.search_book import *
-from ui.search_client import *
-
 from ui.modify_book_console import *
 from ui.modify_client_console import *
-
+from ui.search_book_console import *
+from ui.search_client_console import *
 
 class Console:
-    def __init__(self, ctrl):
-        self.__ctrl = ctrl
+    def __init__(self, book_ctrl:BookController, client_ctrl:ClientController):
+        self.__book_ctrl = book_ctrl
+        self.__client_ctrl=client_ctrl
 
     def run(self):
         """Main menu"""
@@ -17,16 +15,15 @@ class Console:
         create_menu(
             "Choose a command to execute",
             [
-                ("Modify the book collection", ModifyBookConsole),
-                ("Modify the client list", ModifyClientConsole),
-                ("Search for book", search_book_menu),
-                ("Search for client", search_client_menu),
+                ("Modify the book collection", ModifyBookConsole, self.__book_ctrl),
+                ("Modify the client list", ModifyClientConsole, self.__client_ctrl),
+                ("Search for book", SearchBookConsole, self.__book_ctrl),
+                ("Search for client", SearchClientConsole, self.__client_ctrl),
                 ("Borrow book",),
                 ("Return book",),
                 ("Reports",),
             ],
             "Exit",
             "Unknown command. Please try again\n",
-            self.__ctrl,
         )
         print("You have closed the app. Goodbye!\n")

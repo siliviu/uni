@@ -3,7 +3,7 @@ from domain.book import *
 
 
 def print_results(lst):
-    print(f"There are {colored(str(len(lst)),'blue')} search results:")
+    print(f"\nThere are {colored(str(len(lst)),'blue')} search results:")
     for x in lst:
         print(x)
 
@@ -48,7 +48,10 @@ def create_menu(text, options, exit, bad_input, *args, persistent=True):
         ok = False
         for x in range(1, nr + 1):
             if command == str(x):
-                options[x - 1][1](*args)
+                if len(options[x - 1]) == 2:
+                    options[x - 1][1](*args)
+                else:
+                    options[x - 1][1](options[x - 1][2])
                 ok = True
                 break
         if ok == False and command != str(nr + 1):
