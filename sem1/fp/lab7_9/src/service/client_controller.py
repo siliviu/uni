@@ -22,7 +22,9 @@ class ClientController:
         self.__data.remove_client(id)
 
     def modify_client(self, id, prop, val):
-        prop.__set__(self.__data.get_client(id), val)
+        client = self.__data.get_client(id)
+        prop.__set__(client, val)
+        self.__data.set_client(id, client)
 
     def get_clients_criteria(self, mode, arg):
         clients = self.__data.get_client_list()

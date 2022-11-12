@@ -38,8 +38,8 @@ class BookTests(unittest.TestCase):
         b = book(12, "ab", "bc", "ef", 13)
         c = book(12, "ab", "bc", "ef", 13)
         d = book(12, "ab", "bc", " ef", 13)
-        self.assertEquals(b, c)
-        self.assertNotEquals(b, d)
+        self.assertEqual(b, c)
+        self.assertNotEqual(b, d)
 
     def test_exceptions(self):
         b = book(12, "ab", "bc", "ef", 13)
@@ -61,11 +61,14 @@ class BookTests(unittest.TestCase):
 
     def test_borrowed(self):
         b = book(12, "ab", "bc", "ef", 13)
+        self.assertEqual(b.copies, 13)
         b.add_borrowed(1)
         b.add_borrowed(2)
-        self.assertEquals(b.borrowers, 2)
+        self.assertEqual(b.borrowers, 2)
+        self.assertEqual(b.copies, 11)
         b.remove_borrowed(1)
-        self.assertEquals(b.borrowers, 1)
+        self.assertEqual(b.borrowers, 1)
+        self.assertEqual(b.copies, 12)
 
 
 class ClientTests(unittest.TestCase):
@@ -95,8 +98,8 @@ class ClientTests(unittest.TestCase):
         b = client(12, "ef", 13)
         c = client(12, "ef", 13)
         d = client(12, " ef", 13)
-        self.assertEquals(b, c)
-        self.assertNotEquals(b, d)
+        self.assertEqual(b, c)
+        self.assertNotEqual(b, d)
 
     def test_exceptions(self):
         c = client(1, "gigel", 2030)
@@ -116,17 +119,17 @@ class ClientTests(unittest.TestCase):
         c = client(1, "gigel", 2030)
         c.add_borrowed(1)
         c.add_borrowed(2)
-        self.assertEquals(c.borrowed, 2)
+        self.assertEqual(c.borrowed, 2)
         c.remove_borrowed(2)
-        self.assertEquals(c.borrowed, 1)
+        self.assertEqual(c.borrowed, 1)
 
 
 class EventTests(unittest.TestCase):
     def test_init(self):
         e = event(1, 2, 3)
-        self.assertEquals(e.id, 1)
-        self.assertEquals(e.book, 2)
-        self.assertEquals(e.owner, 3)
+        self.assertEqual(e.id, 1)
+        self.assertEqual(e.book, 2)
+        self.assertEqual(e.owner, 3)
 
     def test_str(self):
         e = event(1, 2, 3)

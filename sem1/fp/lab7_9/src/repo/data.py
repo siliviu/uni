@@ -5,11 +5,13 @@ from domain.event import *
 
 class Data:
     def __init__(self):
+        """Initialise data object"""
         self.__clients = {}
         self.__books = {}
         self.__events = {}
 
     def initiate_test_data(self):
+        """Test helper function"""
         self.add_client(client(1, "Gigel", 128))
         self.add_client(client(2, "Gigelescu", 49))
 
@@ -65,6 +67,26 @@ class Data:
         if not (client_id in self.__clients):
             raise OperationException("Client already exists")
         del self.__clients[client_id]
+
+    def add_book_borrowed(self, object_id, event_id):
+        book = self.get_book(object_id)
+        book.add_borrowed(event_id)
+        self.set_book(object_id, book)
+
+    def remove_book_borrowed(self, object_id, event_id):
+        book = self.get_book(object_id)
+        book.remove_borrowed(event_id)
+        self.set_book(object_id, book)
+
+    def add_client_borrowed(self, object_id, event_id):
+        client = self.get_client(object_id)
+        client.add_borrowed(event_id)
+        self.set_client(object_id, client)
+
+    def remove_client_borrowed(self, object_id, event_id):
+        client = self.get_client(object_id)
+        client.remove_borrowed(event_id)
+        self.set_client(object_id, client)
 
     def add_event(self, event: event):
         self.__events[event.id] = event

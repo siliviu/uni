@@ -22,7 +22,9 @@ class BookController:
         self.__data.remove_book(id)
 
     def modify_book(self, id, prop, val):
-        prop.__set__(self.__data.get_book(id), val)
+        book = self.__data.get_book(id)
+        prop.__set__(book, val)
+        self.__data.set_book(id, book)
 
     def get_books_criteria(self, mode, arg):
         books = self.__data.get_book_list()
@@ -34,6 +36,4 @@ class BookController:
             return [book for book in books if Utils.norm(arg) in Utils.norm(book.title)]
         else:
             book_validator.validate_author(arg)
-            return [
-                book for book in books if Utils.norm(arg) in Utils.norm(book.author)
-            ]
+            return [book for book in books if Utils.norm(arg) in Utils.norm(book.author)]
