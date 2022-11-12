@@ -2,6 +2,7 @@ import unittest
 
 from domain.book import *
 from domain.client import *
+from domain.event import *
 
 
 class BookTests(unittest.TestCase):
@@ -55,8 +56,16 @@ class BookTests(unittest.TestCase):
         with self.assertRaises(ConstraintException):
             b.author = "  "
         with self.assertRaises(ConstraintException):
-            b.copies = 0
+            b.copies = -1
         self.assertRaises(ConstraintException, book, 3, "a", "b", "c", "haha")
+
+    def test_borrowed(self):
+        b = book(12, "ab", "bc", "ef", 13)
+        b.add_borrowed(1)
+        b.add_borrowed(2)
+        self.assertEquals(b.borrowers, 2)
+        b.remove_borrowed(1)
+        self.assertEquals(b.borrowers, 1)
 
 
 class ClientTests(unittest.TestCase):
@@ -102,3 +111,26 @@ class ClientTests(unittest.TestCase):
         with self.assertRaises(ConstraintException):
             c.uid = 0
         self.assertRaises(ConstraintException, client, -44, "haha", 2)
+
+    def test_borrowed(self):
+        c = client(1, "gigel", 2030)
+        c.add_borrowed(1)
+        c.add_borrowed(2)
+        self.assertEquals(c.borrowed, 2)
+        c.remove_borrowed(2)
+        self.assertEquals(c.borrowed, 1)
+
+
+class EventTests(unittest.TestCase):
+    def test_init(self):
+        e = event(1, 2, 3)
+        self.assertEquals(e.id, 1)
+        self.assertEquals(e.book, 2)
+        self.assertEquals(e.owner, 3)
+
+    def test_str(self):
+        e = event(1, 2, 3)
+        self.assertEqual(
+            str(e),
+            f"Event ID : {colored('1','blue')}, Borrower ID : {colored('3','blue')}, Book ID : {colored('2','blue')}"
+        )

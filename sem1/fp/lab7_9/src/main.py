@@ -11,6 +11,6 @@ if __name__ == "__main__":
     data.initiate_test_data()
     book_controller = BookController(data)
     client_controller = ClientController(data)
-    event_controller = EventController(data, book_controller, client_controller)
+    event_controller = EventController(data)
     console = Console(book_controller, client_controller, event_controller)
     console.run()

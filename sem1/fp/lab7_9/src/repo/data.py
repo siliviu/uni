@@ -1,12 +1,13 @@
 from domain.book import *
 from domain.client import *
+from domain.event import *
 
 
 class Data:
     def __init__(self):
         self.__clients = {}
         self.__books = {}
-        self.__events = []
+        self.__events = {}
 
     def initiate_test_data(self):
         self.add_client(client(1, "Gigel", 128))
@@ -22,7 +23,10 @@ class Data:
     def get_client_list(self):
         return [client for client in self.__clients.values()]
 
-    def get_book(self, book_id):
+    def get_event_list(self):
+        return [event for event in self.__events.values()]
+
+    def get_book(self, book_id) -> book:
         if not (book_id in self.__books):
             raise OperationException("Book doesn't exist in collection")
         return self.__books[book_id]
@@ -32,7 +36,7 @@ class Data:
             raise OperationException("Book doesn't exist in collection")
         self.__books[book_id] = book
 
-    def get_client(self, client_id):
+    def get_client(self, client_id) -> client:
         if not (client_id in self.__clients):
             raise OperationException("Client isn't in the list")
         return self.__clients[client_id]
@@ -61,3 +65,14 @@ class Data:
         if not (client_id in self.__clients):
             raise OperationException("Client already exists")
         del self.__clients[client_id]
+
+    def add_event(self, event: event):
+        self.__events[event.id] = event
+
+    def get_event(self, event_id) -> event:
+        if not (event_id in self.__events):
+            raise OperationException("Event doesn't exist")
+        return self.__events[event_id]
+
+    def get_new_event_id(self):
+        return len(self.__events) + 1

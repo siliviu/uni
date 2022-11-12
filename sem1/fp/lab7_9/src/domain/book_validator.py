@@ -24,7 +24,5 @@ class book_validator:
 
     @staticmethod
     def validate_copies(copies):
-        if type(copies) != int or copies <= 0:
-            raise ConstraintException(
-                "There must be at least a copy in order to add the book"
-            )
+        if type(copies) != int or copies < 0:
+            raise ConstraintException("No copies left to borrow or the number of copies is invalid")

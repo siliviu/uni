@@ -1,4 +1,4 @@
-from ui.util import *
+from ui.menu import *
 from service.book_controller import *
 
 
@@ -8,7 +8,7 @@ class ModifyBookConsole:
         * db: data class representing all the data
         """
         self.__ctrl = ctrl
-        create_menu(
+        Menu(
             "Choose what to do with the book collection:",
             [
                 ("Print book collection", self.print_books),
@@ -41,10 +41,10 @@ class ModifyBookConsole:
             copies = int(input("Input number of copies available: "))
             print()
             self.__ctrl.add_book(id, title, desc, author, copies)
-            print("The book has been added: ")
+            print(colored("The book has been successfully added: "),"green")
             print(self.__ctrl.get_book(id))
         except ValueError:
-            bad_input()
+            Menu.bad_input()
         except Exception as e:
             print(colored(e, "red"))
         finally:
@@ -56,7 +56,7 @@ class ModifyBookConsole:
         """
         try:
             id = int(input("Enter the id of the book you want to modify: "))
-            create_menu(
+            Menu.create_menu(
                 "Choose what to modify:",
                 [
                     (
@@ -88,10 +88,10 @@ class ModifyBookConsole:
                 "Bad option. Please try again\n",
                 persistent=False,
             )
-            print("The book has been modified: ")
+            print(colored("The book has been successfully modified: "),"green")
             print(self.__ctrl.get_book(id))
         except ValueError:
-            bad_input()
+            Menu.bad_input()
         except Exception as e:
             print(colored(e, "red"))
         finally:
@@ -105,9 +105,9 @@ class ModifyBookConsole:
             id = int(input("Enter the id of the book you want to remove: "))
             print()
             self.__ctrl.remove_book(id)
-            print("The book has been removed")
+            print(colored("The book has been successfully removed: "),"green")
         except ValueError:
-            bad_input()
+            Menu.bad_input()
         except Exception as e:
             print(colored(e, "red"))
         finally:

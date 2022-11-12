@@ -1,4 +1,4 @@
-from ui.util import *
+from ui.menu import *
 from service.book_controller import *
 
 
@@ -8,7 +8,7 @@ class SearchBookConsole:
         * db: data class representing all the data
         """
         self.__ctrl = ctrl
-        create_menu(
+        Menu(
             "Choose the criteria for the search:",
             [
                 ("ID", lambda: self.search_book(0)),
@@ -22,9 +22,13 @@ class SearchBookConsole:
 
     def search_book(self, mode):
         try:
-            print_results(self.__ctrl.get_books_criteria(mode, int(input("Input ID: ")) if mode == 0 else input("Input title: ") if mode == 1 else  input("Input author: ")))
+            Menu.print_results(self.__ctrl.get_books_criteria(
+                mode,
+                int(input("Input ID: ")) if mode == 0
+                else input("Input title: ") if mode == 1
+                else input("Input author: ")))
         except ValueError:
-            bad_input()
+            Menu.bad_input()
         except Exception as e:
             print(colored(e, "red"))
         finally:

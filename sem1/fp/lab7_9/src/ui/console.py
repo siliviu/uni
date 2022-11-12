@@ -1,4 +1,4 @@
-from ui.util import *
+from ui.menu import *
 from ui.modify_book_console import *
 from ui.modify_client_console import *
 from ui.search_book_console import *
@@ -20,29 +20,15 @@ class Console:
     def run(self):
         """Main menu"""
         print("Welcome to the library app!\n")
-        create_menu(
+        Menu(
             "Choose a command to execute",
             [
                 ("Modify the book collection", ModifyBookConsole, self.__book_ctrl),
                 ("Modify the client list", ModifyClientConsole, self.__client_ctrl),
                 ("Search for book", SearchBookConsole, self.__book_ctrl),
                 ("Search for client", SearchClientConsole, self.__client_ctrl),
-                (
-                    "Borrow book",
-                    BorrowReturnConsole,
-                    self.__book_ctrl,
-                    self.__client_ctrl,
-                    self.__event_ctrl,
-                    'b',
-                ),
-                (
-                    "Return book",
-                    BorrowReturnConsole,
-                    self.__book_ctrl,
-                    self.__client_ctrl,
-                    self.__event_ctrl,
-                    'r',
-                ),
+                ("Borrow book", BorrowReturnConsole, self.__event_ctrl, 'b',),
+                ("Return book", BorrowReturnConsole, self.__event_ctrl, 'r',),
                 ("Reports",),
             ],
             "Exit",

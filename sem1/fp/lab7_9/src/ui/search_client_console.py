@@ -1,4 +1,4 @@
-from ui.util import *
+from ui.menu import *
 from service.client_controller import *
 
 
@@ -8,7 +8,7 @@ class SearchClientConsole:
         * db: data class representing all the data
         """
         self.__ctrl = ctrl
-        create_menu(
+        Menu(
             "Choose the criteria for the search:",
             [
                 ("ID", lambda: self.search_client(0)),
@@ -22,18 +22,15 @@ class SearchClientConsole:
 
     def search_client(self, mode):
         try:
-            print_results(
-                self.__ctrl.get_clients_criteria(
-                    mode,
-                    int(input("Input ID: "))
-                    if mode == 0
-                    else input("Input name: ")
-                    if mode == 1
-                    else int(input("Input UID: ")),
-                )
+            Menu(self.__ctrl.get_clients_criteria(
+                mode,
+                int(input("Input ID: ")) if mode == 0
+                else input("Input name: ") if mode == 1
+                else int(input("Input UID: ")),
+            )
             )
         except ValueError:
-            bad_input()
+            Menu.bad_input()
         except Exception as e:
             print(colored(e, "red"))
         finally:

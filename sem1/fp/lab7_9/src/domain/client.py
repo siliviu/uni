@@ -7,7 +7,7 @@ class client:
         self.id = id
         self.name = name
         self.uid = uid
-        self.__borrowed = {}
+        self.__borrowed = set()
 
     @property
     def id(self):
@@ -47,6 +47,12 @@ class client:
             and self.uid == other.uid
             and self.__borrowed == other.__borrowed
         )
+
+    def add_borrowed(self, event_id):
+        self.__borrowed.add(event_id)
+    
+    def remove_borrowed(self, event_id):
+        self.__borrowed.remove(event_id)
 
     def __str__(self):
         s = ""

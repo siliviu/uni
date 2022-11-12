@@ -25,15 +25,15 @@ class RepoTestBooks(unittest.TestCase):
         d.add_book(book(1, "2", "a", "4", 5))
         d.add_book(book(23, "va", "b", "nanana", 1))
         d.remove_book(23)
-        self.assertEquals(d.get_book_list(),[book(1, "2", "a", "4", 5)])
+        self.assertEquals(d.get_book_list(), [book(1, "2", "a", "4", 5)])
 
     def test_exceptions(self):
         d = Data()
         d.add_book(book(1, "2", "a", "4", 5))
-        self.assertRaises(OperationException, d.add_book,book(1, "3", "b", "4", 5))
+        self.assertRaises(OperationException, d.add_book, book(1, "3", "b", "4", 5))
         self.assertRaises(OperationException, d.get_book, 2)
         self.assertRaises(OperationException, d.remove_book, 2)
-        self.assertRaises(OperationException, d.set_book,2, book(2, "b", "c", "d", 4))
+        self.assertRaises(OperationException, d.set_book, 2, book(2, "b", "c", "d", 4))
 
 
 class RepoTestClients(unittest.TestCase):
@@ -64,7 +64,10 @@ class RepoTestClients(unittest.TestCase):
     def test_exceptions(self):
         d = Data()
         d.add_client(client(1, "a", 5))
-        self.assertRaises(OperationException, d.add_client,client(1, "b", 5))
-        self.assertRaises(OperationException, d.get_client,2)
-        self.assertRaises(OperationException, d.remove_client,2)
-        self.assertRaises(OperationException, d.set_client,2, client(2, "b", 4))
+        self.assertRaises(OperationException, d.add_client, client(1, "b", 5))
+        self.assertRaises(OperationException, d.get_client, 2)
+        self.assertRaises(OperationException, d.remove_client, 2)
+        self.assertRaises(OperationException, d.set_client, 2, client(2, "b", 4))
+
+class RepoTestEvents(unittest.TestCase):
+    pass

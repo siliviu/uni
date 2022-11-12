@@ -9,7 +9,7 @@ class book:
         self.desc = desc
         self.author = author
         self.copies = copies
-        self.__borrowed = {}
+        self.__borrowed = set()
 
     @property
     def id(self):
@@ -59,9 +59,14 @@ class book:
     @property
     def borrowers(self):
         return len(self.__borrowed)
-    
+
     def add_borrowed(self, event_id):
-        self.__borrowed[event_id]
+        self.__borrowed.add(event_id)
+        self.copies -= 1
+
+    def remove_borrowed(self, event_id):
+        self.__borrowed.remove(event_id)
+        self.copies += 1
 
     def __eq__(self, other):
         return (
