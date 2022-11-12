@@ -2,6 +2,7 @@ from repo.data import *
 from domain.book import *
 from service.util import *
 
+
 class BookController:
     def __init__(self, data: Data):
         self.__data = data
@@ -25,14 +26,14 @@ class BookController:
 
     def get_books_criteria(self, mode, arg):
         books = self.__data.get_book_list()
-        results = []
         if mode == 0:
             book_validator.validate_id(arg)
-            results = [self.__data.get_book(arg)]
+            return [self.__data.get_book(arg)]
         elif mode == 1:
             book_validator.validate_title(arg)
-            results = [book for book in books if Utils.norm(arg) in Utils.norm(book.title)]
+            return [book for book in books if Utils.norm(arg) in Utils.norm(book.title)]
         else:
             book_validator.validate_author(arg)
-            results = [book for book in books if Utils.norm(arg) in Utils.norm(book.author)]
-        return results
+            return [
+                book for book in books if Utils.norm(arg) in Utils.norm(book.author)
+            ]

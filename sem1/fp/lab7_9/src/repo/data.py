@@ -4,13 +4,17 @@ from domain.client import *
 
 class Data:
     def __init__(self):
-        self.__clients = {1: client(1, "Gigel", 128), 2: client(2, "Gigelescu", 49)}
-        self.__books = {
-            1: book(1, "Ana are mere", "Ana si mere", "Anuta Anisoara", 3),
-            2: book(2, "Ana are mere 2", "Ana si mai multe mere", "Anuta Anisoara", 1),
-            3: book(3, "Ana", "Doar ana", "Anica Anuta", 10),
-        }
+        self.__clients = {}
+        self.__books = {}
         self.__events = []
+
+    def initiate_test_data(self):
+        self.add_client(client(1, "Gigel", 128))
+        self.add_client(client(2, "Gigelescu", 49))
+
+        self.add_book(book(1, "Ana are mere", "Ana si mere", "Anuta Anisoara", 3))
+        self.add_book(book(2, "Ana are mere 2", "Ana si mai multe mere", "Anuta Anisoara", 1))
+        self.add_book(book(3, "Ana", "Doar ana", "Anica Anuta", 10))
 
     def get_book_list(self):
         return [book for book in self.__books.values()]

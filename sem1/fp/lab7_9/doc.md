@@ -36,6 +36,58 @@ Creați o aplicație care permite:
 
 # Scenarii de rulare
 
+## F1 : Adăugare carte în listă 
+| User Input | Program output | Description |
+| - | - | - |
+
+## F2 : Modificare carte din listă 
+| User Input | Program output | Description |
+| - | - | - |
+
+## F3 : Șterge carte din listă 
+| User Input | Program output | Description |
+| - | - | - |
+
+## F4 : Adăugare client în listă 
+| User Input | Program output | Description |
+| - | - | - |
+
+## F5 : Modificare client din listă 
+| User Input | Program output | Description |
+| - | - | - |
+
+## F6 : Șterge client din listă 
+| User Input | Program output | Description |
+| - | - | - |
+
+## F7 : Caută carte din listă 
+| User Input | Program output | Description |
+| - | - | - |
+
+## F8 : Caută client din listă 
+| User Input | Program output | Description |
+| - | - | - |
+
+## F9 : Închiriază carte 
+| User Input | Program output | Description |
+| - | - | - |
+
+## F10 : Returnează carte 
+| User Input | Program output | Description |
+| - | - | - |
+
+## F11 : Raport cele mai închiriate cărți
+| User Input | Program output | Description |
+| - | - | - |
+
+## F12 : Raport clienți după numărul de cărți închiriate
+| User Input | Program output | Description |
+| - | - | - |
+
+## F13 : Raport cei mai activi 20% clienți 
+| User Input | Program output | Description |
+| - | - | - |
+
 # Plan de iterații
 
 * I1: F1, F2, F3, F4, F5, F6

@@ -36,6 +36,18 @@ class client:
         client_validator.validate_uid(uid)
         self.__uid = uid
 
+    @property
+    def borrowed(self):
+        return len(self.__borrowed)
+
+    def __eq__(self, other):
+        return (
+            self.id == other.id
+            and self.name == other.name
+            and self.uid == other.uid
+            and self.__borrowed == other.__borrowed
+        )
+
     def __str__(self):
         s = ""
         s += f"ID : {colored(str(self.id),'blue')}, "

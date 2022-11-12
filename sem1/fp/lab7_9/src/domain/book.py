@@ -56,8 +56,22 @@ class book:
         book_validator.validate_copies(copies)
         self.__copies = copies
 
+    @property
+    def borrowers(self):
+        return len(self.__borrowed)
+    
     def add_borrowed(self, event_id):
         self.__borrowed[event_id]
+
+    def __eq__(self, other):
+        return (
+            self.id == other.id
+            and self.title == other.title
+            and self.desc == other.desc
+            and self.author == other.author
+            and self.copies == other.copies
+            and self.__borrowed == other.__borrowed
+        )
 
     def __str__(self):
         s = ""

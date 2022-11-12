@@ -51,7 +51,7 @@ def create_menu(text, options, exit, bad_input, *args, persistent=True):
                 if len(options[x - 1]) == 2:
                     options[x - 1][1](*args)
                 else:
-                    options[x - 1][1](options[x - 1][2])
+                    options[x - 1][1](*(options[x - 1][2:]))
                 ok = True
                 break
         if ok == False and command != str(nr + 1):

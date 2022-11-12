@@ -8,7 +8,9 @@ from service.client_controller import *
 
 if __name__ == "__main__":
     data = Data()
+    data.initiate_test_data()
     book_controller = BookController(data)
     client_controller = ClientController(data)
-    console = Console(book_controller, client_controller)
+    event_controller = EventController(data, book_controller, client_controller)
+    console = Console(book_controller, client_controller, event_controller)
     console.run()
