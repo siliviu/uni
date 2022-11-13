@@ -3,7 +3,7 @@ from domain.client_validator import *
 
 
 class client:
-    def __init__(self, id, name, uid):
+    def __init__(self, id: int, name: str, uid: int):
         """
         Initialise event object. Raises ConstraintException if params are invalid
         self - client
@@ -24,10 +24,10 @@ class client:
         return self.__id
 
     @id.setter
-    def id(self, id):
+    def id(self, id: int):
         """
         Sets id of the client. Raises ConstraintException if params are invalid
-        self - client
+        * self - client
         * id - int (>= 0)
         """
         client_validator.validate_id(id)
@@ -42,7 +42,7 @@ class client:
         return self.__name
 
     @name.setter
-    def name(self, name):
+    def name(self, name: str):
         """
         Sets name of the client. Raises ConstraintException if params are invalid
         * self - client
@@ -60,7 +60,7 @@ class client:
         return self.__uid
 
     @uid.setter
-    def uid(self, uid):
+    def uid(self, uid: int):
         """
         Sets uid of the client. Raises ConstraintException if params are invalid
         * self - client
@@ -76,7 +76,7 @@ class client:
         """
         return len(self.__borrowed)
 
-    def add_borrowed(self, event_id):
+    def add_borrowed(self, event_id: int):
         """
         Adds borrow event to client
         * self - client
@@ -84,7 +84,7 @@ class client:
         """
         self.__borrowed.add(event_id)
 
-    def remove_borrowed(self, event_id):
+    def remove_borrowed(self, event_id: int):
         """
         Remove borrow event to client
         * self - client

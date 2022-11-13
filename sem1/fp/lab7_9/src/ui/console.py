@@ -4,6 +4,7 @@ from ui.modify_client_console import *
 from ui.search_book_console import *
 from ui.search_client_console import *
 from ui.borrow_return_console import *
+from ui.reports_console import *
 
 
 class Console:
@@ -29,7 +30,7 @@ class Console:
                 ("Search for client", SearchClientConsole, self.__client_ctrl),
                 ("Borrow book", BorrowReturnConsole, self.__event_ctrl, 'b',),
                 ("Return book", BorrowReturnConsole, self.__event_ctrl, 'r',),
-                ("Reports",),
+                ("Reports", ReportsConsole, self.__book_ctrl, self.__client_ctrl),
             ],
             "Exit",
             "Unknown command. Please try again\n",

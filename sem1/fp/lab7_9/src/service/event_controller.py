@@ -14,7 +14,7 @@ class EventController:
         """
         self.__data = data
 
-    def borrow_book(self, client_id, book_id):
+    def borrow_book(self, client_id: int, book_id: int):
         """
         Borrow a book, updating the client, book and creating an event for the action.
         Raises OperationException if the client or book don't exist
@@ -29,7 +29,7 @@ class EventController:
         e = event(event_id, book.id, client.id)
         self.__data.add_event(e)
 
-    def return_book(self, event_id):
+    def return_book(self, event_id: int):
         """
         Returning a book, updating the client, book
         * self - EventController

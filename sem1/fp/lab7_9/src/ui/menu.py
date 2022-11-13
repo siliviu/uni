@@ -10,9 +10,10 @@ class Menu():
         * string for the beginning of the menu
 
         `options` :
-        * list of tuples `(message, fnc)` for each interaction
+        * list of tuples `(message, fnc, *args)` for each interaction
         * `message` : string corresponding to the message for an option
         * `fnc` : function called if the option is chosen
+        * *args : argument to call the function
         * the `i` th element corresponds to the `i+1` th number inputted by the user`
 
         `exit`:
@@ -22,7 +23,7 @@ class Menu():
         * string to display if the input is wrong
 
         `args`:
-        * all other arguments to be passed on
+        * arguments to be passed on if not specified individually
         """
         command = ""
         nr = len(options)
@@ -50,6 +51,10 @@ class Menu():
 
     @staticmethod
     def print_results(lst):
+        """
+        Helper function to print results
+        * lst - list of books | clients
+        """
         print(f"\nThere are {colored(str(len(lst)),'blue')} results:")
         for x in lst:
             print(x)

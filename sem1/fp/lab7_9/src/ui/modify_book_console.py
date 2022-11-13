@@ -41,7 +41,7 @@ class ModifyBookConsole:
             copies = int(input("Input number of copies available: "))
             print()
             self.__ctrl.add_book(id, title, desc, author, copies)
-            print(colored("The book has been successfully added: "),"green")
+            print(colored("The book has been successfully added: ","green"))
             print(self.__ctrl.get_book(id))
         except ValueError:
             Menu.bad_input()
@@ -56,7 +56,7 @@ class ModifyBookConsole:
         """
         try:
             id = int(input("Enter the id of the book you want to modify: "))
-            Menu.create_menu(
+            Menu(
                 "Choose what to modify:",
                 [
                     (
@@ -88,7 +88,7 @@ class ModifyBookConsole:
                 "Bad option. Please try again\n",
                 persistent=False,
             )
-            print(colored("The book has been successfully modified: "),"green")
+            print(colored("The book has been successfully modified: ","green"))
             print(self.__ctrl.get_book(id))
         except ValueError:
             Menu.bad_input()
@@ -105,7 +105,7 @@ class ModifyBookConsole:
             id = int(input("Enter the id of the book you want to remove: "))
             print()
             self.__ctrl.remove_book(id)
-            print(colored("The book has been successfully removed: "),"green")
+            print(colored("The book has been successfully removed: ","green"))
         except ValueError:
             Menu.bad_input()
         except Exception as e:

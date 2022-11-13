@@ -37,7 +37,7 @@ class ModifyClientConsole:
             uid = int(input("Input client UID: "))
             print()
             self.__ctrl.add_client(id, name, uid)
-            print(colored("The client has been successfully added: "),"green")
+            print(colored("The client has been successfully added: ", "green"))
             print(self.__ctrl.get_client(id))
         except ValueError:
             Menu.bad_input()
@@ -57,7 +57,7 @@ class ModifyClientConsole:
                 [("Name of the client", lambda: self.__ctrl.modify_client(id, client.name, input("Input name: ")),),
                  ("UID of the client", lambda: self.__ctrl.modify_client(id, client.uid, int(input("Input UID: "))),), ],
                 "Go back\n", "Bad option. Please try again\n", persistent=False,)
-            print(colored("The client has been successfully modified: "),"green")
+            print(colored("The client has been successfully modified: ", "green"))
             print(self.__ctrl.get_client(id))
         except ValueError:
             Menu.bad_input()
@@ -74,7 +74,7 @@ class ModifyClientConsole:
             id = int(input("Enter the id of the client you want to remove: "))
             print()
             self.__ctrl.remove_client(id)
-            print(colored("The client has been successfully removed: "),"green")
+            print(colored("The client has been successfully removed: ", "green"))
         except ValueError:
             Menu.bad_input()
         except Exception as e:

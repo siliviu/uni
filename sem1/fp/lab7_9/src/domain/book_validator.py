@@ -46,3 +46,4 @@ class book_validator:
         """
         if type(copies) != int or copies < 0:
             raise ConstraintException("No copies left to borrow or the number of copies is invalid")
+    

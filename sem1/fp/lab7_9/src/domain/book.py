@@ -3,10 +3,10 @@ from domain.book_validator import *
 
 
 class book:
-    def __init__(self, id, title, desc, author, copies):
+    def __init__(self, id: int, title: str, desc: str, author: str, copies: int):
         """
         Initialise book object. Raises ConstraintException if params are invalid
-        self - book
+        * self - book
         * id - int (>= 0)
         * title, desc, author - string (non empty)
         * copies - int (>= 0)
@@ -27,7 +27,7 @@ class book:
         return self.__id
 
     @id.setter
-    def id(self, id):
+    def id(self, id: int):
         """
         Sets id of the book. Raises ConstraintException if params are invalid
         self - book
@@ -45,7 +45,7 @@ class book:
         return self.__title
 
     @title.setter
-    def title(self, title):
+    def title(self, title: str):
         """
         Sets title of the book. Raises ConstraintException if params are invalid
         * self - book
@@ -63,7 +63,7 @@ class book:
         return self.__desc
 
     @desc.setter
-    def desc(self, desc):
+    def desc(self, desc: str):
         """
         Sets title of the book. Raises ConstraintException if params are invalid
         * self - book
@@ -81,7 +81,7 @@ class book:
         return self.__author
 
     @author.setter
-    def author(self, author):
+    def author(self, author: str):
         """
         Sets title of the book. Raises ConstraintException if params are invalid
         * self - book
@@ -99,7 +99,7 @@ class book:
         return self.__copies
 
     @copies.setter
-    def copies(self, copies):
+    def copies(self, copies: int):
         """
         Sets nr of copies of the book. Raises ConstraintException if params are invalid
         * self - book
@@ -116,7 +116,7 @@ class book:
         """
         return len(self.__borrowed)
 
-    def add_borrowed(self, event_id):
+    def add_borrowed(self, event_id: int):
         """
         Adds borrow event to book
         * self - book
@@ -125,7 +125,7 @@ class book:
         self.__borrowed.add(event_id)
         self.copies -= 1
 
-    def remove_borrowed(self, event_id):
+    def remove_borrowed(self, event_id: int):
         """
         Removes borrow event from book
         * self - book

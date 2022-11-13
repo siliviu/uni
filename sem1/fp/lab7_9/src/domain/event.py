@@ -2,10 +2,10 @@ from termcolor import colored
 
 
 class event:
-    def __init__(self, id, book, owner):
+    def __init__(self, id: int, book: int, owner: int):
         """
         Initialises event object
-        self - event
+        * self - event
         * id, book, owner - int
         """
         self.__id = id
