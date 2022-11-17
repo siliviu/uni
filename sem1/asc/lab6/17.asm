@@ -22,18 +22,15 @@ segment code use32 class=code
         cld
 
     for:
-        mov edx, ecx
-        sub edx, 1
         push ecx
+        sub ecx, 1
+
         lodsw ; ax = a[i]
 
-        mov ecx, edx
         jecxz continue
 
-        mov edx, esi
-        add edx, 2
         push esi
-        mov esi, edx ; esi = j = i + 1
+        add esi, 2 ; esi = j = i + 1
 
         for2:
             mov bx, ax ; bx = a[i]

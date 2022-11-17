@@ -11,6 +11,7 @@ class book:
         * title, desc, author - string (non empty)
         * copies - int (>= 0)
         """
+        # self.dic = {} (lab 7)
         self.id = id
         self.title = title
         self.desc = desc
@@ -24,6 +25,7 @@ class book:
         Returns id (int) of the book
         * self - book
         """
+        # return self.dic["id"] (lab 7)
         return self.__id
 
     @id.setter
@@ -35,6 +37,7 @@ class book:
         """
         book_validator.validate_id(id)
         self.__id = id
+        # self.dic["id"] = id (lab 7)
 
     @property
     def title(self):
@@ -151,5 +154,6 @@ class book:
         s += f"Title : {colored(self.title,'blue')}, "
         s += f"Description : {colored(self.desc,'blue')}, "
         s += f"Author : {colored(self.author,'blue')}, "
-        s += f"Copies : {colored(str(self.copies),'blue')}"
+        s += f"Copies : {colored(str(self.copies),'blue')}, "
+        s += f"Borrowers : {colored(str(self.borrowers),'blue')}"
         return s

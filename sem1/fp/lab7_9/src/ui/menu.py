@@ -58,6 +58,7 @@ class Menu():
         print(f"\nThere are {colored(str(len(lst)),'blue')} results:")
         for x in lst:
             print(x)
+        print()
 
     @staticmethod
     def bad_input():

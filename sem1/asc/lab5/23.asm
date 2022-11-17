@@ -8,11 +8,12 @@ import exit msvcrt.dll
 extern printf
 import printf msvcrt.dll
 
+; A byte string S is given. Obtain in the string D the set of the elements of S.
 segment data use32 class=data
     s db 1,4,2,4,8,2,1,1
     l equ $-s
     d times l db 0
-    format db "%hhu "
+    format db "%hd "
 
 segment code use32 class=code
     start:
@@ -54,7 +55,7 @@ segment code use32 class=code
     print:
         push ecx
         
-        movsx ax, byte [d+esi]
+        movzx ax, byte [d+esi]
         push eax
         push format
         call [printf]

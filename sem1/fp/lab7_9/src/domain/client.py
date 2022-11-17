@@ -107,5 +107,6 @@ class client:
         s = ""
         s += f"ID : {colored(str(self.id),'blue')}, "
         s += f"Name : {colored(self.name,'blue')}, "
-        s += f"UID : {colored(str(self.uid),'blue')}"
+        s += f"UID : {colored(str(self.uid),'blue')}, "
+        s += f"Borrowed : {colored(str(self.borrowed),'blue')}"
         return s

@@ -31,7 +31,7 @@ class BookTests(unittest.TestCase):
         b = book(12, "ab", "bc", "ef", 13)
         self.assertEqual(
             str(b),
-            f"ID : {colored('12','blue')}, Title : {colored('ab','blue')}, Description : {colored('bc','blue')}, Author : {colored('ef','blue')}, Copies : {colored('13','blue')}",
+            f"ID : {colored('12','blue')}, Title : {colored('ab','blue')}, Description : {colored('bc','blue')}, Author : {colored('ef','blue')}, Copies : {colored('13','blue')}, Borrowers : {colored('0','blue')}",
         )
 
     def test_eq(self):
@@ -91,7 +91,7 @@ class ClientTests(unittest.TestCase):
         c = client(1, "gigel", 2030)
         self.assertEqual(
             str(c),
-            f"ID : {colored(str('1'),'blue')}, Name : {colored('gigel','blue')}, UID : {colored('2030','blue')}",
+            f"ID : {colored(str('1'),'blue')}, Name : {colored('gigel','blue')}, UID : {colored('2030','blue')}, Borrowed : {colored('0','blue')}",
         )
 
     def test_eq(self):

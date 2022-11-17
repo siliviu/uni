@@ -22,13 +22,11 @@ class SearchClientConsole:
 
     def search_client(self, mode):
         try:
-            Menu(self.__ctrl.get_clients_criteria(
+            Menu.print_results(self.__ctrl.get_clients_criteria(
                 mode,
                 int(input("Input ID: ")) if mode == 0
                 else input("Input name: ") if mode == 1
-                else int(input("Input UID: ")),
-            )
-            )
+                else int(input("Input UID: "))))
         except ValueError:
             Menu.bad_input()
         except Exception as e:

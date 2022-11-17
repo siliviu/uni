@@ -1,10 +1,11 @@
-from repo.data import *
-from domain.book import *
+import math
+from repo.memory_repository import *
+from domain.client import *
 from service.util import *
 
 
 class ClientController:
-    def __init__(self, data: Data):
+    def __init__(self, data: MemoryRepo):
         """
         Initialises client controller
         * self - ClientController
@@ -17,7 +18,7 @@ class ClientController:
         Returns a list of all client objects
         * self - ClientController
         """
-        return self.__data.get_client_list()
+        return self.__data.get_list()
 
     def add_client(self, id: int, name: str, uid: int):
         """
@@ -29,7 +30,7 @@ class ClientController:
         * uid - (int >=0) - uid of the client
         """
         b = client(id, name, uid)
-        self.__data.add_client(b)
+        self.__data.add(b)
 
     def get_client(self, id: int):
         """
@@ -38,7 +39,7 @@ class ClientController:
         * self - ClientController
         * id - (int >= 0) - id of the client to search
         """
-        return self.__data.get_client(id)
+        return self.__data.get(id)
 
     def remove_client(self, id: int):
         """
@@ -48,7 +49,7 @@ class ClientController:
         * id - (int >= 0) - id of the client to remove
         """
         client_validator.validate_id(id)
-        self.__data.remove_client(id)
+        self.__data.remove(id)
 
     def modify_client(self, id: int, prop: property, val: int | str):
         """
@@ -59,13 +60,25 @@ class ClientController:
         * prop - property - property to modify
         * val - int | string - value to modify
         """
-        client = self.__data.get_client(id)
+        client = self.__data.get(id)
         prop.__set__(client, val)
-        self.__data.set_client(id, client)
+        self.__data.set(id, client)
+
+    def change_borrow(self, id: int, func, event_id: int):
+        """
+        Adds borrow event to client
+        * self - ClientController
+        * id - id of the client to modify
+        * func - function to add/remove borrow from client
+        * event_id - event id to add
+        """
+        c = self.__data.get(id)
+        func(c, event_id)
+        self.__data.set(id, c)
 
     def get_clients_criteria(self, mode: int, arg: int | str):
         """
-        Gets clients meeting criteria for search
+        Gets list of client objects meeting criteria for search
         Raises ConstraintException if the search arg is invalid
         * self - ClientController
         * mode - int -
@@ -74,13 +87,33 @@ class ClientController:
             * 2 if searching by uid
         * arg - int | string - search argument
         """
-        clients = self.__data.get_client_list()
+        clients = self.__data.get_list()
         if mode == 0:
             client_validator.validate_id(arg)
-            return [self.__data.get_client(arg)]
+            return [self.__data.get(arg)]
         elif mode == 1:
             client_validator.validate_name(arg)
             return [client for client in clients if Utils.norm(arg) in Utils.norm(client.name)]
         else:
             client_validator.validate_uid(arg)
             return [client for client in clients if arg == client.uid]
+
+    def get_borrowers(self, mode: int):
+        """
+        Returns list with clients who borrowed books (and not returned them)
+        * self - ClientController
+        * mode - int = 0 if ordered by name, 1 if ordered by number of books
+        """
+        clients = self.__data.get_list()
+        clients = list(filter(lambda c: c.borrowed != 0, clients))
+        clients.sort(key=lambda c: c.name if mode == 0 else -c.borrowed)
+        return clients
+
+    def get_20th_percentile(self) -> list[(str, int)]:
+        """
+        Returns a list of pairs [name, nr of books borrowed] for the 20th percentile of clients
+        * self - ClientController
+        """
+        clients = self.__data.get_list()
+        clients.sort(key=lambda c: -c.borrowed)
+        return [(client.name, client.borrowed) for client in clients[:math.ceil(len(clients)/5)]]

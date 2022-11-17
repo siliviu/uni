@@ -116,36 +116,104 @@ Creați o aplicație care permite:
 
 | User Input | Program output | Description |
 | ---------- | -------------- | ----------- |
+| 3 | | Accessing the option using the menu |
+| | Choose what to search after | Prompt submenu for selecting search criteria | 
+| 1 | | User chooses to search by ID |
+| | Input ID | Asking user for input |
+| 12 | | User enters ID = 12 |
+| | The results are : <br/> ID : 12, Title : Moby Dick ... | Program prints the search results |
+| 3 | | Accessing the option using the menu |
+| | Choose what to search after | Prompt submenu for selecting search criteria | 
+| 2 | | User chooses to search by Title |
+| | Input Title | Asking user for input |
+| harry POTTER | | User enters the title |
+| | The results are : <br/> ID : 3, Title : Harry Potter and the Sorcerer's Stone  ...  <br/> ID : 4, Title : Harry Potter and the Sorcerer's Stone  ... <br/> ID : 29, Title : 3. Harry Potter and the Prisoner of Azkaban ... <br/> ... | Program prints the search results |
+| 3 | | Accessing the option using the menu |
+| | Choose what to search after | Prompt submenu for selecting search criteria | 
+| 3 | | User chooses to search by Author |
+| | Input Author | Asking user for input |
+|  kin | | User enters the author |
+| | The results are : <br/> ID : 11, Title : The Stand, Author : Stephen King ...  <br/> ID : 214, Title : Euphoria , Author : Lily King ... <br/> ... | Program prints the search results |
+
 
 ## F8 : Caută client din listă
 
 | User Input | Program output | Description |
 | ---------- | -------------- | ----------- |
+| 4 | | Accessing the option using the menu |
+| | Choose what to search after | Prompt submenu for selecting search criteria | 
+| 1 | | User chooses to search by ID |
+| | Input ID | Asking user for input |
+| 12 | | User enters ID = 12 |
+| | The results are : <br/> ID : 12, Name: Thomas Jefferson, UID: | Program prints the search results |
+| 4 | | Accessing the option using the menu |
+| | Choose what to search after | Prompt submenu for selecting search criteria | 
+| 2 | | User chooses to search by Name |
+| | Input Name | Asking user for input |
+| Thomas | | User enters name |
+| | The results are : <br/> ID : 12, Name: Thomas Jefferson, UID: 100 <br/> ID : 38, Name: Thomas Edison, UID: 900<br/> ... | Program prints the search results |
+| 4 | | Accessing the option using the menu |
+| | Choose what to search after | Prompt submenu for selecting search criteria | 
+| 3 | | User chooses to search by UID |
+| | Input UID | Asking user for input |
+| 900 | | User enters uid |
+| | The results are : <br/> ID : 38, Name: Thomas Edison, UID: 900 | Program prints the search results |
 
 ## F9 : Închiriază carte
 
 | User Input | Program output | Description |
 | ---------- | -------------- | ----------- |
+| 5 | | Accessing the option using the menu |
+| | Input Client ID | Asking user for input |
+| 1 | | User chooses client with ID 1 |
+| | Input Book ID | Asking user for input |
+| 2 | | User chooses Book with ID 2 |
+| | The book has been successfully borrowed | Confirms action |
+| | Event ID: 1 | Prints the Borrow Event ID |
+| 1 | | User chooses client with ID 1 |
+| | Input Book ID | Asking user for input |
+| 2 | | User chooses Book with ID 2 |
+| | No copies left to borrow | Prints error message |
+
 
 ## F10 : Returnează carte
 
 | User Input | Program output | Description |
 | ---------- | -------------- | ----------- |
+| 6 | | Accessing the option using the menu |
+| | Input Event ID | Asking user for input |
+| 1 | | User chooses borrow event with ID 1 |
+| | The book has been successfully returbed | Confirms action |
 
 ## F11 : Raport cele mai închiriate cărți
 
 | User Input | Program output | Description |
 | ---------- | -------------- | ----------- |
+| 7 | | Accessing the option using the menu |
+| | Choose report type | Prompt submenu asking for report |
+| 1 |  | User chooses to see the most rented books |
+| | ID : 1 ... <br/> ID : 2 ... <br/> ID : 3 ... <br/> ID : 4 ... <br/> ID : 5 ... | Prints results |
+
 
 ## F12 : Raport clienți după numărul de cărți închiriate
 
 | User Input | Program output | Description |
 | ---------- | -------------- | ----------- |
+| 7 | | Accessing the option using the menu |
+| | Choose report type | Prompt submenu asking for report |
+| 2 |  | User chooses to see clients ordered by name |
+| | ID : 1, Name : Arnold ... | Prints results |
+| 3 | | User chooses to see clients ordered by number of borrowed books |
+| | ID : 41, ..., Borrowed: 4214 <br/> ... | Prints results |
 
 ## F13 : Raport cei mai activi 20% clienți
 
 | User Input | Program output | Description |
 | ---------- | -------------- | ----------- |
+| 7 | | Accessing the option using the menu |
+| | Choose report type | Prompt submenu asking for report |
+| 3 |  | User chooses to see the most active 20% clients |
+| | ID : 41, ..., Borrowed: 4214 <br/> ... | Prints results |
 
 # Plan de iterații
 

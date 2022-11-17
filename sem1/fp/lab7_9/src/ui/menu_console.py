@@ -7,7 +7,7 @@ from ui.borrow_return_console import *
 from ui.reports_console import *
 
 
-class Console:
+class MenuConsole:
     def __init__(
         self,
         book_ctrl: BookController,

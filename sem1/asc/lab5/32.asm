@@ -1,4 +1,3 @@
-; 23, 25
 bits 32
 
 global start        
@@ -9,11 +8,14 @@ import exit msvcrt.dll
 extern printf
 import printf msvcrt.dll
 
+; A byte string S of length l is given. 
+; Obtain the string D of length l-1, such that each element of D is the quotient of two consecutive elements of S, i.e.
+; D(i) = S(i) / S(i+1).
 segment data use32 class=data
     s db 1,6,3,1
     l equ $-s
     d times l db 0
-    format db "%hhd "
+    format db "%hd "
 
 segment code use32 class=code
     start:
@@ -34,7 +36,7 @@ segment code use32 class=code
 
     print:
         push ecx
-        movsx ax, byte [d+esi]
+        movzx ax, byte [d+esi]
         
         push eax
         push format

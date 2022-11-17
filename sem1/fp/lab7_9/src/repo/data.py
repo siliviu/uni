@@ -13,18 +13,6 @@ class Data:
         self.__books = {}
         self.__events = {}
 
-    def initiate_test_data(self):
-        """
-        Test helper function
-        * self - Data
-        """
-        self.add_client(client(1, "Gigel", 128))
-        self.add_client(client(2, "Gigelescu", 49))
-
-        self.add_book(book(1, "Ana are mere", "Ana si mere", "Anuta Anisoara", 3))
-        self.add_book(book(2, "Ana are mere 2", "Ana si mai multe mere", "Anuta Anisoara", 1))
-        self.add_book(book(3, "Ana", "Doar ana", "Anica Anuta", 10))
-
     def get_book_list(self):
         """
         Returns a list of all book objects
@@ -200,9 +188,9 @@ class Data:
             raise OperationException("Event doesn't exist")
         return self.__events[event_id]
 
-    def get_new_event_id(self):
+    def get_length(self):
         """
         Returns an int representing the next id to add an event
         * self - Data
         """
-        return len(self.__events) + 1
+        return len(self.__events)

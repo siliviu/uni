@@ -1,10 +1,10 @@
-from repo.data import *
+from repo.memory_repository import *
 from domain.book import *
 from service.util import *
 
 
 class BookController:
-    def __init__(self, data: Data):
+    def __init__(self, data: MemoryRepo):
         """
         Initialises book controller
         * self - BookController
@@ -17,7 +17,7 @@ class BookController:
         Returns a list of all book objects
         * self - BookController
         """
-        return self.__data.get_book_list()
+        return self.__data.get_list()
 
     def add_book(self, id: int, title: str, desc: str, author: str, copies: int):
         """
@@ -31,7 +31,7 @@ class BookController:
         * copies - (int >=0) - uid of the book
         """
         b = book(id, title, desc, author, copies)
-        self.__data.add_book(b)
+        self.__data.add(b)
 
     def get_book(self, id: int):
         """
@@ -40,7 +40,7 @@ class BookController:
         * self - BookController
         * id - (int >= 0) - id of the book to search
         """
-        return self.__data.get_book(id)
+        return self.__data.get(id)
 
     def remove_book(self, id: int):
         """
@@ -50,7 +50,7 @@ class BookController:
         * id - (int >= 0) - id of the book to remove
         """
         book_validator.validate_id(id)
-        self.__data.remove_book(id)
+        self.__data.remove(id)
 
     def modify_book(self, id: int, prop: property, val: int | str):
         """
@@ -61,13 +61,25 @@ class BookController:
         * prop - property - property to modify
         * val - int | string - value to modify
         """
-        book = self.__data.get_book(id)
+        book = self.__data.get(id)
         prop.__set__(book, val)
-        self.__data.set_book(id, book)
+        self.__data.set(id, book)
+
+    def change_borrow(self, id: int, func, event_id: int):
+        """
+        Adds borrow event to book
+        * self - BookController
+        * id - id of the book to modify
+        * func - function to add/remove borrow from book
+        * event_id - event id to add
+        """
+        b = self.__data.get(id)
+        func(b, event_id)
+        self.__data.set(id, b)
 
     def get_books_criteria(self, mode: int, arg: int | str):
         """
-        Gets book meeting criteria for search
+        Gets list book objects meeting criteria for search
         Raises ConstraintException if the search arg is invalid
         * self - BookController
         * mode - int -
@@ -76,13 +88,22 @@ class BookController:
             * 2 if searching by author
         * arg - int | string - search argument
         """
-        books = self.__data.get_book_list()
+        books = self.__data.get_list()
         if mode == 0:
             book_validator.validate_id(arg)
-            return [self.__data.get_book(arg)]
+            return [self.__data.get(arg)]
         elif mode == 1:
             book_validator.validate_title(arg)
             return [book for book in books if Utils.norm(arg) in Utils.norm(book.title)]
         else:
             book_validator.validate_author(arg)
             return [book for book in books if Utils.norm(arg) in Utils.norm(book.author)]
+
+    def get_most_borrowed(self):
+        """
+        Gets list of most borrowed 5 books.
+        self - BookController
+        """
+        books = self.__data.get_list()
+        books.sort(key=lambda b: -b.borrowers)
+        return books[:5]

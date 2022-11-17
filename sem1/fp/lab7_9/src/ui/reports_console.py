@@ -11,9 +11,10 @@ class ReportsConsole:
         Menu(
             "Choose the report type:",
             [
-                ("Print most borrowed books", self.__book_ctrl),
-                ("Print clients who borrowed books ordered by name, number of borrowed books", self.__client_ctrl),
-                ("Print the most active 20% clients ", self.__client_ctrl),
+                ("Print most borrowed books", lambda : Menu.print_results(self.__book_ctrl.get_most_borrowed())),
+                ("Print clients who borrowed books ordered by name", lambda:Menu.print_results(self.__client_ctrl.get_borrowers(0))),
+                ("Print clients who borrowed books ordered by number of borrowed books", lambda:Menu.print_results(self.__client_ctrl.get_borrowers(1))),
+                ("Print the most active 20% clients ", lambda:Menu.print_results(self.__client_ctrl.get_20th_percentile())),
             ],
             "Go back\n",
             "Bad option. Please try again\n",
