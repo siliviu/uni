@@ -7,7 +7,7 @@ from service.util import *
 
 class ServiceTestBook(unittest.TestCase):
     def test_book(self):
-        ctrl = BookController(MemoryRepo())
+        ctrl = BookController(Repo())
         ctrl.add_book(1, 'a', 'b', 'c', 2)
         ctrl.add_book(2, 'b', 'c', 'd', 10)
         self.assertEqual(ctrl.get_book_list(), [book(1, 'a', 'b', 'c', 2), book(2, 'b', 'c', 'd', 10)])
@@ -18,7 +18,7 @@ class ServiceTestBook(unittest.TestCase):
         self.assertEqual(ctrl.get_book_list(), [book(1, 'a', 'zaza', 'c', 2)])
 
     def test_util(self):
-        ctrl = BookController(MemoryRepo())
+        ctrl = BookController(Repo())
         ctrl.add_book(1, "Ana are mere", "Ana si mere", "Anuta Anisoara", 3)
         ctrl.add_book(2, "Ana are mere 2", "Ana si mai multe mere", "Anuta Anisoara", 1)
         ctrl.add_book(3, "Ana", "Doar ana", "Anica Anuta", 10)
@@ -75,7 +75,7 @@ class ServiceTestBook(unittest.TestCase):
              ctrl.get_book(2)])
 
     def test_exceptions(self):
-        ctrl = BookController(MemoryRepo())
+        ctrl = BookController(Repo())
         ctrl.add_book(1, 'a', 'b', 'c', 2)
         ctrl.add_book(2, 'b', 'c', 'd', 10)
         self.assertRaises(OperationException, ctrl.add_book, 1, 'a', 'b', 'c', 2)
@@ -87,7 +87,7 @@ class ServiceTestBook(unittest.TestCase):
 
 class ServiceTestClient(unittest.TestCase):
     def test_client(self):
-        ctrl = ClientController(MemoryRepo())
+        ctrl = ClientController(Repo())
         ctrl.add_client(1, 'a',  2)
         ctrl.add_client(2, 'b',  10)
         self.assertEqual(ctrl.get_client_list(), [client(1, 'a', 2), client(2, 'b',  10)])
@@ -98,7 +98,7 @@ class ServiceTestClient(unittest.TestCase):
         self.assertEqual(ctrl.get_client_list(), [client(2, 'zaza', 10)])
 
     def test_util(self):
-        ctrl = ClientController(MemoryRepo())
+        ctrl = ClientController(Repo())
         ctrl.add_client(1, "Gigel", 128)
         ctrl.add_client(2, "Gigelescu", 49)
         self.assertEqual(ctrl.get_clients_criteria(0, 1), [client(1, "Gigel", 128)])
@@ -127,7 +127,7 @@ class ServiceTestClient(unittest.TestCase):
 
 
     def test_exceptions(self):
-        ctrl = ClientController(MemoryRepo())
+        ctrl = ClientController(Repo())
         ctrl.add_client(1, 'a', 2)
         ctrl.add_client(2, 'b', 10)
         self.assertRaises(OperationException, ctrl.add_client, 1, 'a', 2)
@@ -139,9 +139,9 @@ class ServiceTestClient(unittest.TestCase):
 
 class ServiceTestEvent(unittest.TestCase):
     def test_service(self):
-        e_repo = MemoryRepo()
-        book_ctrl = BookController(MemoryRepo())
-        client_ctrl = ClientController(MemoryRepo())
+        e_repo = Repo()
+        book_ctrl = BookController(Repo())
+        client_ctrl = ClientController(Repo())
         event_ctrl = EventController(e_repo, book_ctrl, client_ctrl)
         book_ctrl.add_book(1, 'a', 'b', 'c', 1)
         client_ctrl.add_client(1, 'a', 2)
@@ -155,9 +155,9 @@ class ServiceTestEvent(unittest.TestCase):
         self.assertEqual(client_ctrl.get_client(1).borrowed, 0)
 
     def test_exceptions(self):
-        book_ctrl = BookController(MemoryRepo())
-        client_ctrl = ClientController(MemoryRepo())
-        event_ctrl = EventController(MemoryRepo(), book_ctrl, client_ctrl)
+        book_ctrl = BookController(Repo())
+        client_ctrl = ClientController(Repo())
+        event_ctrl = EventController(Repo(), book_ctrl, client_ctrl)
         book_ctrl.add_book(1, 'a', 'b', 'c', 1)
         client_ctrl.add_client(1, 'a', 2)
         self.assertRaises(OperationException, event_ctrl.borrow_book, 1, 2)

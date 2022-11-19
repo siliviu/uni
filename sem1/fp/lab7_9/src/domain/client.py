@@ -110,3 +110,22 @@ class client:
         s += f"UID : {colored(str(self.uid),'blue')}, "
         s += f"Borrowed : {colored(str(self.borrowed),'blue')}"
         return s
+
+    def __repr__(self):
+        s = str(self.id)+'\\'+str(self.name)+'\\'+str(self.uid)+'|'
+        for x in self.__borrowed:
+            s += str(x) + ' '
+        return s
+
+    @staticmethod
+    def deserialise(e):
+        a, b = e.strip().split('|')
+        args = a.strip().split('\\')
+        args[0] = int(args[0])
+        args[2] = int(args[2])
+        r = client(*args)
+        if b != '':
+            events = b.strip().split(' ')
+            for x in events:
+                r.__borrowed.add(int(x))
+        return r

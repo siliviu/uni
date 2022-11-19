@@ -37,7 +37,6 @@ class book:
         """
         book_validator.validate_id(id)
         self.__id = id
-        # self.dic["id"] = id (lab 7)
 
     @property
     def title(self):
@@ -157,3 +156,22 @@ class book:
         s += f"Copies : {colored(str(self.copies),'blue')}, "
         s += f"Borrowers : {colored(str(self.borrowers),'blue')}"
         return s
+
+    def __repr__(self):
+        s = str(self.id)+'\\'+str(self.title)+'\\'+str(self.desc)+'\\'+str(self.author)+'\\'+str(self.copies)+'|'
+        for x in self.__borrowed:
+            s += str(x) + ' '
+        return s
+
+    @staticmethod
+    def deserialise(e):
+        a, b = e.strip().split('|')
+        args = a.strip().split('\\')
+        args[0] = int(args[0])
+        args[4] = int(args[4])
+        r = book(*args)
+        if b != '':
+            events = b.strip().split(' ')
+            for x in events:
+                r.__borrowed.add(int(x))
+        return r

@@ -50,3 +50,12 @@ class event:
         s += f"Borrower ID : {colored(str(self.owner),'blue')}, "
         s += f"Book ID : {colored(str(self.book),'blue')}"
         return s
+
+    def __repr__(self):
+        return str(self.id)+'\\'+str(self.book)+'\\'+str(self.owner)
+
+    @staticmethod
+    def deserialise(e):
+        args = e.strip().split('\\')
+        r = event(int(args[0]), int(args[1]), int(args[2]))
+        return r

@@ -4,7 +4,7 @@ from service.util import *
 
 
 class BookController:
-    def __init__(self, data: MemoryRepo):
+    def __init__(self, data: Repo):
         """
         Initialises book controller
         * self - BookController
@@ -19,7 +19,7 @@ class BookController:
         """
         return self.__data.get_list()
 
-    def add_book(self, id: int, title: str, desc: str, author: str, copies: int):
+    def add_book(self, *args):
         """
         Adds book to list
         Raises operation exception if the book is a duplicate
@@ -30,7 +30,7 @@ class BookController:
         * author - (nonempty) - author of book
         * copies - (int >=0) - uid of the book
         """
-        b = book(id, title, desc, author, copies)
+        b = book(*args)
         self.__data.add(b)
 
     def get_book(self, id: int):
@@ -40,6 +40,7 @@ class BookController:
         * self - BookController
         * id - (int >= 0) - id of the book to search
         """
+        book_validator.validate_id(id)
         return self.__data.get(id)
 
     def remove_book(self, id: int):
@@ -61,6 +62,7 @@ class BookController:
         * prop - property - property to modify
         * val - int | string - value to modify
         """
+        book_validator.validate_id(id)
         book = self.__data.get(id)
         prop.__set__(book, val)
         self.__data.set(id, book)

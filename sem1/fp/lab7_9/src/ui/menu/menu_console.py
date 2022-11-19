@@ -1,10 +1,10 @@
-from ui.menu import *
-from ui.modify_book_console import *
-from ui.modify_client_console import *
-from ui.search_book_console import *
-from ui.search_client_console import *
-from ui.borrow_return_console import *
-from ui.reports_console import *
+from ui.util_menu import *
+from ui.menu.modify_book_console import *
+from ui.menu.modify_client_console import *
+from ui.menu.search_book_console import *
+from ui.menu.search_client_console import *
+from ui.menu.borrow_return_console import *
+from ui.menu.reports_console import *
 
 
 class MenuConsole:

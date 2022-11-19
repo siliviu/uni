@@ -7,7 +7,7 @@ from domain.client import *
 from domain.event import *
 
 class EventController:
-    def __init__(self, data: MemoryRepo, book_ctrl: BookController, client_ctrl: ClientController):
+    def __init__(self, data: Repo, book_ctrl: BookController, client_ctrl: ClientController):
         """
         Initialises event controller
         * self - EventController

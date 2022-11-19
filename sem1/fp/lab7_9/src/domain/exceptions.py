@@ -3,3 +3,6 @@ class ConstraintException (Exception):
 
 class OperationException (Exception):
     pass
+
+class CommandException (Exception):
+    pass

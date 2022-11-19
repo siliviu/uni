@@ -5,7 +5,7 @@ from service.util import *
 
 
 class ClientController:
-    def __init__(self, data: MemoryRepo):
+    def __init__(self, data: Repo):
         """
         Initialises client controller
         * self - ClientController
@@ -39,6 +39,7 @@ class ClientController:
         * self - ClientController
         * id - (int >= 0) - id of the client to search
         """
+        client_validator.validate_id(id)
         return self.__data.get(id)
 
     def remove_client(self, id: int):
@@ -60,6 +61,7 @@ class ClientController:
         * prop - property - property to modify
         * val - int | string - value to modify
         """
+        client_validator.validate_id(id)
         client = self.__data.get(id)
         prop.__set__(client, val)
         self.__data.set(id, client)
