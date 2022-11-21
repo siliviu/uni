@@ -51,7 +51,7 @@ class PersistencyRepoTest(unittest.TestCase):
             e.get_list(),
             [book(1, "2", "a", "4", 5), book(23, "va", "b", "nanana", 1)],
         )
-        os.remove('binrepo.test')
+        os.remove(os.path.dirname(__file__)+'\\bin_binrepo.test')
 
     def test_file(self):
         d = FileRepo('filerepo.test', book)
@@ -62,4 +62,4 @@ class PersistencyRepoTest(unittest.TestCase):
             e.get_list(),
             [book(1, "2", "a", "4", 5), book(23, "va", "b", "nanana", 1)],
         )
-        os.remove('filerepo.test')
+        os.remove(os.path.dirname(__file__)+'\\file_filerepo.test')

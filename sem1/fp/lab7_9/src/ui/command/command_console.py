@@ -29,8 +29,37 @@ class CommandConsole:
             splits = command.strip().split(' ')
             name = splits[0].strip().lower()
             args = splits[1:]
-            for arg in args:
-                arg = arg.strip().lower()
+
+            try:
+                nargs = []
+                for arg in args:
+                    arg = arg.strip().lower()
+                    if arg != "":
+                        nargs.append(arg)
+                args = nargs
+                cur = ""
+                nargs = []
+                for arg in args:
+                    if '\"' in arg:
+                        if cur == "":
+                            if arg.endswith('\"'):
+                                nargs.append(arg[1:-1])
+                            else:
+                                cur += arg[1:] + ' '
+                        else:
+                            cur += arg
+                            nargs.append(cur[:-1])
+                            cur = ""
+                    else:
+                        if cur == "":
+                            nargs.append(arg)
+                        elif len(arg) > 0:
+                            cur += arg + ' '
+                args = nargs
+
+            except:
+                print("Command could not be parsed")
+
             try:
                 if name == 'book':
                     if len(args) == 0:

@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\domain",
+    "\\src\\repo",
+    "\\src\\ui",
+    "\\src\\ui\\command",
+    "\\src\\ui\\menu"
+  ],
+  "SelectedNode": "\\src\\repo\\repo_test.py",
+  "PreviewInSolutionExplorer": false
+}
