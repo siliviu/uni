@@ -2,19 +2,23 @@ from ui.util_menu import *
 from service.book_controller import *
 from service.client_controller import *
 from service.event_controller import *
+from service.random_controller import *
 
 
 class CommandConsole:
-    def __init__(self, book_ctrl: BookController, client_ctrl: ClientController, event_ctrl: EventController):
+    def __init__(
+            self, book_ctrl: BookController, client_ctrl: ClientController, event_ctrl: EventController,
+            rand_ctrl: RandomController):
         self.__book_ctrl = book_ctrl
         self.__client_ctrl = client_ctrl
         self.__event_ctrl = event_ctrl
+        self.__rand_ctrl = rand_ctrl
 
     @staticmethod
     def print_help():
         print("""Available commands:
-* book list | add <id> <title> <desc> <author> <copies> | delete <id> | edit <id> <title|desc|author|copies> <value> | search <id|title|author> <value>
-* client list | add <id> <name> <uid> | delete <id> | edit <id> <name|uid> <value> | search <id|name|uid> <value>
+* book list | add <id> <title> <desc> <author> <copies> | delete <id> | edit <id> <title|desc|author|copies> <value> | search <id|title|author> <value> | validate
+* client list | add <id> <name> <uid> | delete <id> | edit <id> <name|uid> <value> | search <id|name|uid> <value> | validate
 * borrow <client_id> <book_id>
 * return <evend_id>
 * reports <1|2|3|4>
@@ -96,7 +100,7 @@ class CommandConsole:
                         print(self.__book_ctrl.get_book(int(args[1])))
                     elif args[0] == 'search':
                         if len(args) != 3:
-                            raise
+                            CommandException
                         options = {'id': 0, 'title': 1, 'author': 2}
                         if args[1] not in options:
                             raise CommandException
@@ -104,6 +108,10 @@ class CommandConsole:
                             self.__book_ctrl.get_books_criteria(
                                 options[args[1]],
                                 int(args[2]) if args[1] == 'id' else args[2]))
+                    elif args[0] in 'populate':
+                        if len(args) != 2:
+                            raise CommandException
+                        self.__rand_ctrl.generate_random_books(int(args[1]))
                     else:
                         raise CommandException
                 elif name == 'client':
@@ -149,6 +157,10 @@ class CommandConsole:
                             self.__client_ctrl.get_clients_criteria(
                                 options[args[1]],
                                 int(args[2]) if args[1] in ('id', 'uid') else args[2]))
+                    elif args[0] in 'populate':
+                        if len(args) != 2:
+                            raise CommandException
+                        self.__rand_ctrl.generate_random_clients(int(args[1]))
                     else:
                         raise CommandException
                 elif name == 'borrow':

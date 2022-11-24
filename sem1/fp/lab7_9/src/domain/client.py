@@ -112,7 +112,7 @@ class client:
         return s
 
     def __repr__(self):
-        s = str(self.id)+'\\'+str(self.name)+'\\'+str(self.uid)+'|'
+        s = '\\'.join([str(self.id),self.name,str(self.uid)])+'|'
         for x in self.__borrowed:
             s += str(x) + ' '
         return s

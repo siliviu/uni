@@ -9,8 +9,8 @@ extern printf
 import printf msvcrt.dll
 
 segment data use32 class=data
-    ; sir dd 12345678h, 1256ABCDh, 12AB4344h
-    sir dd 5,1,3,2,8,2,7,1
+    sir dd 12345678h, 1256ABCDh, 12AB4344h
+    ; sir dd 5,1,3,2,8,2,7,1
     l equ ($-sir)/4
     format db "%x ", 0
 
@@ -55,16 +55,17 @@ segment code use32 class=code
             stosw ; a'[i] = a[j] 2/2
             
             next:
-            lodsw
-            mov ax, dx ; ax = max(a[i],a[j])
+                lodsw
+                mov ax, dx ; ax = max(a[i],a[j])
+                
             loop for2
         
         pop esi ; esi = i
 
         continue:
-        lodsw
-        pop ecx
-        loop for 
+            lodsw
+            pop ecx
+            loop for 
 
     final:
         mov ecx, l

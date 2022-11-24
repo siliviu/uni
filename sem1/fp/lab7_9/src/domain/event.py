@@ -52,7 +52,7 @@ class event:
         return s
 
     def __repr__(self):
-        return str(self.id)+'\\'+str(self.book)+'\\'+str(self.owner)
+        return '\\'.join([str(self.id), str(self.book), str(self.owner)])
 
     @staticmethod
     def deserialise(e):

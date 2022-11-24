@@ -18,11 +18,12 @@ if __name__ == "__main__":
     client_data = FileRepo("clients.txt", client)
     # client_data.add(client(1, "Gigel", 128))
     # client_data.add(client(2, "Gigelescu", 49))
-    event_data = FileRepo("events.txt",event)
+    event_data = FileRepo("events.txt", event)
 
     book_controller = BookController(book_data)
     client_controller = ClientController(client_data)
-    event_controller = EventController(event_data, book_controller, client_controller)
+    event_controller = EventController(event_data, book_data, client_data)
+    rand_controller = RandomController(book_data, client_data)  # lab 8
 
-    console = CommandConsole(book_controller, client_controller, event_controller)
+    console = CommandConsole(book_controller, client_controller, event_controller, rand_controller)
     console.run()

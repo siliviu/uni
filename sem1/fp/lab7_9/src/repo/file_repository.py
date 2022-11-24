@@ -2,6 +2,7 @@ from repo.memory_repository import *
 from domain.book import *
 import pickle
 import os.path
+import io
 
 
 class FileRepo(Repo):
@@ -13,11 +14,11 @@ class FileRepo(Repo):
     def load(self):
         if not os.path.exists(self.__file):
             self.save()
-        with open(self.__file, 'r') as f:
+        with open(self.__file, 'r', encoding='utf-8') as f:
             for line in f:
                 self.add(self.__type.deserialise(line))
 
     def save(self):
-        with open(self.__file, 'w') as f:
+        with open(self.__file, 'w',encoding='utf-8') as f:
             for x in self.get_list():
                 f.write(repr(x)+'\n')

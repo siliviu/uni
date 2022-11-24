@@ -1,7 +1,7 @@
 from repo.memory_repository import *
 from domain.book import *
 from service.util import *
-
+from random import *
 
 class BookController:
     def __init__(self, data: Repo):
@@ -69,7 +69,7 @@ class BookController:
 
     def change_borrow(self, id: int, func, event_id: int):
         """
-        Adds borrow event to book
+        Adds borrow event to book. FOR TESTING ONLY
         * self - BookController
         * id - id of the book to modify
         * func - function to add/remove borrow from book
@@ -83,7 +83,7 @@ class BookController:
         """
         Gets list book objects meeting criteria for search
         Raises ConstraintException if the search arg is invalid
-        * self - BookController
+        * self - BookControllera
         * mode - int -
             * 0 if searching by id
             * 1 if searching by title

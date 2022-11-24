@@ -68,7 +68,7 @@ class ClientController:
 
     def change_borrow(self, id: int, func, event_id: int):
         """
-        Adds borrow event to client
+        Adds borrow event to client. TESTONLY
         * self - ClientController
         * id - id of the client to modify
         * func - function to add/remove borrow from client

@@ -158,7 +158,7 @@ class book:
         return s
 
     def __repr__(self):
-        s = str(self.id)+'\\'+str(self.title)+'\\'+str(self.desc)+'\\'+str(self.author)+'\\'+str(self.copies)+'|'
+        s = '\\'.join([str(self.id),self.title,self.desc,self.author,str(self.copies)]) + '|'
         for x in self.__borrowed:
             s += str(x) + ' '
         return s
