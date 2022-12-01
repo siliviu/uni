@@ -68,7 +68,7 @@ class ClientController:
 
     def change_borrow(self, id: int, func, event_id: int):
         """
-        Adds borrow event to client. TESTONLY
+        Adds borrow event to client. FOR TESTING ONLY
         * self - ClientController
         * id - id of the client to modify
         * func - function to add/remove borrow from client
@@ -117,5 +117,4 @@ class ClientController:
         * self - ClientController
         """
         clients = self.__data.get_list()
-        clients.sort(key=lambda c: -c.borrowed)
-        return [(client.name, client.borrowed) for client in clients[:math.ceil(len(clients)/5)]]
+        return [(client.name, client.borrowed) for client in sorted(clients,key=lambda c: -c.borrowed)[:math.ceil(len(clients)/5)]]

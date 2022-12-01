@@ -1,3 +1,4 @@
+import math
 from repo.memory_repository import *
 from domain.book import *
 from service.util import *
@@ -107,5 +108,12 @@ class BookController:
         self - BookController
         """
         books = self.__data.get_list()
-        books.sort(key=lambda b: -b.borrowers)
-        return books[:5]
+        return sorted(books,key=lambda b: -b.borrowers)[:5]
+
+    def get_20th_percentile(self) -> list[(str, int)]:
+        """
+        Returns a list of pairs [name, nr of books borrowed] for the 20th percentile of clients
+        * self - ClientController
+        """
+        books = self.__data.get_list()
+        return [(book.title, book.borrowers) for book in sorted(books,key=lambda c: -c.borrowers)[:math.ceil(len(books)/5)]]

@@ -17,6 +17,17 @@ class MemoryRepoTest(unittest.TestCase):
             [book(1, "2", "a", "4", 5), book(23, "va", "b", "nanana", 1)],
         )
 
+    def test_blackbox_add(self):
+        d = Repo()
+        d.add(book(1, "2", "a", "4", 5))
+        d.add(book(23, "va", "b", "nanana", 1))
+        self.assertEqual(d.get_length(), 2)
+        self.assertEqual(
+            d.get_list(),
+            [book(1, "2", "a", "4", 5), book(23, "va", "b", "nanana", 1)],
+        )
+        self.assertRaises(OperationException, d.add, book(1, "4", "5", "6", 7))
+
     def test_setget(self):
         d = Repo()
         d.add(book(1, "2", "a", "4", 5))

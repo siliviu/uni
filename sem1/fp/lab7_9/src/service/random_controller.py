@@ -20,7 +20,7 @@ class RandomController:
         self.__client_data = client_data
 
     def generate_random_books(self, nr):
-        for x in range(nr):
+        for _ in range(nr):
             try:
                 self.__book_data.add(book(
                     randint(1, 50),
@@ -32,7 +32,7 @@ class RandomController:
                 pass
 
     def generate_random_clients(self, nr):
-        for x in range(nr):
+        for _ in range(nr):
             try:
                 self.__client_data.add(client(randint(1, 50), Utils.rand_string(15), randint(1, 10000000)))
             except:

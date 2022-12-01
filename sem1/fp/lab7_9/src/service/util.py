@@ -3,7 +3,7 @@ import random
 
 class Utils():
     @staticmethod
-    def norm(s: str):
+    def norm(s: str) -> str:
         """Returns a string capitalised and stripped, normalising it for comparison"""
         return s.upper().strip()
 

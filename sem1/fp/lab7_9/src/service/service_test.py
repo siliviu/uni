@@ -68,11 +68,11 @@ class ServiceTestBook(unittest.TestCase):
         self.assertEqual(
             ctrl.get_most_borrowed(),
             [
-             ctrl.get_book(5),
-             ctrl.get_book(3),
-             ctrl.get_book(4),
-             ctrl.get_book(1),
-             ctrl.get_book(2)])
+                ctrl.get_book(5),
+                ctrl.get_book(3),
+                ctrl.get_book(4),
+                ctrl.get_book(1),
+                ctrl.get_book(2)])
 
     def test_exceptions(self):
         ctrl = BookController(Repo())
@@ -125,7 +125,6 @@ class ServiceTestClient(unittest.TestCase):
             ctrl.change_borrow(5, client.remove_borrowed, 40+_)
         self.assertEqual(ctrl.get_20th_percentile(), [("Viorel", 13)])
 
-
     def test_exceptions(self):
         ctrl = ClientController(Repo())
         ctrl.add_client(1, 'a', 2)
@@ -141,7 +140,7 @@ class ServiceTestEvent(unittest.TestCase):
     def test_service(self):
         book_repo = Repo()
         client_repo = Repo()
-        event_ctrl = EventController(Repo(), book_repo,client_repo)
+        event_ctrl = EventController(Repo(), book_repo, client_repo)
         book_repo.add(book(1, 'a', 'b', 'c', 1))
         client_repo.add(client(1, 'a', 2))
         self.assertEqual(event_ctrl.borrow_book(1, 1), 1)

@@ -16,5 +16,7 @@ class ReportsConsole:
              ("Print clients who borrowed books ordered by number of borrowed books", lambda: Menu.print_results(
                  self.__client_ctrl.get_borrowers(1))),
              ("Print the most active 20% clients ", lambda: Menu.print_results(
-                 self.__client_ctrl.get_20th_percentile())), ],
+                 self.__client_ctrl.get_20th_percentile())),
+             ("Print the most borrowed 20% books ", lambda: Menu.print_results(
+                 self.__book_ctrl.get_20th_percentile())), ],
             "Go back\n", "Bad option. Please try again\n",)

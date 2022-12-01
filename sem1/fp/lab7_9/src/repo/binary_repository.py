@@ -2,6 +2,7 @@ from repo.memory_repository import *
 import pickle
 import os.path
 
+
 class BinaryRepo(Repo):
     def __init__(self, file):
         self.__file = os.path.dirname(__file__)+"\\bin_"+file

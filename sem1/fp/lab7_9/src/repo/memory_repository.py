@@ -3,7 +3,7 @@ from domain.exceptions import *
 class Repo:
     def __init__(self):
         """
-        Initialise data object
+        Initialise memory repo
         * self - Repo
         """
         self._objects = {}
