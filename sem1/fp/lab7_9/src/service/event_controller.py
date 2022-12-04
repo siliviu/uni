@@ -2,8 +2,6 @@ from service.book_controller import *
 from service.client_controller import *
 from service.util import *
 from repo.memory_repository import *
-from domain.book import *
-from domain.client import *
 from domain.event import *
 
 
@@ -40,6 +38,7 @@ class EventController:
     def return_book(self, event_id: int):
         """
         Returning a book, updating the client, book
+        Raises OperationException if the event is invalid or the book has already been returned
         * self - EventController
         * event_id - int representing the id of a VALID borrow action
         """

@@ -4,8 +4,6 @@ from service.book_controller import *
 from service.client_controller import *
 from service.util import *
 from repo.memory_repository import *
-from domain.book import *
-from domain.client import *
 from random import *
 
 

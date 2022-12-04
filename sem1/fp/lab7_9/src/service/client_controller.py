@@ -1,4 +1,3 @@
-import math
 from repo.memory_repository import *
 from domain.client import *
 from service.util import *
@@ -99,22 +98,3 @@ class ClientController:
         else:
             client_validator.validate_uid(arg)
             return [client for client in clients if arg == client.uid]
-
-    def get_borrowers(self, mode: int):
-        """
-        Returns list with clients who borrowed books (and not returned them)
-        * self - ClientController
-        * mode - int = 0 if ordered by name, 1 if ordered by number of books
-        """
-        clients = self.__data.get_list()
-        clients = list(filter(lambda c: c.borrowed != 0, clients))
-        clients.sort(key=lambda c: c.name if mode == 0 else -c.borrowed)
-        return clients
-
-    def get_20th_percentile(self) -> list[(str, int)]:
-        """
-        Returns a list of pairs [name, nr of books borrowed] for the 20th percentile of clients
-        * self - ClientController
-        """
-        clients = self.__data.get_list()
-        return [(client.name, client.borrowed) for client in sorted(clients,key=lambda c: -c.borrowed)[:math.ceil(len(clients)/5)]]

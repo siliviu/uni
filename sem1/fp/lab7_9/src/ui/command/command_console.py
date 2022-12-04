@@ -3,16 +3,18 @@ from service.book_controller import *
 from service.client_controller import *
 from service.event_controller import *
 from service.random_controller import *
+from service.statistics_controller import *
 
 
 class CommandConsole:
     def __init__(
             self, book_ctrl: BookController, client_ctrl: ClientController, event_ctrl: EventController,
-            rand_ctrl: RandomController):
+            rand_ctrl: RandomController, stats_ctrl: StatisticsController):
         self.__book_ctrl = book_ctrl
         self.__client_ctrl = client_ctrl
         self.__event_ctrl = event_ctrl
         self.__rand_ctrl = rand_ctrl
+        self.__stats_ctrl = stats_ctrl
 
     @staticmethod
     def print_help():
@@ -177,14 +179,14 @@ class CommandConsole:
                 elif name == 'reports':
                     if len(args) != 1:
                         raise CommandException
-                    if args[0] not in ('1', '2', '3', '4','5'):
+                    if args[0] not in ('1', '2', '3', '4', '5'):
                         raise CommandException
                     Menu.print_results(
-                        self.__book_ctrl.get_most_borrowed() if args[0] == '1'
-                        else self.__client_ctrl.get_borrowers(0) if args[0] == '2'
-                        else self.__client_ctrl.get_borrowers(1) if args[0] == '3'
-                        else self.__client_ctrl.get_20th_percentile() if args[0]=='4'
-                        else self.__book_ctrl.get_20th_percentile() # lab 9
+                        self.__stats_ctrl.get_most_borrowed() if args[0] == '1'
+                        else self.__stats_ctrl.get_borrowers(0) if args[0] == '2'
+                        else self.__stats_ctrl.get_borrowers(1) if args[0] == '3'
+                        else self.__stats_ctrl.get_20th_percentile_clients() if args[0] == '4'
+                        else self.__stats_ctrl.get_20th_percentile_books()  # lab 9
                     )
                 elif name == 'exit':
                     print("You have closed the app. Goodbye!\n")

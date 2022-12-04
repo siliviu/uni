@@ -2,6 +2,7 @@ import unittest
 from service.book_controller import *
 from service.client_controller import *
 from service.event_controller import *
+from service.statistics_controller import *
 from service.util import *
 
 
@@ -18,7 +19,9 @@ class ServiceTestBook(unittest.TestCase):
         self.assertEqual(ctrl.get_book_list(), [book(1, 'a', 'zaza', 'c', 2)])
 
     def test_util(self):
-        ctrl = BookController(Repo())
+        r = Repo()
+        ctrl = BookController(r)
+        stats = StatisticsController(r, Repo())
         ctrl.add_book(1, "Ana are mere", "Ana si mere", "Anuta Anisoara", 3)
         ctrl.add_book(2, "Ana are mere 2", "Ana si mai multe mere", "Anuta Anisoara", 1)
         ctrl.add_book(3, "Ana", "Doar ana", "Anica Anuta", 10)
@@ -55,7 +58,7 @@ class ServiceTestBook(unittest.TestCase):
             ctrl.change_borrow(6, book.add_borrowed, 60+_)
 
         self.assertEqual(
-            ctrl.get_most_borrowed(),
+            stats.get_most_borrowed(),
             [ctrl.get_book(6),
              ctrl.get_book(5),
              ctrl.get_book(3),
@@ -66,7 +69,7 @@ class ServiceTestBook(unittest.TestCase):
             ctrl.change_borrow(6, book.remove_borrowed, 60+_)
 
         self.assertEqual(
-            ctrl.get_most_borrowed(),
+            stats.get_most_borrowed(),
             [
                 ctrl.get_book(5),
                 ctrl.get_book(3),
@@ -98,7 +101,9 @@ class ServiceTestClient(unittest.TestCase):
         self.assertEqual(ctrl.get_client_list(), [client(2, 'zaza', 10)])
 
     def test_util(self):
-        ctrl = ClientController(Repo())
+        r = Repo()
+        ctrl = ClientController(r)
+        stats = StatisticsController(Repo(), r)
         ctrl.add_client(1, "Gigel", 128)
         ctrl.add_client(2, "Gigelescu", 49)
         self.assertEqual(ctrl.get_clients_criteria(0, 1), [client(1, "Gigel", 128)])
@@ -117,13 +122,13 @@ class ServiceTestClient(unittest.TestCase):
         for _ in range(14):
             ctrl.change_borrow(5, client.add_borrowed, 40+_)
         self.assertEqual(
-            ctrl.get_borrowers(0), [ctrl.get_client(1), ctrl.get_client(2), ctrl.get_client(3), ctrl.get_client(5)])
+            stats.get_borrowers(0), [ctrl.get_client(1), ctrl.get_client(2), ctrl.get_client(3), ctrl.get_client(5)])
         self.assertEqual(
-            ctrl.get_borrowers(1), [ctrl.get_client(5), ctrl.get_client(1), ctrl.get_client(3), ctrl.get_client(2)])
-        self.assertEqual(ctrl.get_20th_percentile(), [("Viorel", 14)])
+            stats.get_borrowers(1), [ctrl.get_client(5), ctrl.get_client(1), ctrl.get_client(3), ctrl.get_client(2)])
+        self.assertEqual(stats.get_20th_percentile_clients(), [("Viorel", 14)])
         for _ in range(1):
             ctrl.change_borrow(5, client.remove_borrowed, 40+_)
-        self.assertEqual(ctrl.get_20th_percentile(), [("Viorel", 13)])
+        self.assertEqual(stats.get_20th_percentile_clients(), [("Viorel", 13)])
 
     def test_exceptions(self):
         ctrl = ClientController(Repo())
@@ -160,6 +165,10 @@ class ServiceTestEvent(unittest.TestCase):
         client_repo.add(client(1, 'a', 2))
         self.assertRaises(OperationException, event_ctrl.borrow_book, 1, 2)
         self.assertRaises(OperationException, event_ctrl.borrow_book, 2, 1)
+        self.assertRaises(OperationException, event_ctrl.return_book, 1)
+        event_ctrl.borrow_book(1, 1)
+        event_ctrl.return_book(1)
+        self.assertRaises(ConstraintException, event_ctrl.return_book, 1)
 
 
 class ServiceTestUtil(unittest.TestCase):

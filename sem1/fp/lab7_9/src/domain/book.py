@@ -133,6 +133,8 @@ class book:
         * self - book
         * event_id - int
         """
+        if event_id not in self.__borrowed:
+            raise ConstraintException("Event already handled")
         self.__borrowed.remove(event_id)
         self.copies += 1
 

@@ -90,6 +90,8 @@ class client:
         * self - client
         * event_id - int
         """
+        if event_id not in self.__borrowed:
+            raise ConstraintException("Event already handled")
         self.__borrowed.remove(event_id)
 
     def __eq__(self, other):

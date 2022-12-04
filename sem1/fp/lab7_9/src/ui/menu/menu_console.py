@@ -15,11 +15,13 @@ class MenuConsole:
         client_ctrl: ClientController,
         event_ctrl: EventController,
         random_ctrl: RandomController,
+        stats_ctrl: StatisticsController
     ):
         self.__book_ctrl = book_ctrl
         self.__client_ctrl = client_ctrl
         self.__event_ctrl = event_ctrl
         self.__random_ctrl = random_ctrl
+        self.__stats_ctrl = stats_ctrl
 
     def run(self):
         """Main menu"""
@@ -33,7 +35,7 @@ class MenuConsole:
                 ("Search for client", SearchClientConsole, self.__client_ctrl),
                 ("Borrow book", BorrowReturnConsole, self.__event_ctrl, 'b',),
                 ("Return book", BorrowReturnConsole, self.__event_ctrl, 'r',),
-                ("Reports", ReportsConsole, self.__book_ctrl, self.__client_ctrl),
+                ("Reports", ReportsConsole, self.__stats_ctrl),
             ],
             "Exit",
             "Unknown command. Please try again\n",
