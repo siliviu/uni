@@ -14,7 +14,7 @@ segment data use32 class=data
     name db "output_30.txt", 0
     mode db "w", 0
     formatr db "%s", 0
-    formatw db "%s", 0xD,0xA,0
+    formatw db "%s", 0xD, 0xA, 0
 
 segment code use32 class=code
     start:

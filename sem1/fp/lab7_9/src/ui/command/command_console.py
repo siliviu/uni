@@ -177,14 +177,14 @@ class CommandConsole:
                     self.__event_ctrl.return_book(int(args[0]))
                     print(colored("\nThe book has been successfully returned", "green"))
                 elif name == 'reports':
-                    if len(args) != 1:
+                    if len(args) != 1 and len(args) != 2:
                         raise CommandException
                     if args[0] not in ('1', '2', '3', '4', '5'):
                         raise CommandException
                     Menu.print_results(
                         self.__stats_ctrl.get_most_borrowed() if args[0] == '1'
-                        else self.__stats_ctrl.get_borrowers(0) if args[0] == '2'
-                        else self.__stats_ctrl.get_borrowers(1) if args[0] == '3'
+                        else self.__stats_ctrl.get_borrowers(0, len(args) == 2) if args[0] == '2'
+                        else self.__stats_ctrl.get_borrowers(1, len(args) == 2) if args[0] == '3'
                         else self.__stats_ctrl.get_20th_percentile_clients() if args[0] == '4'
                         else self.__stats_ctrl.get_20th_percentile_books()  # lab 9
                     )

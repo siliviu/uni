@@ -10,9 +10,9 @@ import printf msvcrt.dll
 segment data use32 class=data
     a resd 1
     b resd 1
-    result resd 1
+    result resq 1
     formatr db "%d %d", 0
-    formatw db "%d", 0
+    formatw db "%lld", 0
 
 segment code use32 class=code
     start:
@@ -23,9 +23,11 @@ segment code use32 class=code
         add esp, 12
 
         mov eax, [a]
-        add eax, [b]
+        mul dword [b]
+        mov [result + 4], edx
         mov [result], eax
 
+        push edx
         push eax
         push formatw
         call [printf]

@@ -1,8 +1,6 @@
 from repo.memory_repository import *
 from domain.book import *
-import pickle
 import os.path
-import io
 
 
 class FileRepo(Repo):
