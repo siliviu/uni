@@ -1,0 +1,13 @@
+@ECHO OFF
+nasm -fobj 27.asm
+nasm -fobj util.asm
+nasm -fobj io.asm
+
+alink 27.obj util.obj io.obj -oPE -subsys console -entry start
+
+del 27.obj
+del util.obj
+del io.obj
+
+ECHO Result:
+27.exe

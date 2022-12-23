@@ -9,6 +9,7 @@ from ui.command.command_console import *
 from service.book_controller import *
 from service.client_controller import *
 from service.statistics_controller import *
+from service.util import *
 
 
 if __name__ == "__main__":

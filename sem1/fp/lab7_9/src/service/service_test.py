@@ -3,6 +3,7 @@ from service.book_controller import *
 from service.client_controller import *
 from service.event_controller import *
 from service.statistics_controller import *
+from service.random_controller import *
 from service.util import *
 
 
@@ -170,8 +171,18 @@ class ServiceTestEvent(unittest.TestCase):
         event_ctrl.return_book(1)
         self.assertRaises(ConstraintException, event_ctrl.return_book, 1)
 
+class ServiceTestRandom(unittest.TestCase):
+    def test(self):
+        book_repo=Repo()
+        client_repo=Repo()
+        r = RandomController(book_repo,client_repo)
+        r.recursive_generate_random_books(4)
+        self.assertEqual(book_repo.get_length(),4)
+        r.recursive_generate_random_clients(3)
+        self.assertEqual(client_repo.get_length(),3)
 
 class ServiceTestUtil(unittest.TestCase):
     def test(self):
         self.assertEqual(Utils.norm(" aBCdEFg  h   "), "ABCDEFG  H")
         self.assertEqual(Utils.norm("       "), "")
+    

@@ -21,6 +21,8 @@ class Repo:
         """
         Returns a list of all objects
         * self - Repo
+        Best case = Worst case = Average case 
+        T(n) ~ n -> θ(n), where n = number of objects in repo  
         """
         return [obj for obj in self._objects.values()]
 
