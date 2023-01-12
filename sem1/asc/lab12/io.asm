@@ -3,7 +3,7 @@ bits 32
 global _read, _print
 extern _fopen, _fscanf, _printf, _fprintf, _fclose
 
-segment public data use32
+segment data public data use32
     a dd 0
     mode db "r", 0
     name db "numere.txt", 0
@@ -57,7 +57,7 @@ segment code use32 class=code
             mov esp, ebp
             pop ebp
 
-            ret 4
+            ret
 
     _print:
         push ebp
@@ -98,4 +98,4 @@ segment code use32 class=code
         mov esp, ebp
         pop ebp
 
-        ret 8
+        ret

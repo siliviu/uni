@@ -5,7 +5,7 @@ nasm -fobj io.asm
 
 alink 27.obj util.obj io.obj -oPE -subsys console -entry start
 
-del 27.obj util.obj io.obj
+DEL 27.obj util.obj io.obj
 
 ECHO Result:
 27.exe

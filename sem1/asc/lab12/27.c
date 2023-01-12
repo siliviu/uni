@@ -8,9 +8,9 @@ int* construct(int* s, int l, int* n, int* p);
 void print(int* a, int l);
 
 int s[100], n[100], p[100], ls, ln, lp;
+void* imports[] = {printf,fscanf,fopen,fclose };
 
 int main() {
-    void* imports[] = { printf,fscanf,fopen,fclose };
     ls = read(s) - s;
     lp = construct(s, ls, n, p) - p;
     ln = ls - lp;

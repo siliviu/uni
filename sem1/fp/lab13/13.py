@@ -62,11 +62,18 @@ a = [10, 27, 18, 16, 7, 14]
 # a = [1, 2, 2, 3]
 # a = [i for i in range(14)]
 
-st = time.time()
+# st = time.time()
 
-for x in back_it(a):
-    print(x)
-    pass
+while True:
+    option = int(input("Enter 1 for the recursive version and 2 for the iterative version:"))
+    if option == 1:
+     for x in back_rec_fast(a):
+        print(x)
+    else:
+     for x in back_it(a):
+        print(x)
+    
 
-end = time.time()
-print(end-st)
+
+# end = time.time()
+# print(end-st)
