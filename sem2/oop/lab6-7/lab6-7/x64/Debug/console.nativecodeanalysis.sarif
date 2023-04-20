@@ -1,0 +1,236 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26432",
+          "message": {
+            "text": "If you define or delete any default operation in the type 'class Activity', define or delete them all (c.21)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/activity.h"
+                },
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 2,
+                  "endLine": 11,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Activity::{ctor}",
+                  "decoratedName": "??0Activity@@QEAA@AEBV0@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26440",
+          "message": {
+            "text": "Function 'Console::FilterMenu' can be declared 'noexcept' (f.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/console.cpp"
+                },
+                "region": {
+                  "startLine": 65,
+                  "startColumn": 15,
+                  "endLine": 65,
+                  "endColumn": 15
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Console::FilterMenu",
+                  "decoratedName": "?FilterMenu@Console@@AEBAXAEBVService@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26440",
+          "message": {
+            "text": "Function 'Console::SortMenu' can be declared 'noexcept' (f.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/console.cpp"
+                },
+                "region": {
+                  "startLine": 73,
+                  "startColumn": 15,
+                  "endLine": 73,
+                  "endColumn": 15
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Console::SortMenu",
+                  "decoratedName": "?SortMenu@Console@@AEBAXAEBVService@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26432",
+          "message": {
+            "text": "If you define or delete any default operation in the type 'class Console', define or delete them all (c.21)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/console.cpp"
+                },
+                "region": {
+                  "startLine": 84,
+                  "startColumn": 11,
+                  "endLine": 84,
+                  "endColumn": 11
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Console::{dtor}",
+                  "decoratedName": "??1Console@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26823",
+          "message": {
+            "text": "Dereferencing a possibly null pointer 'x' (lifetime.1)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/console.cpp"
+                },
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 8,
+                  "endLine": 7,
+                  "endColumn": 46
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "PrintVector",
+                  "decoratedName": "??$PrintVector@VActivity@@@@YAXAEBV?$vector@VActivity@@V?$allocator@VActivity@@@std@@@std@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/console.cpp"
+                          },
+                          "region": {
+                            "startLine": 7,
+                            "startColumn": 43
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.35.32215.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/activity.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "908bd8dbc9791c0d9a71f148d25107fbe8eadfacf7eaec4880c57621e625c93b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/console.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "7b6266506fafe5b75d7a586b1f1b885d86ce1ece3172a741014ffb620bc256e3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/liviu/documents/p/uni/sem2/oop/lab6-7/lab6-7/console.h"
+          },
+          "hashes": {
+            "sha-256": "af9ffe8eef53ac49c65e63f06af3ce24d2da8f592f5136b78a2cee52c694a14b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/liviu/documents/p/uni/sem2/oop/lab6-7/lab6-7/service.h"
+          },
+          "hashes": {
+            "sha-256": "a8f42b32c19706f0c5a0358704eb27d5961467e14dd8bbbdc4756d592626cc83"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/liviu/documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.h"
+          },
+          "hashes": {
+            "sha-256": "f7e0be3f7dca684380f30654ed3afe305ea09aaf7a69c89fb229fdcf738247eb"
+          }
+        }
+      ]
+    }
+  ]
+}

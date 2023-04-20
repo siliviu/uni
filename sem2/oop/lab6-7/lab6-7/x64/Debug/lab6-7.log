@@ -1,0 +1,22 @@
+﻿  console.cpp
+  tests.cpp
+  Running Code Analysis for C/C++...
+  Generating Code...
+  lab6-7.vcxproj -> C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\x64\Debug\lab6-7.exe
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\activity.h(11): warning C26432: If you define or delete any default operation in the type 'class Activity', define or delete them all (c.21).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\console.cpp(65): warning C26440: Function 'Console::FilterMenu' can be declared 'noexcept' (f.6).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\console.cpp(73): warning C26440: Function 'Console::SortMenu' can be declared 'noexcept' (f.6).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\console.cpp(84): warning C26432: If you define or delete any default operation in the type 'class Console', define or delete them all (c.21).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\console.cpp(7): warning C26823: Dereferencing a possibly null pointer 'x' (lifetime.1).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.cpp(9): warning C26493: Don't use C-style casts (type.4).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.cpp(18): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.cpp(18): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.cpp(26): warning C26823: Dereferencing a possibly null pointer 'allotemp.1' (lifetime.1).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.cpp(30): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.cpp(30): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.cpp(42): warning C26823: Dereferencing a possibly null pointer 'x' (lifetime.1).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.cpp(17): warning C26440: Function 'Repo<int>::GetElement' can be declared 'noexcept' (f.6).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.cpp(25): warning C26440: Function 'Repo<int>::RemoveElement' can be declared 'noexcept' (f.6).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\service.cpp(31): warning C26823: Dereferencing a possibly null pointer 'allotemp.2' (lifetime.1).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\tests.cpp(28): warning C26823: Dereferencing a possibly null pointer 'allotemp.13' (lifetime.1).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.h(53): warning C26823: Dereferencing a possibly null pointer 'allotemp.5' (lifetime.1).

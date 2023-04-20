@@ -1,0 +1,736 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26432",
+          "message": {
+            "text": "If you define or delete any default operation in the type 'class Activity', define or delete them all (c.21)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/activity.h"
+                },
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 2,
+                  "endLine": 11,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Activity::{ctor}",
+                  "decoratedName": "??0Activity@@QEAA@AEBV0@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26493",
+          "message": {
+            "text": "Don't use C-style casts (type.4)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                },
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 9,
+                  "endLine": 9,
+                  "endColumn": 20
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Repo<Activity>::Length",
+                  "decoratedName": "?Length@?$Repo@VActivity@@@@QEBAHXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26446",
+          "message": {
+            "text": "Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                },
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 9,
+                  "endLine": 18,
+                  "endColumn": 19
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Repo<Activity>::GetElement",
+                  "decoratedName": "?GetElement@?$Repo@VActivity@@@@QEBA?AVActivity@@H@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26458",
+          "message": {
+            "text": "Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                },
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 9,
+                  "endLine": 18,
+                  "endColumn": 19
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Repo<Activity>::GetElement",
+                  "decoratedName": "?GetElement@?$Repo@VActivity@@@@QEBA?AVActivity@@H@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26823",
+          "message": {
+            "text": "Dereferencing a possibly null pointer 'allotemp.1' (lifetime.1)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                },
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 10,
+                  "endLine": 26,
+                  "endColumn": 22
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Repo<Activity>::RemoveElement",
+                  "decoratedName": "?RemoveElement@?$Repo@VActivity@@@@QEAAXH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                          },
+                          "region": {
+                            "startLine": 25,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                          },
+                          "region": {
+                            "startLine": 26,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                          },
+                          "region": {
+                            "startLine": 26,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                          },
+                          "region": {
+                            "startLine": 26,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26446",
+          "message": {
+            "text": "Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                },
+                "region": {
+                  "startLine": 30,
+                  "startColumn": 2,
+                  "endLine": 30,
+                  "endColumn": 12
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Repo<Activity>::ModifyEement",
+                  "decoratedName": "?ModifyEement@?$Repo@VActivity@@@@QEAAXHAEBVActivity@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26458",
+          "message": {
+            "text": "Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                },
+                "region": {
+                  "startLine": 30,
+                  "startColumn": 2,
+                  "endLine": 30,
+                  "endColumn": 12
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Repo<Activity>::ModifyEement",
+                  "decoratedName": "?ModifyEement@?$Repo@VActivity@@@@QEAAXHAEBVActivity@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26823",
+          "message": {
+            "text": "Dereferencing a possibly null pointer 'x' (lifetime.1)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                },
+                "region": {
+                  "startLine": 42,
+                  "startColumn": 7,
+                  "endLine": 42,
+                  "endColumn": 9
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Repo<Activity>::GetElements",
+                  "decoratedName": "?GetElements@?$Repo@VActivity@@@@QEBA?AV?$vector@VActivity@@V?$allocator@VActivity@@@std@@@std@@V?$function@$$A6A_NAEBVActivity@@@Z@3@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                          },
+                          "region": {
+                            "startLine": 42,
+                            "startColumn": 8
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26493",
+          "message": {
+            "text": "Don't use C-style casts (type.4)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                },
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 9,
+                  "endLine": 9,
+                  "endColumn": 20
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Repo<int>::Length",
+                  "decoratedName": "?Length@?$Repo@H@@QEBAHXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26446",
+          "message": {
+            "text": "Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                },
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 9,
+                  "endLine": 18,
+                  "endColumn": 19
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Repo<int>::GetElement",
+                  "decoratedName": "?GetElement@?$Repo@H@@QEBAHH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26440",
+          "message": {
+            "text": "Function 'Repo<int>::GetElement' can be declared 'noexcept' (f.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                },
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 12,
+                  "endLine": 17,
+                  "endColumn": 12
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Repo<int>::GetElement",
+                  "decoratedName": "?GetElement@?$Repo@H@@QEBAHH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26458",
+          "message": {
+            "text": "Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                },
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 9,
+                  "endLine": 18,
+                  "endColumn": 19
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Repo<int>::GetElement",
+                  "decoratedName": "?GetElement@?$Repo@H@@QEBAHH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26440",
+          "message": {
+            "text": "Function 'Repo<int>::RemoveElement' can be declared 'noexcept' (f.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                },
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 15,
+                  "endLine": 25,
+                  "endColumn": 15
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Repo<int>::RemoveElement",
+                  "decoratedName": "?RemoveElement@?$Repo@H@@QEAAXH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26823",
+          "message": {
+            "text": "Dereferencing a possibly null pointer 'allotemp.1' (lifetime.1)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                },
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 10,
+                  "endLine": 26,
+                  "endColumn": 22
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Repo<int>::RemoveElement",
+                  "decoratedName": "?RemoveElement@?$Repo@H@@QEAAXH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                          },
+                          "region": {
+                            "startLine": 25,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                          },
+                          "region": {
+                            "startLine": 26,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                          },
+                          "region": {
+                            "startLine": 26,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                          },
+                          "region": {
+                            "startLine": 26,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26446",
+          "message": {
+            "text": "Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                },
+                "region": {
+                  "startLine": 30,
+                  "startColumn": 2,
+                  "endLine": 30,
+                  "endColumn": 12
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Repo<int>::ModifyEement",
+                  "decoratedName": "?ModifyEement@?$Repo@H@@QEAAXHAEBH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26458",
+          "message": {
+            "text": "Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                },
+                "region": {
+                  "startLine": 30,
+                  "startColumn": 2,
+                  "endLine": 30,
+                  "endColumn": 12
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Repo<int>::ModifyEement",
+                  "decoratedName": "?ModifyEement@?$Repo@H@@QEAAXHAEBH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26823",
+          "message": {
+            "text": "Dereferencing a possibly null pointer 'x' (lifetime.1)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                },
+                "region": {
+                  "startLine": 42,
+                  "startColumn": 7,
+                  "endLine": 42,
+                  "endColumn": 9
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Repo<int>::GetElements",
+                  "decoratedName": "?GetElements@?$Repo@H@@QEBA?AV?$vector@HV?$allocator@H@std@@@std@@V?$function@$$A6A_NAEBH@Z@3@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+                          },
+                          "region": {
+                            "startLine": 42,
+                            "startColumn": 8
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.35.32215.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/activity.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "908bd8dbc9791c0d9a71f148d25107fbe8eadfacf7eaec4880c57621e625c93b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "362feff55904b2de6d4eb21a17dfe3873a6ce749933b84470e3ec42b0151f61a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/liviu/documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.h"
+          },
+          "hashes": {
+            "sha-256": "f7e0be3f7dca684380f30654ed3afe305ea09aaf7a69c89fb229fdcf738247eb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/liviu/documents/p/uni/sem2/oop/lab6-7/lab6-7/util.h"
+          },
+          "hashes": {
+            "sha-256": "f85cd68f08722ef6101fe15e65694bf5618a1b0c596f7129ea8e90090f03ec0c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/liviu/documents/p/uni/sem2/oop/lab6-7/lab6-7/console.h"
+          },
+          "hashes": {
+            "sha-256": "af9ffe8eef53ac49c65e63f06af3ce24d2da8f592f5136b78a2cee52c694a14b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/liviu/documents/p/uni/sem2/oop/lab6-7/lab6-7/service.h"
+          },
+          "hashes": {
+            "sha-256": "a8f42b32c19706f0c5a0358704eb27d5961467e14dd8bbbdc4756d592626cc83"
+          }
+        }
+      ]
+    }
+  ]
+}

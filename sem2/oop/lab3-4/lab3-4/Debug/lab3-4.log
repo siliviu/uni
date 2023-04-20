@@ -1,0 +1,16 @@
+﻿Debug\account.obj : warning LNK4042: object specified more than once; extras ignored
+tests.obj : error LNK2019: unresolved external symbol _AddTransaction referenced in function _TestService
+ui.obj : error LNK2001: unresolved external symbol _AddTransaction
+tests.obj : error LNK2019: unresolved external symbol _ModifyTransaction referenced in function _TestService
+ui.obj : error LNK2001: unresolved external symbol _ModifyTransaction
+tests.obj : error LNK2019: unresolved external symbol _RemoveTransaction referenced in function _TestService
+ui.obj : error LNK2001: unresolved external symbol _RemoveTransaction
+tests.obj : error LNK2019: unresolved external symbol _GetTransaction referenced in function _TestService
+ui.obj : error LNK2001: unresolved external symbol _GetTransaction
+tests.obj : error LNK2019: unresolved external symbol _CountTransactions referenced in function _TestService
+ui.obj : error LNK2001: unresolved external symbol _CountTransactions
+tests.obj : error LNK2019: unresolved external symbol _FilterTransactions referenced in function _TestService
+ui.obj : error LNK2001: unresolved external symbol _FilterTransactions
+tests.obj : error LNK2019: unresolved external symbol _OrderTransactions referenced in function _TestService
+ui.obj : error LNK2001: unresolved external symbol _OrderTransactions
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab3-4\Debug\lab3-4.exe : fatal error LNK1120: 7 unresolved externals

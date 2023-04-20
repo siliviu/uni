@@ -1,0 +1,44 @@
+1:
+grep -e "economica" last.fake | grep -e "Sun" | awk '{print $1}' | sort | uniq
+
+2:
+head -n -1 last.fake | tail -n +2 | awk '{print $1, $7}' | sed 's/:/ /g' | awk '$2 >= 23 {print $1}' | sort | uniq
+
+3:
+awk -F: '$1 ~ /^m.*/ && $3 % 7 == 0 {print $5}' passwd.fake
+
+4:
+?
+pts/2
+tty1
+tty2
+tty3
+tty4
+tty5
+tty6
+
+5:
+awk -F: '$1 ~ /.*88/ {print $5}' passwd.fake
+
+6:
+awk -F: '$3 ~ /23./ {print $5}' passwd.fake
+
+7:
+awk '$1 ~ /^t.*/ && $2 ~ /pts\/9/ {print $1}' last.fake | sort | uniq
+
+8:
+awk '$1 ~ /^r.*/ {print $1}' ps.fake | sort | uniq | sed -e 's/a/aa/g' -e 's/e/ee/g' -e 's/i/ii/g' -e 's/o/oo/g' -e 's/u/uu/g'
+
+9:
+sed -e 's/[a-z]//g' -e 's/[A-Z]//g' -e 's/[0-9]//g' -e 's/ //g' passwd.fake | sort | uniq
+
+10:
+sed -e 's/[^r]//g' passwd.fake | sort | uniq
+
+11:
+awk '{sum+=$2} END{print sum/NR}' ps.fake
+
+bradut
+1:  grep '^\(...\)\+$'
+2:  grep -e '[AEIOU].*[AEIOU].*[AEIOU]' | grep -e '[^13579]'
+
