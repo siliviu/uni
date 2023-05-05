@@ -1,11 +1,12 @@
 #pragma once
 #include <vector>
+#include "vvector.h"
 #include <functional>
 
 template<class T>
 class Repo {
 private:
-	std::vector<T> v;
+	vvector<T> v;
 public:
 	/// <summary>
 	/// Returns number of elements
@@ -44,7 +45,7 @@ public:
 	/// Get all elements
 	/// </summary>
 	/// <returns></returns>
-	const std::vector<T>& GetAllElements() const noexcept;
+	std::vector<T> GetAllElements() const noexcept;
 	/// <summary>
 	/// Gets all elements based on function
 	/// </summary>

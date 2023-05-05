@@ -7,8 +7,10 @@ private:
 	std::string title, desc, type;
 	int length;
 public:
+	bool operator==(const Activity& a) const = default;
+	Activity() = default;
 	Activity(const std::string& title, const std::string& desc, const std::string& type, const int length);
-	Activity(const Activity& a) :title(a.title), desc(a.desc), type(a.type), length(a.length) { std::cerr << "COPY\n"; }
+	Activity(const Activity& a) : title(a.title), desc(a.desc), type(a.type), length(a.length) { /*std::cerr << "COPY\n";*/ }
 	std::string GetTitle() const;
 	std::string GetDescription() const;
 	std::string GetType() const;

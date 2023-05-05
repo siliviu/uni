@@ -63,19 +63,25 @@ void Console::SearchMenu(const Service& s) const {
 }
 
 void Console::FilterMenu(const Service& s) const {
-	s;
-	//std::string w;
-	//std::cout << "Enter the title you wish to search: ";
-	//std::cin >> w;
-	//PrintVector(s.Search(w));
+	std::cout << "Choose an option:" << '\n'
+		<< "0. Filter by description" << '\n'
+		<< "1. Filter by type" << '\n';
+	int option;
+	std::cin >> option;
+	std::cout << "Enter the filter query: ";
+	std::string a;
+	std::cin >> a;
+	PrintVector(s.Filter(a, option));
 }
 
 void Console::SortMenu(const Service& s) const {
-	s;
-	//std::string w;
-	//std::cout << "Enter the title you wish to search: ";
-	//std::cin >> w;
-	//PrintVector(s.Search(w));
+	std::cout << "Choose an option:" << '\n'
+		<< "0. Sort by title" << '\n'
+		<< "1. Sort by description" << '\n'
+		<< "2. Sort by type + length" << '\n';
+	int option;
+	std::cin >> option;
+	PrintVector(s.Sort(option));
 }
 
 Console::Console() noexcept {
@@ -87,6 +93,13 @@ Console::~Console() noexcept {
 void Console::Run() const {
 	std::cout << "Welcome to the activity manager: " << '\n';
 	Service s;
+	s.Add("1", "2", "3", 4);
+	s.Add("2", "2", "2", 5);
+	s.Add("5", "5", "1", 8);
+	s.Add("3", "3", "3", 6);
+	s.Add("6", "4", "3", 2);
+	s.Add("4", "4", "2", 12);
+	PrintAll(s);
 	while (1) {
 		std::cout << "Choose an option:" << '\n'
 			<< "0. Exit the application" << '\n'
@@ -97,7 +110,6 @@ void Console::Run() const {
 			<< "5. Search activities" << '\n'
 			<< "6. Filter activities" << '\n'
 			<< "7. Sort activities" << '\n';
-
 		int option;
 		std::cin >> option;
 		switch (option) {

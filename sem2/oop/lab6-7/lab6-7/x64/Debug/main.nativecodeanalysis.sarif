@@ -16,9 +16,9 @@
                   "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/activity.h"
                 },
                 "region": {
-                  "startLine": 11,
+                  "startLine": 13,
                   "startColumn": 2,
-                  "endLine": 11,
+                  "endLine": 13,
                   "endColumn": 2
                 }
               },
@@ -55,7 +55,7 @@
             "resultFile"
           ],
           "hashes": {
-            "sha-256": "908bd8dbc9791c0d9a71f148d25107fbe8eadfacf7eaec4880c57621e625c93b"
+            "sha-256": "17d3e2f56e7c161b9e10e7296921370393310662a92da171fc134c97017a28f5"
           }
         },
         {
@@ -66,7 +66,7 @@
             "analysisTarget"
           ],
           "hashes": {
-            "sha-256": "75fa687e3efb75751e7e1c943491356d9489d529aaa00518a8e557221bf0e922"
+            "sha-256": "330f732d2ec0fa087aceb6a64fb147b9d0291c1e0a5ba3f50c2cc551e0540bdc"
           }
         },
         {
@@ -82,7 +82,15 @@
             "uri": "file:///c:/users/liviu/documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.h"
           },
           "hashes": {
-            "sha-256": "f7e0be3f7dca684380f30654ed3afe305ea09aaf7a69c89fb229fdcf738247eb"
+            "sha-256": "dd0b661362cecb6fb520b4068ce6777b00517a679fe5c25463e60667f619eef3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/liviu/documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.h"
+          },
+          "hashes": {
+            "sha-256": "15a03dba30f8abab894c6c0957b8a108842d16e92f6edb3ecc523bd4791af522"
           }
         },
         {
@@ -98,7 +106,7 @@
             "uri": "file:///c:/users/liviu/documents/p/uni/sem2/oop/lab6-7/lab6-7/service.h"
           },
           "hashes": {
-            "sha-256": "a8f42b32c19706f0c5a0358704eb27d5961467e14dd8bbbdc4756d592626cc83"
+            "sha-256": "c9b4d6d2a7e252dbbc605c4718dd8ef03b783f63b608d3a178bccc6fd16b9cda"
           }
         },
         {

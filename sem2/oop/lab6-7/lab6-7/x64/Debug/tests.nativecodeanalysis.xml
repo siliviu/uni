@@ -4,14 +4,14 @@
     <SFA>
       <FILEPATH>C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\</FILEPATH>
       <FILENAME>activity.h</FILENAME>
-      <LINE>11</LINE>
+      <LINE>13</LINE>
       <COLUMN>1</COLUMN>
     </SFA>
     <DEFECTCODE>26432</DEFECTCODE>
     <DESCRIPTION>If you define or delete any default operation in the type 'class Activity', define or delete them all (c.21).</DESCRIPTION>
     <FUNCTION>Activity::{ctor}</FUNCTION>
     <DECORATED>??0Activity@@QEAA@AEBV0@@Z</DECORATED>
-    <FUNCLINE>11</FUNCLINE>
+    <FUNCLINE>13</FUNCLINE>
     <PATH></PATH>
   </DEFECT>
   <DEFECT>
@@ -300,13 +300,13 @@
       <SFA>
         <FILEPATH>C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\</FILEPATH>
         <FILENAME>repo.h</FILENAME>
-        <LINE>53</LINE>
+        <LINE>54</LINE>
         <COLUMN>98</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\</FILEPATH>
         <FILENAME>repo.h</FILENAME>
-        <LINE>53</LINE>
+        <LINE>54</LINE>
         <COLUMN>98</COLUMN>
       </SFA>
       <SFA>
@@ -375,7 +375,7 @@
     <SFA>
       <FILEPATH>C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\</FILEPATH>
       <FILENAME>repo.h</FILENAME>
-      <LINE>53</LINE>
+      <LINE>54</LINE>
       <COLUMN>98</COLUMN>
     </SFA>
     <DEFECTCODE>26823</DEFECTCODE>
@@ -657,9 +657,93 @@
       <SFA>
         <FILEPATH>C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\</FILEPATH>
         <FILENAME>repo.h</FILENAME>
-        <LINE>53</LINE>
+        <LINE>54</LINE>
         <COLUMN>98</COLUMN>
       </SFA>
     </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\</FILEPATH>
+      <FILENAME>tests.cpp</FILENAME>
+      <LINE>74</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26446</DEFECTCODE>
+    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
+    <FUNCTION>TestService</FUNCTION>
+    <DECORATED>?TestService@@YAXXZ</DECORATED>
+    <FUNCLINE>31</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\</FILEPATH>
+      <FILENAME>tests.cpp</FILENAME>
+      <LINE>75</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26446</DEFECTCODE>
+    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
+    <FUNCTION>TestService</FUNCTION>
+    <DECORATED>?TestService@@YAXXZ</DECORATED>
+    <FUNCLINE>31</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\</FILEPATH>
+      <FILENAME>tests.cpp</FILENAME>
+      <LINE>76</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26446</DEFECTCODE>
+    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
+    <FUNCTION>TestService</FUNCTION>
+    <DECORATED>?TestService@@YAXXZ</DECORATED>
+    <FUNCLINE>31</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\</FILEPATH>
+      <FILENAME>tests.cpp</FILENAME>
+      <LINE>74</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26458</DEFECTCODE>
+    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
+    <FUNCTION>TestService</FUNCTION>
+    <DECORATED>?TestService@@YAXXZ</DECORATED>
+    <FUNCLINE>31</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\</FILEPATH>
+      <FILENAME>tests.cpp</FILENAME>
+      <LINE>75</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26458</DEFECTCODE>
+    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
+    <FUNCTION>TestService</FUNCTION>
+    <DECORATED>?TestService@@YAXXZ</DECORATED>
+    <FUNCLINE>31</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\</FILEPATH>
+      <FILENAME>tests.cpp</FILENAME>
+      <LINE>76</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26458</DEFECTCODE>
+    <DESCRIPTION>Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).</DESCRIPTION>
+    <FUNCTION>TestService</FUNCTION>
+    <DECORATED>?TestService@@YAXXZ</DECORATED>
+    <FUNCLINE>31</FUNCLINE>
+    <PATH></PATH>
   </DEFECT>
 </DEFECTS>

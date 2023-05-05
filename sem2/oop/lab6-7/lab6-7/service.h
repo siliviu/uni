@@ -2,6 +2,7 @@
 #include "activity.h"
 #include "repo.h"
 #include <stdexcept>
+#include <algorithm>
 
 class Service {
 private:
@@ -35,11 +36,24 @@ public:
 	/// Returns a vector of all activities
 	/// </summary>
 	/// <returns></returns>
-	const std::vector<Activity>& GetAll() const noexcept;
+	std::vector<Activity> GetAll() const noexcept;
 	/// <summary>
 	/// Searches based on title
 	/// </summary>
 	/// <param name="s"></param>
 	/// <returns></returns>
 	std::vector<Activity> Search(const std::string& s) const;
+	/// <summary>
+	/// Filter based on desc if mode=0, type otherwise
+	/// </summary>
+	/// <param name="s"></param>
+	/// <param name="mode"></param>
+	/// <returns></returns>
+	std::vector<Activity> Filter(const std::string& s, int mode) const;
+	/// <summary>
+	/// Sort depending on the mode (0 = title, 1 = desc, 2 = type+length)
+	/// </summary>
+	/// <param name="mode"></param>
+	/// <returns></returns>
+	std::vector<Activity> Sort(int mode) const;
 };

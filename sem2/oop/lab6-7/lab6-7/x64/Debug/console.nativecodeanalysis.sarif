@@ -16,9 +16,9 @@
                   "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/activity.h"
                 },
                 "region": {
-                  "startLine": 11,
+                  "startLine": 13,
                   "startColumn": 2,
-                  "endLine": 11,
+                  "endLine": 13,
                   "endColumn": 2
                 }
               },
@@ -26,62 +26,6 @@
                 {
                   "fullyQualifiedName": "Activity::{ctor}",
                   "decoratedName": "??0Activity@@QEAA@AEBV0@@Z",
-                  "kind": "function"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ruleId": "C26440",
-          "message": {
-            "text": "Function 'Console::FilterMenu' can be declared 'noexcept' (f.6)."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/console.cpp"
-                },
-                "region": {
-                  "startLine": 65,
-                  "startColumn": 15,
-                  "endLine": 65,
-                  "endColumn": 15
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Console::FilterMenu",
-                  "decoratedName": "?FilterMenu@Console@@AEBAXAEBVService@@@Z",
-                  "kind": "function"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "ruleId": "C26440",
-          "message": {
-            "text": "Function 'Console::SortMenu' can be declared 'noexcept' (f.6)."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/console.cpp"
-                },
-                "region": {
-                  "startLine": 73,
-                  "startColumn": 15,
-                  "endLine": 73,
-                  "endColumn": 15
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Console::SortMenu",
-                  "decoratedName": "?SortMenu@Console@@AEBAXAEBVService@@@Z",
                   "kind": "function"
                 }
               ]
@@ -100,9 +44,9 @@
                   "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/console.cpp"
                 },
                 "region": {
-                  "startLine": 84,
+                  "startLine": 90,
                   "startColumn": 11,
-                  "endLine": 84,
+                  "endLine": 90,
                   "endColumn": 11
                 }
               },
@@ -191,7 +135,7 @@
             "resultFile"
           ],
           "hashes": {
-            "sha-256": "908bd8dbc9791c0d9a71f148d25107fbe8eadfacf7eaec4880c57621e625c93b"
+            "sha-256": "17d3e2f56e7c161b9e10e7296921370393310662a92da171fc134c97017a28f5"
           }
         },
         {
@@ -203,7 +147,7 @@
             "resultFile"
           ],
           "hashes": {
-            "sha-256": "7b6266506fafe5b75d7a586b1f1b885d86ce1ece3172a741014ffb620bc256e3"
+            "sha-256": "8c0a3e94dcf30865bca62243081a507b14e7f81f9db56664c5dda218f9e51ac0"
           }
         },
         {
@@ -219,7 +163,7 @@
             "uri": "file:///c:/users/liviu/documents/p/uni/sem2/oop/lab6-7/lab6-7/service.h"
           },
           "hashes": {
-            "sha-256": "a8f42b32c19706f0c5a0358704eb27d5961467e14dd8bbbdc4756d592626cc83"
+            "sha-256": "c9b4d6d2a7e252dbbc605c4718dd8ef03b783f63b608d3a178bccc6fd16b9cda"
           }
         },
         {
@@ -227,7 +171,15 @@
             "uri": "file:///c:/users/liviu/documents/p/uni/sem2/oop/lab6-7/lab6-7/repo.h"
           },
           "hashes": {
-            "sha-256": "f7e0be3f7dca684380f30654ed3afe305ea09aaf7a69c89fb229fdcf738247eb"
+            "sha-256": "dd0b661362cecb6fb520b4068ce6777b00517a679fe5c25463e60667f619eef3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/liviu/documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.h"
+          },
+          "hashes": {
+            "sha-256": "15a03dba30f8abab894c6c0957b8a108842d16e92f6edb3ecc523bd4791af522"
           }
         }
       ]

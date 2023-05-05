@@ -1,0 +1,37 @@
+[
+  {
+    "directory": "C:\\Users\\Liviu\\Documents\\p\\uni\\sem2\\oop\\lab6-7\\lab6-7",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/Zi \/JMC \/nologo \/W4 \/WX \/diagnostics:column \/Od \/D CODE_ANALYSIS \/EHsc \/RTC1 \/MDd \/GS \/fp:precise \/std:c++20 \/permissive- \/Fo\"x64\\Debug\\\\\" \/Gd \/TP   \"C:\\Users\\Liviu\\Documents\\p\\uni\\sem2\\oop\\lab6-7\\lab6-7\\activity.cpp\"",
+    "file": "C:\\Users\\Liviu\\Documents\\p\\uni\\sem2\\oop\\lab6-7\\lab6-7\\activity.cpp"
+  },
+  {
+    "directory": "C:\\Users\\Liviu\\Documents\\p\\uni\\sem2\\oop\\lab6-7\\lab6-7",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/Zi \/JMC \/nologo \/W4 \/WX \/diagnostics:column \/Od \/D CODE_ANALYSIS \/EHsc \/RTC1 \/MDd \/GS \/fp:precise \/std:c++20 \/permissive- \/Fo\"x64\\Debug\\\\\" \/Gd \/TP   \"C:\\Users\\Liviu\\Documents\\p\\uni\\sem2\\oop\\lab6-7\\lab6-7\\console.cpp\"",
+    "file": "C:\\Users\\Liviu\\Documents\\p\\uni\\sem2\\oop\\lab6-7\\lab6-7\\console.cpp"
+  },
+  {
+    "directory": "C:\\Users\\Liviu\\Documents\\p\\uni\\sem2\\oop\\lab6-7\\lab6-7",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/Zi \/JMC \/nologo \/W4 \/WX \/diagnostics:column \/Od \/D CODE_ANALYSIS \/EHsc \/RTC1 \/MDd \/GS \/fp:precise \/std:c++20 \/permissive- \/Fo\"x64\\Debug\\\\\" \/Gd \/TP   \"C:\\Users\\Liviu\\Documents\\p\\uni\\sem2\\oop\\lab6-7\\lab6-7\\main.cpp\"",
+    "file": "C:\\Users\\Liviu\\Documents\\p\\uni\\sem2\\oop\\lab6-7\\lab6-7\\main.cpp"
+  },
+  {
+    "directory": "C:\\Users\\Liviu\\Documents\\p\\uni\\sem2\\oop\\lab6-7\\lab6-7",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/Zi \/JMC \/nologo \/W4 \/WX \/diagnostics:column \/Od \/D CODE_ANALYSIS \/EHsc \/RTC1 \/MDd \/GS \/fp:precise \/std:c++20 \/permissive- \/Fo\"x64\\Debug\\\\\" \/Gd \/TP   \"C:\\Users\\Liviu\\Documents\\p\\uni\\sem2\\oop\\lab6-7\\lab6-7\\repo.cpp\"",
+    "file": "C:\\Users\\Liviu\\Documents\\p\\uni\\sem2\\oop\\lab6-7\\lab6-7\\repo.cpp"
+  },
+  {
+    "directory": "C:\\Users\\Liviu\\Documents\\p\\uni\\sem2\\oop\\lab6-7\\lab6-7",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/Zi \/JMC \/nologo \/W4 \/WX \/diagnostics:column \/Od \/D CODE_ANALYSIS \/EHsc \/RTC1 \/MDd \/GS \/fp:precise \/std:c++20 \/permissive- \/Fo\"x64\\Debug\\\\\" \/Gd \/TP   \"C:\\Users\\Liviu\\Documents\\p\\uni\\sem2\\oop\\lab6-7\\lab6-7\\service.cpp\"",
+    "file": "C:\\Users\\Liviu\\Documents\\p\\uni\\sem2\\oop\\lab6-7\\lab6-7\\service.cpp"
+  },
+  {
+    "directory": "C:\\Users\\Liviu\\Documents\\p\\uni\\sem2\\oop\\lab6-7\\lab6-7",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/Zi \/JMC \/nologo \/W4 \/WX \/diagnostics:column \/Od \/D CODE_ANALYSIS \/EHsc \/RTC1 \/MDd \/GS \/fp:precise \/std:c++20 \/permissive- \/Fo\"x64\\Debug\\\\\" \/Gd \/TP   \"C:\\Users\\Liviu\\Documents\\p\\uni\\sem2\\oop\\lab6-7\\lab6-7\\tests.cpp\"",
+    "file": "C:\\Users\\Liviu\\Documents\\p\\uni\\sem2\\oop\\lab6-7\\lab6-7\\tests.cpp"
+  },
+  {
+    "directory": "C:\\Users\\Liviu\\Documents\\p\\uni\\sem2\\oop\\lab6-7\\lab6-7",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/Zi \/JMC \/nologo \/W4 \/WX \/diagnostics:column \/Od \/D CODE_ANALYSIS \/EHsc \/RTC1 \/MDd \/GS \/fp:precise \/std:c++20 \/permissive- \/Fo\"x64\\Debug\\\\\" \/Gd \/TP   \"C:\\Users\\Liviu\\Documents\\p\\uni\\sem2\\oop\\lab6-7\\lab6-7\\vvector.cpp\"",
+    "file": "C:\\Users\\Liviu\\Documents\\p\\uni\\sem2\\oop\\lab6-7\\lab6-7\\vvector.cpp"
+  }
+]

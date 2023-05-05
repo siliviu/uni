@@ -1,22 +1,49 @@
-﻿  console.cpp
-  tests.cpp
-  Running Code Analysis for C/C++...
-  Generating Code...
+﻿  main.cpp
   lab6-7.vcxproj -> C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\x64\Debug\lab6-7.exe
-C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\activity.h(11): warning C26432: If you define or delete any default operation in the type 'class Activity', define or delete them all (c.21).
-C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\console.cpp(65): warning C26440: Function 'Console::FilterMenu' can be declared 'noexcept' (f.6).
-C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\console.cpp(73): warning C26440: Function 'Console::SortMenu' can be declared 'noexcept' (f.6).
-C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\console.cpp(84): warning C26432: If you define or delete any default operation in the type 'class Console', define or delete them all (c.21).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\activity.h(13): warning C26432: If you define or delete any default operation in the type 'class Activity', define or delete them all (c.21).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\console.cpp(90): warning C26432: If you define or delete any default operation in the type 'class Console', define or delete them all (c.21).
 C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\console.cpp(7): warning C26823: Dereferencing a possibly null pointer 'x' (lifetime.1).
 C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.cpp(9): warning C26493: Don't use C-style casts (type.4).
 C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.cpp(18): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
 C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.cpp(18): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.cpp(26): warning C26823: Dereferencing a possibly null pointer 'allotemp.1' (lifetime.1).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.cpp(21): warning C26440: Function 'Repo<Activity>::AddElement' can be declared 'noexcept' (f.6).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.cpp(25): warning C26440: Function 'Repo<Activity>::RemoveElement' can be declared 'noexcept' (f.6).
 C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.cpp(30): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
 C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.cpp(30): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
-C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.cpp(42): warning C26823: Dereferencing a possibly null pointer 'x' (lifetime.1).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.cpp(37): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.cpp(45): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.cpp(46): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
 C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.cpp(17): warning C26440: Function 'Repo<int>::GetElement' can be declared 'noexcept' (f.6).
-C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.cpp(25): warning C26440: Function 'Repo<int>::RemoveElement' can be declared 'noexcept' (f.6).
-C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\service.cpp(31): warning C26823: Dereferencing a possibly null pointer 'allotemp.2' (lifetime.1).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\service.cpp(10): warning C26823: Dereferencing a possibly null pointer 'x' (lifetime.1).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\service.cpp(34): warning C26823: Dereferencing a possibly null pointer 'allotemp.2' (lifetime.1).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\service.cpp(38): warning C26823: Dereferencing a possibly null pointer 'allotemp.2' (lifetime.1).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\service.cpp(44): warning C26823: Dereferencing a possibly null pointer 'allotemp.2' (lifetime.1).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\service.cpp(44): warning C26823: Dereferencing a possibly null pointer 'allotemp.3' (lifetime.1).
 C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\tests.cpp(28): warning C26823: Dereferencing a possibly null pointer 'allotemp.13' (lifetime.1).
-C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.h(53): warning C26823: Dereferencing a possibly null pointer 'allotemp.5' (lifetime.1).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\repo.h(54): warning C26823: Dereferencing a possibly null pointer 'allotemp.5' (lifetime.1).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\tests.cpp(74): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\tests.cpp(75): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\tests.cpp(76): warning C26446: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\tests.cpp(74): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\tests.cpp(75): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\tests.cpp(76): warning C26458: Prefer to use gsl::at() instead of unchecked subscript operator (bounds.4).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\vvector.cpp(10): warning C26409: Avoid calling new and delete explicitly, use std::make_unique<T> instead (r.11).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\vvector.cpp(10): warning C26400: Do not assign the result of an allocation or a function call with an owner<T> return value to a raw pointer, use owner<T> instead (i.11).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\vvector.cpp(9): warning C26496: The variable 'NN' does not change after construction, mark it as const (con.4).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\vvector.cpp(13): warning C26823: Dereferencing a possibly null pointer 'allotemp.2' (lifetime.1).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\vvector.cpp(19): warning C26455: Default constructor should not throw. Declare it 'noexcept' (f.6).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\vvector.cpp(20): warning C26409: Avoid calling new and delete explicitly, use std::make_unique<T> instead (r.11).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\vvector.cpp(37): warning C26481: Don't use pointer arithmetic. Use span instead (bounds.1).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\vvector.cpp(43): warning C26447: The function is declared 'noexcept' but calls function 'resize()' which may throw exceptions (f.6).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\vvector.cpp(24): warning C26432: If you define or delete any default operation in the type 'class vvector<class Activity>', define or delete them all (c.21).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\vvector.cpp(25): warning C26823: Dereferencing a possibly null pointer 'allotemp.1' (lifetime.1).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\vvector.cpp(13): warning C26401: Do not delete a raw pointer that is not an owner<T> (i.11).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\vvector.cpp(13): warning C26409: Avoid calling new and delete explicitly, use std::make_unique<T> instead (r.11).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\vvector.cpp(12): warning C26481: Don't use pointer arithmetic. Use span instead (bounds.1).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\vvector.cpp(12): warning C26823: Dereferencing a possibly null pointer '(this->vvector<int>::v)' (lifetime.1).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\vvector.cpp(44): warning C26481: Don't use pointer arithmetic. Use span instead (bounds.1).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\vvector.cpp(50): warning C26481: Don't use pointer arithmetic. Use span instead (bounds.1).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\vvector.cpp(50): warning C26823: Dereferencing a possibly null pointer '(this->vvector<int>::v)' (lifetime.1).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\vvector.cpp(25): warning C26401: Do not delete a raw pointer that is not an owner<T> (i.11).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\vvector.cpp(25): warning C26409: Avoid calling new and delete explicitly, use std::make_unique<T> instead (r.11).
+C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\activity.h(11): warning C26495: Variable 'Activity::length' is uninitialized. Always initialize a member variable (type.6).

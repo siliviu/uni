@@ -1,4 +1,4 @@
-[2023-04-07 12:44:32] [info] Start Program:
+[2023-04-28 12:29:31] [info] Start Program:
 Path:"C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\x64\Debug\lab6-7.exe"
 Arguments:
 Working directory: "C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\"
@@ -9,13 +9,13 @@ Cover Children: 0
 Aggregate by file: 1
 Continue after C++ exception: 0
 Optimized build support: 0
-Export: Binary C:\Users\Liviu\AppData\Local\Temp\ppxql054.33j 
+Export: Binary C:\Users\Liviu\AppData\Local\Temp\x3qbmymm.ltv 
 Input coverage: 
 Unified diff: 
 Excluded line regular expressions: 
 Substitute pdb source paths: 
 
-[2023-04-07 12:44:32] [info] Module: C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\x64\Debug\lab6-7.exe is selected because it matches selected pattern: C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\x64\Debug\lab6-7.exe
-[2023-04-07 12:44:33] [info] ----------------------------------------------------
-[2023-04-07 12:44:33] [info] Coverage binary generated in file: C:\Users\Liviu\AppData\Local\Temp\ppxql054.33j
-[2023-04-07 12:44:33] [info] ----------------------------------------------------
+[2023-04-28 12:29:31] [info] Module: C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\x64\Debug\lab6-7.exe is selected because it matches selected pattern: C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\x64\Debug\lab6-7.exe
+[2023-04-28 12:29:33] [info] ----------------------------------------------------
+[2023-04-28 12:29:33] [info] Coverage binary generated in file: C:\Users\Liviu\AppData\Local\Temp\x3qbmymm.ltv
+[2023-04-28 12:29:33] [info] ----------------------------------------------------

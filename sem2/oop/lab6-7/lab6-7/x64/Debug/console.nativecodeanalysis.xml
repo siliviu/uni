@@ -4,56 +4,28 @@
     <SFA>
       <FILEPATH>C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\</FILEPATH>
       <FILENAME>activity.h</FILENAME>
-      <LINE>11</LINE>
+      <LINE>13</LINE>
       <COLUMN>1</COLUMN>
     </SFA>
     <DEFECTCODE>26432</DEFECTCODE>
     <DESCRIPTION>If you define or delete any default operation in the type 'class Activity', define or delete them all (c.21).</DESCRIPTION>
     <FUNCTION>Activity::{ctor}</FUNCTION>
     <DECORATED>??0Activity@@QEAA@AEBV0@@Z</DECORATED>
-    <FUNCLINE>11</FUNCLINE>
+    <FUNCLINE>13</FUNCLINE>
     <PATH></PATH>
   </DEFECT>
   <DEFECT>
     <SFA>
       <FILEPATH>C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\</FILEPATH>
       <FILENAME>console.cpp</FILENAME>
-      <LINE>65</LINE>
-      <COLUMN>14</COLUMN>
-    </SFA>
-    <DEFECTCODE>26440</DEFECTCODE>
-    <DESCRIPTION>Function 'Console::FilterMenu' can be declared 'noexcept' (f.6).</DESCRIPTION>
-    <FUNCTION>Console::FilterMenu</FUNCTION>
-    <DECORATED>?FilterMenu@Console@@AEBAXAEBVService@@@Z</DECORATED>
-    <FUNCLINE>65</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\</FILEPATH>
-      <FILENAME>console.cpp</FILENAME>
-      <LINE>73</LINE>
-      <COLUMN>14</COLUMN>
-    </SFA>
-    <DEFECTCODE>26440</DEFECTCODE>
-    <DESCRIPTION>Function 'Console::SortMenu' can be declared 'noexcept' (f.6).</DESCRIPTION>
-    <FUNCTION>Console::SortMenu</FUNCTION>
-    <DECORATED>?SortMenu@Console@@AEBAXAEBVService@@@Z</DECORATED>
-    <FUNCLINE>73</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\</FILEPATH>
-      <FILENAME>console.cpp</FILENAME>
-      <LINE>84</LINE>
+      <LINE>90</LINE>
       <COLUMN>10</COLUMN>
     </SFA>
     <DEFECTCODE>26432</DEFECTCODE>
     <DESCRIPTION>If you define or delete any default operation in the type 'class Console', define or delete them all (c.21).</DESCRIPTION>
     <FUNCTION>Console::{dtor}</FUNCTION>
     <DECORATED>??1Console@@QEAA@XZ</DECORATED>
-    <FUNCLINE>84</FUNCLINE>
+    <FUNCLINE>90</FUNCLINE>
     <PATH></PATH>
   </DEFECT>
   <DEFECT>

@@ -1,0 +1,1239 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26432",
+          "message": {
+            "text": "If you define or delete any default operation in the type 'class Activity', define or delete them all (c.21)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/activity.h"
+                },
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 2,
+                  "endLine": 13,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Activity::{ctor}",
+                  "decoratedName": "??0Activity@@QEAA@AEBV0@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26409",
+          "message": {
+            "text": "Avoid calling new and delete explicitly, use std::make_unique<T> instead (r.11)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 9
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<Activity>::resize",
+                  "decoratedName": "?resize@?$vvector@VActivity@@@@AEAAXXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26400",
+          "message": {
+            "text": "Do not assign the result of an allocation or a function call with an owner<T> return value to a raw pointer, use owner<T> instead (i.11)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 9,
+                  "endLine": 10,
+                  "endColumn": 15
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<Activity>::resize",
+                  "decoratedName": "?resize@?$vvector@VActivity@@@@AEAAXXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26496",
+          "message": {
+            "text": "The variable 'NN' does not change after construction, mark it as const (con.4)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 6,
+                  "endLine": 9,
+                  "endColumn": 15
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<Activity>::resize",
+                  "decoratedName": "?resize@?$vvector@VActivity@@@@AEAAXXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26823",
+          "message": {
+            "text": "Dereferencing a possibly null pointer 'allotemp.2' (lifetime.1)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 2,
+                  "endLine": 13,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<Activity>::resize",
+                  "decoratedName": "?resize@?$vvector@VActivity@@@@AEAAXXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                          },
+                          "region": {
+                            "startLine": 8,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                          },
+                          "region": {
+                            "startLine": 9,
+                            "startColumn": 6
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                          },
+                          "region": {
+                            "startLine": 9,
+                            "startColumn": 13
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                          },
+                          "region": {
+                            "startLine": 10,
+                            "startColumn": 5
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                          },
+                          "region": {
+                            "startLine": 10,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                          },
+                          "region": {
+                            "startLine": 10,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                          },
+                          "region": {
+                            "startLine": 10,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                          },
+                          "region": {
+                            "startLine": 10,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                          },
+                          "region": {
+                            "startLine": 11,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                          },
+                          "region": {
+                            "startLine": 11,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                          },
+                          "region": {
+                            "startLine": 11,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                          },
+                          "region": {
+                            "startLine": 13,
+                            "startColumn": 2
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                          },
+                          "region": {
+                            "startLine": 13,
+                            "startColumn": 2
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                          },
+                          "region": {
+                            "startLine": 13,
+                            "startColumn": 2
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26455",
+          "message": {
+            "text": "Default constructor should not throw. Declare it 'noexcept' (f.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 13,
+                  "endLine": 19,
+                  "endColumn": 13
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<Activity>::{ctor}",
+                  "decoratedName": "??0?$vvector@VActivity@@@@QEAA@H@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26409",
+          "message": {
+            "text": "Avoid calling new and delete explicitly, use std::make_unique<T> instead (r.11)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 6
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<Activity>::{ctor}",
+                  "decoratedName": "??0?$vvector@VActivity@@@@QEAA@H@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26481",
+          "message": {
+            "text": "Don't use pointer arithmetic. Use span instead (bounds.1)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 2,
+                  "endLine": 37,
+                  "endColumn": 12
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<Activity>::[]",
+                  "decoratedName": "??A?$vvector@VActivity@@@@QEBAAEAVActivity@@H@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26447",
+          "message": {
+            "text": "The function is declared 'noexcept' but calls function 'resize()' which may throw exceptions (f.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 43,
+                  "startColumn": 3,
+                  "endLine": 43,
+                  "endColumn": 9
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<Activity>::emplace_back",
+                  "decoratedName": "?emplace_back@?$vvector@VActivity@@@@QEAAXAEBVActivity@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26432",
+          "message": {
+            "text": "If you define or delete any default operation in the type 'class vvector<class Activity>', define or delete them all (c.21)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 14,
+                  "endLine": 24,
+                  "endColumn": 14
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<Activity>::{dtor}",
+                  "decoratedName": "??1?$vvector@VActivity@@@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26823",
+          "message": {
+            "text": "Dereferencing a possibly null pointer 'allotemp.1' (lifetime.1)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 2,
+                  "endLine": 25,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<Activity>::{dtor}",
+                  "decoratedName": "??1?$vvector@VActivity@@@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                          },
+                          "region": {
+                            "startLine": 24,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                          },
+                          "region": {
+                            "startLine": 25,
+                            "startColumn": 2
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                          },
+                          "region": {
+                            "startLine": 25,
+                            "startColumn": 2
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                          },
+                          "region": {
+                            "startLine": 25,
+                            "startColumn": 2
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26409",
+          "message": {
+            "text": "Avoid calling new and delete explicitly, use std::make_unique<T> instead (r.11)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 9
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<int>::resize",
+                  "decoratedName": "?resize@?$vvector@H@@AEAAXXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26400",
+          "message": {
+            "text": "Do not assign the result of an allocation or a function call with an owner<T> return value to a raw pointer, use owner<T> instead (i.11)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 9,
+                  "endLine": 10,
+                  "endColumn": 9
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<int>::resize",
+                  "decoratedName": "?resize@?$vvector@H@@AEAAXXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26401",
+          "message": {
+            "text": "Do not delete a raw pointer that is not an owner<T> (i.11)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 2,
+                  "endLine": 13,
+                  "endColumn": 11
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<int>::resize",
+                  "decoratedName": "?resize@?$vvector@H@@AEAAXXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26409",
+          "message": {
+            "text": "Avoid calling new and delete explicitly, use std::make_unique<T> instead (r.11)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 2,
+                  "endLine": 13,
+                  "endColumn": 11
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<int>::resize",
+                  "decoratedName": "?resize@?$vvector@H@@AEAAXXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26496",
+          "message": {
+            "text": "The variable 'NN' does not change after construction, mark it as const (con.4)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 6,
+                  "endLine": 9,
+                  "endColumn": 15
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<int>::resize",
+                  "decoratedName": "?resize@?$vvector@H@@AEAAXXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26481",
+          "message": {
+            "text": "Don't use pointer arithmetic. Use span instead (bounds.1)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 3,
+                  "endLine": 12,
+                  "endColumn": 13
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<int>::resize",
+                  "decoratedName": "?resize@?$vvector@H@@AEAAXXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26481",
+          "message": {
+            "text": "Don't use pointer arithmetic. Use span instead (bounds.1)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 3,
+                  "endLine": 12,
+                  "endColumn": 13
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<int>::resize",
+                  "decoratedName": "?resize@?$vvector@H@@AEAAXXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26823",
+          "message": {
+            "text": "Dereferencing a possibly null pointer '(this->vvector<int>::v)' (lifetime.1)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 3,
+                  "endLine": 12,
+                  "endColumn": 13
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<int>::resize",
+                  "decoratedName": "?resize@?$vvector@H@@AEAAXXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                          },
+                          "region": {
+                            "startLine": 12,
+                            "startColumn": 8
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26455",
+          "message": {
+            "text": "Default constructor should not throw. Declare it 'noexcept' (f.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 13,
+                  "endLine": 19,
+                  "endColumn": 13
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<int>::{ctor}",
+                  "decoratedName": "??0?$vvector@H@@QEAA@H@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26409",
+          "message": {
+            "text": "Avoid calling new and delete explicitly, use std::make_unique<T> instead (r.11)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 6
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<int>::{ctor}",
+                  "decoratedName": "??0?$vvector@H@@QEAA@H@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26481",
+          "message": {
+            "text": "Don't use pointer arithmetic. Use span instead (bounds.1)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 2,
+                  "endLine": 37,
+                  "endColumn": 12
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<int>::[]",
+                  "decoratedName": "??A?$vvector@H@@QEBAAEAHH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26447",
+          "message": {
+            "text": "The function is declared 'noexcept' but calls function 'resize()' which may throw exceptions (f.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 43,
+                  "startColumn": 3,
+                  "endLine": 43,
+                  "endColumn": 9
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<int>::emplace_back",
+                  "decoratedName": "?emplace_back@?$vvector@H@@QEAAXAEBH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26481",
+          "message": {
+            "text": "Don't use pointer arithmetic. Use span instead (bounds.1)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 44,
+                  "startColumn": 2,
+                  "endLine": 44,
+                  "endColumn": 11
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<int>::emplace_back",
+                  "decoratedName": "?emplace_back@?$vvector@H@@QEAAXAEBH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26481",
+          "message": {
+            "text": "Don't use pointer arithmetic. Use span instead (bounds.1)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 50,
+                  "startColumn": 3,
+                  "endLine": 50,
+                  "endColumn": 17
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<int>::erase",
+                  "decoratedName": "?erase@?$vvector@H@@QEAAXH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26481",
+          "message": {
+            "text": "Don't use pointer arithmetic. Use span instead (bounds.1)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 50,
+                  "startColumn": 3,
+                  "endLine": 50,
+                  "endColumn": 17
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<int>::erase",
+                  "decoratedName": "?erase@?$vvector@H@@QEAAXH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26823",
+          "message": {
+            "text": "Dereferencing a possibly null pointer '(this->vvector<int>::v)' (lifetime.1)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 50,
+                  "startColumn": 3,
+                  "endLine": 50,
+                  "endColumn": 17
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<int>::erase",
+                  "decoratedName": "?erase@?$vvector@H@@QEAAXH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                          },
+                          "region": {
+                            "startLine": 50,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "important"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26432",
+          "message": {
+            "text": "If you define or delete any default operation in the type 'class vvector<int>', define or delete them all (c.21)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 14,
+                  "endLine": 24,
+                  "endColumn": 14
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<int>::{dtor}",
+                  "decoratedName": "??1?$vvector@H@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26401",
+          "message": {
+            "text": "Do not delete a raw pointer that is not an owner<T> (i.11)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 2,
+                  "endLine": 25,
+                  "endColumn": 11
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<int>::{dtor}",
+                  "decoratedName": "??1?$vvector@H@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26409",
+          "message": {
+            "text": "Avoid calling new and delete explicitly, use std::make_unique<T> instead (r.11)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+                },
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 2,
+                  "endLine": 25,
+                  "endColumn": 11
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "vvector<int>::{dtor}",
+                  "decoratedName": "??1?$vvector@H@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'Activity::length' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/activity.h"
+                },
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 2,
+                  "endLine": 11,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Activity::{ctor}",
+                  "decoratedName": "??0Activity@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Activity::length"
+          }
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.35.32215.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/activity.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "17d3e2f56e7c161b9e10e7296921370393310662a92da171fc134c97017a28f5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Liviu/Documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "238abd6626686b50ea3affd2e7d1fe28a5687211b10686a862e8f7ebe0a478e1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/liviu/documents/p/uni/sem2/oop/lab6-7/lab6-7/vvector.h"
+          },
+          "hashes": {
+            "sha-256": "15a03dba30f8abab894c6c0957b8a108842d16e92f6edb3ecc523bd4791af522"
+          }
+        }
+      ]
+    }
+  ]
+}

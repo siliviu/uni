@@ -37,6 +37,11 @@ void TestService() {
 	}
 	catch (std::exception e) {
 	};
+	try {
+		s.Add("1", "2", "3", 4); assert(0);
+	}
+	catch (std::exception e) {
+	};
 	assert(s.GetAll().size() == 2);
 	try {
 		s.Remove(-1); assert(0);
@@ -57,6 +62,18 @@ void TestService() {
 	catch (std::exception e) {
 	};
 	assert(s.Search("11").size() == 1);
+	Service t;
+	t.Add("1", "2", "3", 4);
+	t.Add("2", "2", "2", 5);
+	t.Add("5", "5", "1", 8);
+	t.Add("3", "3", "3", 6);
+	t.Add("6", "4", "3", 2);
+	t.Add("4", "4", "2", 12);
+	assert(t.Filter("2", 0).size() == 2);
+	assert(t.Filter("3", 1).size() == 3);
+	assert(t.Sort(0)[2].GetTitle() == "3");
+	assert(t.Sort(1)[2].GetDescription() == "3");
+	assert(t.Sort(2)[2].GetLength() == 12);
 }
 
 void TestAll() {

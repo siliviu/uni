@@ -1,0 +1,21 @@
+[2023-05-05 12:24:06] [info] Start Program:
+Path:"C:\Users\Liviu\Documents\p\uni\sem2\oop\lab8-9\x64\Debug\lab8-9.exe"
+Arguments:
+Working directory: "C:\Users\Liviu\Documents\p\uni\sem2\oop\lab8-9\lab8-9\"
+Modules: Selected: C:\Users\Liviu\Documents\p\uni\sem2\oop\lab8-9\x64\Debug\lab8-9.exe Excluded: 
+Sources: Selected: C:\Users\Liviu\Documents\p\uni\sem2\oop\lab8-9\lab8-9 Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: Binary C:\Users\Liviu\AppData\Local\Temp\1oamb2fl.gwl 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2023-05-05 12:24:06] [info] Module: C:\Users\Liviu\Documents\p\uni\sem2\oop\lab8-9\x64\Debug\lab8-9.exe is selected because it matches selected pattern: C:\Users\Liviu\Documents\p\uni\sem2\oop\lab8-9\x64\Debug\lab8-9.exe
+[2023-05-05 12:24:07] [info] ----------------------------------------------------
+[2023-05-05 12:24:07] [info] Coverage binary generated in file: C:\Users\Liviu\AppData\Local\Temp\1oamb2fl.gwl
+[2023-05-05 12:24:07] [info] ----------------------------------------------------

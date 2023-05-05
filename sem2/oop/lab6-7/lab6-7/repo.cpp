@@ -23,7 +23,7 @@ void Repo<T>::AddElement(const T& element) {
 }
 template<class T>
 void Repo<T>::RemoveElement(const int position) {
-	v.erase(v.begin() + position);
+	v.erase(position);
 }
 template<class T>
 void Repo<T>::ModifyEement(const int position, const T& element) noexcept {
@@ -31,15 +31,18 @@ void Repo<T>::ModifyEement(const int position, const T& element) noexcept {
 }
 
 template<class T>
-const std::vector<T>& Repo<T>::GetAllElements() const noexcept{
-	return v;
+std::vector<T> Repo<T>::GetAllElements() const noexcept {
+	std::vector<T> a;
+	for (int i = 0; i < v.size(); ++i)
+		a.emplace_back(v[i]);
+	return a;
 }
 
 template<class T>
 std::vector<T> Repo<T>::GetElements(std::function<bool(const T&)> f) const {
 	std::vector<T> ans;
-	for (const auto& x : v)
-		if (f(x))
-			ans.emplace_back(x);
+	for (int i = 0; i < v.size(); ++i)
+		if (f(v[i]))
+			ans.emplace_back(v[i]);
 	return ans;
 }
