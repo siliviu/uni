@@ -34,6 +34,7 @@ void Colectie::adauga(TElem elem) {
 	a[free].val = elem;
 	a[free].freq = 1;
 	a[last].next = free;
+	a[free].prev = last;
 	UpdateFree();
 }
 
@@ -42,17 +43,14 @@ bool Colectie::sterge(TElem elem) {
 	int key = hash(elem);
 	if (a[key].freq == -1)
 		return false;
-	int last = key;
+	int last = -1;
 	for (int cur = key; cur != -1; cur = a[cur].next) {
 		// added
 		if (a[cur].val == elem) {
-			if (a[cur].freq == 0)
-				return false;
 			--nr;
 			--a[cur].freq;
-			if (a[cur].freq == 0) {
-				// delete;
-			}
+			if (a[cur].freq == 0)
+				DeleteNode(cur, a[cur].prev);
 			return true;
 		}
 		last = cur;
@@ -67,8 +65,7 @@ bool Colectie::cauta(TElem elem) const {
 		return false;
 	for (int cur = key; cur != -1; cur = a[cur].next)
 		if (a[cur].val == elem)
-			return a[cur].freq > 0;
-			//return true;
+			return true;
 	return false;
 }
 
