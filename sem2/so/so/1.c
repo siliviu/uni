@@ -20,8 +20,8 @@ int main(int argc, char** argv) {
         exit(1);
     }
     if(pid == 0) {
+        close(pd[1]); // close write 
         while(1) {
-            close(pd[1]); // close write 
             char ch;
             read(pd[0], &ch, sizeof(char));
             printf("Received %c\n", ch);

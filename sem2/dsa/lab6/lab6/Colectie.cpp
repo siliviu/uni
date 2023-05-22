@@ -6,9 +6,33 @@
 using namespace std;
 
 
-Colectie::Colectie() {
+int Colectie::hash(TElem x) const {
+	return (unsigned)(2654435761LL * x) >> (32 - MAX_POW);
 }
-
+void Colectie::DeleteNode(int pos, int before) {
+	int last = pos;
+	for (int cur = a[pos].next; cur != -1; cur = a[cur].next) {
+		if (hash(a[cur].val) == pos) {
+			a[pos].val = a[cur].val;
+			a[pos].freq = a[cur].freq;
+			DeleteNode(cur, last);
+			return;
+		}
+		last = cur;
+	}
+	if (before != -1) {
+		a[before].next = a[pos].next;
+		if (a[pos].next != -1)
+			a[a[pos].next].prev = before;
+	}
+	if (pos < free)
+		free = pos;
+	a[pos].freq = a[pos].next = a[pos].prev = -1;
+}
+void Colectie::UpdateFree() {
+	while (free < MAX_SIZE && a[free].freq != -1)
+		++free;
+}
 
 void Colectie::adauga(TElem elem) {
 	++nr;
@@ -92,9 +116,3 @@ bool Colectie::vida() const {
 IteratorColectie Colectie::iterator() const {
 	return IteratorColectie(*this);
 }
-
-
-Colectie::~Colectie() {
-}
-
-

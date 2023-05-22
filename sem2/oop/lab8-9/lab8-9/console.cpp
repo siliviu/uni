@@ -124,7 +124,7 @@ void Console::SelectedMenu(Service& s) const {
 
 void Console::ReportMenu(const Service& s) const {
 	for (const auto& [x, y] : s.Report())
-		std::cout << "Type: " << x << ", Number: " << y << '\n';
+		std::cout << "Title: " << x << ", Number: " << y << '\n';
 }
 
 void Console::UndoMenu(Service& s) const {
@@ -167,7 +167,7 @@ void Console::Run() const {
 			<< "6. Filter activities" << '\n'
 			<< "7. Sort activities" << '\n'
 			<< "8. Manage current activities" << '\n'
-			<< "9. Report how many activities of each type" << '\n'
+			<< "9. Report how many activities of each title" << '\n'
 			<< "10. Undo last addition/removal/modification" << '\n';
 		int option;
 		std::cin >> option;

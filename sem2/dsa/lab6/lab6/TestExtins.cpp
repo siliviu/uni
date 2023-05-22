@@ -315,10 +315,46 @@ void testQuantity() {//scopul e sa adaugam multe date
 }
 
 
+void testCerinta() {
+	Colectie c;
+	c.adauga(1);
+	c.adauga(1);
+	c.adauga(5);
+	c.adauga(5);
+	c.adauga(3);
+	auto it = c.iterator();
+	assert(it.element() == 5);
+	it.urmator();
+	assert(it.element() == 5);
+	it.urmator();
+	assert(it.element() == 1);
+	it.urmator();
+	assert(it.element() == 1);
+	it.urmator();
+	assert(it.element() == 3);
+	it.anterior();
+	assert(it.element() == 1);
+	it.anterior();
+	assert(it.element() == 1);
+	it.anterior();
+	assert(it.element() == 5);
+	it.anterior();
+	assert(it.element() == 5);
+	it.anterior();
+	try{
+		it.anterior();
+		assert(0);
+	}
+	catch(exception e){
+	}
+
+}
+
 void testAllExtins() {
 	testCreeaza();
 	testAdauga();
 	testSterge();
 	testIterator();
 	testQuantity();
+	testCerinta();
 }

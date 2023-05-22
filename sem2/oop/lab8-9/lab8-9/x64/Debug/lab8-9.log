@@ -1,4 +1,7 @@
-﻿  lab_repo.cpp
+﻿  console.cpp
+  service.cpp
+  Running Code Analysis for C/C++...
+  Generating Code...
   lab8-9.vcxproj -> C:\Users\Liviu\Documents\p\uni\sem2\oop\lab8-9\x64\Debug\lab8-9.exe
 C:\Users\Liviu\Documents\p\uni\sem2\oop\lab8-9\lab8-9\activity.h(14): warning C26432: If you define or delete any default operation in the type 'class Activity', define or delete them all (c.21).
 C:\Users\Liviu\Documents\p\uni\sem2\oop\lab8-9\lab8-9\activity.cpp(23): warning C26494: Variable 'length' is uninitialized. Always initialize an object (type.5).
