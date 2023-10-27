@@ -1,0 +1,21 @@
+[2023-05-26 12:50:08] [info] Start Program:
+Path:"C:\Users\Liviu\Documents\p\uni\sem2\oop\simulare\x64\Debug\simulare.exe"
+Arguments:
+Working directory: "C:\Users\Liviu\Documents\p\uni\sem2\oop\simulare\simulare\"
+Modules: Selected: C:\Users\Liviu\Documents\p\uni\sem2\oop\simulare\x64\Debug\simulare.exe Excluded: 
+Sources: Selected: C:\Users\Liviu\Documents\p\uni\sem2\oop\simulare\simulare Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: Binary C:\Users\Liviu\AppData\Local\Temp\fn3eibkl.hts 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2023-05-26 12:50:08] [info] Module: C:\Users\Liviu\Documents\p\uni\sem2\oop\simulare\x64\Debug\simulare.exe is selected because it matches selected pattern: C:\Users\Liviu\Documents\p\uni\sem2\oop\simulare\x64\Debug\simulare.exe
+[2023-05-26 12:50:10] [info] ----------------------------------------------------
+[2023-05-26 12:50:10] [info] Coverage binary generated in file: C:\Users\Liviu\AppData\Local\Temp\fn3eibkl.hts
+[2023-05-26 12:50:10] [info] ----------------------------------------------------

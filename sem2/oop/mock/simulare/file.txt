@@ -1,0 +1,12 @@
+1 AGV Ana Gigel Vasile | open
+2 IV Ionel Vasile | open
+3 IA Ionel Ana | inprogress
+4 AGV Ana Gigel Vasile | closed
+5 IG Ionel Gigel | open
+6 IA Ionel Ana | closed
+7 A Ana | inprogress
+8 V Vasile | closed
+9 G Gigel | inprogress
+10 GV Givel Vasile | inprogress
+11 AVGC Ana Vasile Grigore Costel | open
+1111 asdasd a a | open

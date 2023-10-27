@@ -1,2 +1,0 @@
-C:\Users\Liviu\Documents\p\uni\sem2\oop\lab8-9\x64\Debug\lab8-9.exe.lastcodeanalysissucceeded
-C:\Users\Liviu\Documents\p\uni\sem2\oop\lab8-9\lab6-7\x64\Debug\NativeCodeAnalysis.read.1.tlog

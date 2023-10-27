@@ -1,0 +1,18 @@
+[2023-06-16 12:57:56] [info] Start Program:
+Path:"C:\Users\Liviu\Documents\p\uni\sem2\simulare\x64\Debug\simulare.exe"
+Arguments:
+Working directory: "C:\Users\Liviu\Documents\p\uni\sem2\simulare\simulare\"
+Modules: Selected: C:\Users\Liviu\Documents\p\uni\sem2\simulare\x64\Debug\simulare.exe Excluded: 
+Sources: Selected: C:\Users\Liviu\Documents\p\uni\sem2\simulare\simulare Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: Binary C:\Users\Liviu\AppData\Local\Temp\h0di3vac.rvw 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2023-06-16 12:57:56] [info] Module: C:\Users\Liviu\Documents\p\uni\sem2\simulare\x64\Debug\simulare.exe is selected because it matches selected pattern: C:\Users\Liviu\Documents\p\uni\sem2\simulare\x64\Debug\simulare.exe
