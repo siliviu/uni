@@ -1,6 +1,6 @@
 package ro.ubbcluj.map.domain.validators;
 
-import ro.ubbcluj.map.domain.ValidationException;
+import ro.ubbcluj.map.domain.exceptions.ValidationException;
 
 public interface Validator<T> {
     /**

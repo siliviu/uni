@@ -7,7 +7,8 @@ public class Friendship extends Entity<Tuple<Long,Long>> {
 
     LocalDateTime date;
 
-    public Friendship() {
+    public Friendship(LocalDateTime _date) {
+        date=_date;
     }
 
     /**

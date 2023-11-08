@@ -1,10 +1,12 @@
-package ro.ubbcluj.map.repository;
+package ro.ubbcluj.map.repository.memory;
 
 import ro.ubbcluj.map.domain.Entity;
-import ro.ubbcluj.map.domain.BadValueException;
+import ro.ubbcluj.map.domain.exceptions.BadValueException;
+import ro.ubbcluj.map.repository.Repository;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class InMemoryRepository<ID, E extends Entity<ID>> implements Repository<ID, E> {
 	Map<ID, E> entities;
@@ -14,10 +16,10 @@ public class InMemoryRepository<ID, E extends Entity<ID>> implements Repository<
 	}
 
 	@Override
-	public E get(ID id) {
+	public Optional<E> get(ID id) {
 		if (id == null)
 			throw new BadValueException("id must be not null");
-		return entities.get(id);
+		return Optional.ofNullable(entities.get(id));
 	}
 
 	@Override
@@ -26,25 +28,25 @@ public class InMemoryRepository<ID, E extends Entity<ID>> implements Repository<
 	}
 
 	@Override
-	public E add(E entity) {
+	public Optional<E> add(E entity) {
 		if (entity == null)
 			throw new BadValueException("entity must be not null");
 		if (entities.get(entity.getId()) != null)
-			return entity;
+			return Optional.ofNullable(entity);
 		else
 			entities.put(entity.getId(), entity);
-		return null;
+		return Optional.empty();
 	}
 
 	@Override
-	public E delete(ID id) {
+	public Optional<E> delete(ID id) {
 		if (!entities.containsKey(id))
 			throw new BadValueException("Repo does not contain entity with given id");
-		return entities.remove(id);
+		return Optional.ofNullable(entities.remove(id));
 	}
 
 	@Override
-	public E update(E entity) {
+	public Optional<E> update(E entity) {
 		if (entity == null)
 			throw new BadValueException("entity must be not null!");
 
@@ -52,9 +54,9 @@ public class InMemoryRepository<ID, E extends Entity<ID>> implements Repository<
 
 		if (entities.get(entity.getId()) != null) {
 			entities.put(entity.getId(), entity);
-			return null;
+			return Optional.empty();
 		}
-		return entity;
+		return Optional.of(entity);
 
 	}
 }

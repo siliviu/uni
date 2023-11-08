@@ -21,7 +21,7 @@ description		VARCHAR(100)
 
 CREATE TABLE Languages(
 language_id		INT				PRIMARY KEY		IDENTITY,
-name			VARCHAR(25)		NOT NULL		UNIQUE
+name			VARCHAR(25)		NOT NULL
 );
 
 CREATE TABLE Courses(
@@ -67,7 +67,7 @@ CONSTRAINT		contract_id		PRIMARY KEY(teacher_id,class_id)
 CREATE TABLE Evaluations (
 evaluation_id	INT				PRIMARY KEY		IDENTITY,
 time			TIME			NOT NULL,
-max_score		INT				NOT NULL,
+max_score		INT				NOT NULL		CHECK(max_score > 0),
 course_id		INT				FOREIGN KEY		REFERENCES Courses(course_id) ON DELETE CASCADE
 );
 

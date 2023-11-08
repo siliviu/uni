@@ -1,7 +1,9 @@
 package ro.ubbcluj.map.repository;
 
 import ro.ubbcluj.map.domain.Entity;
-import ro.ubbcluj.map.domain.ValidationException;
+import ro.ubbcluj.map.domain.exceptions.ValidationException;
+
+import java.util.Optional;
 
 /**
  * CRUD operations repository interface
@@ -20,7 +22,7 @@ public interface Repository<ID, E extends Entity<ID>> {
      * @throws IllegalArgumentException
      *                  if id is null.
      */
-    E get(ID id);
+    Optional<E> get(ID id);
 
     /**
      *
@@ -39,7 +41,7 @@ public interface Repository<ID, E extends Entity<ID>> {
      * @throws IllegalArgumentException
      *             if the given entity is null.     *
      */
-    E add(E entity);
+    Optional<E> add(E entity);
 
 
     /**
@@ -50,7 +52,7 @@ public interface Repository<ID, E extends Entity<ID>> {
      * @throws IllegalArgumentException
      *                   if the given id is null.
      */
-    E delete(ID id);
+    Optional<E> delete(ID id);
 
     /**
      *
@@ -63,7 +65,7 @@ public interface Repository<ID, E extends Entity<ID>> {
      * @throws ValidationException
      *             if the entity is not valid.
      */
-    E update(E entity);
+    Optional<E> update(E entity);
 
 }
 

@@ -1,6 +1,6 @@
 package ro.ubbcluj.map.ui;
 
-import ro.ubbcluj.map.domain.ValidationException;
+import ro.ubbcluj.map.domain.exceptions.ValidationException;
 import ro.ubbcluj.map.service.Service;
 
 import java.io.BufferedReader;
@@ -17,14 +17,15 @@ public class Console implements UI {
 	private void userMenu() {
 		Runnable printUsers = () -> {
 			System.out.println("""
-					You can add/remove users as follows:
+					You can add/remove/update users as follows:
 					+ firstName lastName
 					- id
+					? id
+					= id firstName lastName					
 					Enter 0 to exit the menu
 					""");
 			System.out.println("The current users are: ");
-			for (var user : service.getUsers())
-				System.out.println("Id: " + user.getId().toString() + ", Name:" + user.getFirstName() + " " + user.getLastName());
+			service.getUsers().forEach(user -> System.out.println("Id: " + user.getId().toString() + ", Name:" + user.getFirstName() + " " + user.getLastName()));
 			System.out.println();
 		};
 		printUsers.run();
@@ -35,16 +36,24 @@ public class Console implements UI {
 				s = s.substring(1).trim();
 				if (type == '+') {
 					String[] splits = s.split(" ");
-					if (splits.length != 2)
-						throw new ValidationException("Invalid names");
+					if (splits.length != 2) throw new ValidationException("Invalid names");
 					service.addUser(splits[0], splits[1]);
 				} else if (type == '-') {
 					Long id = Long.parseLong(s);
 					service.removeUser(id);
-				} else if (type == '0')
-					return;
-				else
-					throw new ValidationException(("Invalid operation"));
+				} else if(type=='?') {
+					Long id = Long.parseLong(s);
+					System.out.println(service.getUser(id));
+				}else if(type=='=') {
+					String[] splits = s.split(" ");
+					if(splits.length!=3)
+						throw new ValidationException("Invalid command");
+					Long id = Long.parseLong(splits[0]);
+					service.updateFriend(id, splits[1],splits[2]);
+					System.out.println(service.getUser(id));
+				}
+				else if (type == '0') return;
+				else throw new ValidationException(("Invalid operation"));
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			} finally {
@@ -61,10 +70,10 @@ public class Console implements UI {
 					- id1 id1
 					Enter 0 to exit the menu
 					""");
-			System.out.println("The current friendships are: ");
-			for (var friendship : service.getFriendships())
-				System.out.println(friendship.getId().getLeft() + " " + friendship.getId().getRight());
-			System.out.println();
+//			System.out.println("The current friendships are: ");
+//			for (var friendship : service.getFriendships())
+//				System.out.println(friendship.getId().getLeft() + " " + friendship.getId().getRight());
+//			System.out.println();
 		};
 		printFriendships.run();
 		while (true) {
@@ -74,18 +83,14 @@ public class Console implements UI {
 				s = s.substring(1).trim();
 				if (type == '+') {
 					String[] splits = s.split(" ");
-					if (splits.length != 2)
-						throw new ValidationException("Invalid ids");
+					if (splits.length != 2) throw new ValidationException("Invalid ids");
 					service.addFriendship(Long.parseLong(splits[0]), Long.parseLong(splits[1]));
 				} else if (type == '-') {
 					String[] splits = s.split(" ");
-					if (splits.length != 2)
-						throw new ValidationException("Invalid ids");
+					if (splits.length != 2) throw new ValidationException("Invalid ids");
 					service.removeFriendship(Long.parseLong(splits[0]), Long.parseLong(splits[1]));
-				} else if (type == '0')
-					return;
-				else
-					throw new ValidationException(("Invalid operation"));
+				} else if (type == '0') return;
+				else throw new ValidationException(("Invalid operation"));
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			} finally {
@@ -109,15 +114,11 @@ public class Console implements UI {
 				String s = reader.readLine();
 				char type = s.charAt(0);
 				s = s.substring(1).trim();
-				if (type == '1')
-					System.out.println(service.getGroups());
+				if (type == '1') System.out.println(service.getGroups());
 				else if (type == '2') {
-					for (var user : service.getBiggestGroup())
-						System.out.println(user.getId().toString() + " " + user.getFirstName() + " " + user.getLastName());
-				} else if (type == '0')
-					return;
-				else
-					throw new ValidationException(("Invalid operation"));
+					service.getBiggestGroup().forEach(user -> System.out.println(user.getId().toString() + " " + user.getFirstName() + " " + user.getLastName()));
+				} else if (type == '0') return;
+				else throw new ValidationException(("Invalid operation"));
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			} finally {

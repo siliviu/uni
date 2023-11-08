@@ -1,12 +1,10 @@
 package ro.ubbcluj.map.service;
 
 import ro.ubbcluj.map.domain.Entity;
-import ro.ubbcluj.map.domain.Friendship;
-import ro.ubbcluj.map.domain.Tuple;
 import ro.ubbcluj.map.domain.User;
-import ro.ubbcluj.map.domain.BadValueException;
+import ro.ubbcluj.map.domain.exceptions.BadValueException;
 import ro.ubbcluj.map.domain.validators.UserValidator;
-import ro.ubbcluj.map.domain.ValidationException;
+import ro.ubbcluj.map.domain.exceptions.ValidationException;
 import ro.ubbcluj.map.domain.validators.Validator;
 import ro.ubbcluj.map.repository.Repository;
 
@@ -14,18 +12,17 @@ import java.util.*;
 
 public class Service {
 	private final Repository<Long, User> userRepo;
-	private final Repository<Tuple<Long, Long>, Friendship> friendshipRepo;
+	//	private final Repository<Tuple<Long, Long>, Friendship> friendshipRepo;
 	private static final Validator<User> validator = new UserValidator();
 
 	/**
 	 * Constructor initialising repos
 	 *
-	 * @param repository
-	 * @param friendshipRepository
+	 * @param repository //	 * @param friendshipRepository
 	 */
-	public Service(Repository<Long, User> repository, Repository<Tuple<Long, Long>, Friendship> friendshipRepository) {
+	public Service(Repository<Long, User> repository) {
 		this.userRepo = repository;
-		this.friendshipRepo = friendshipRepository;
+//		this.friendshipRepo = friendshipRepository;
 
 //		for (var friendship : friendshipRepo.getAll()) {
 //			User u1 = userRepo.get(friendship.getId().getLeft()), u2 = userRepo.get(friendship.getId().getRight());
@@ -62,6 +59,11 @@ public class Service {
 	 *
 	 * @return
 	 */
+
+	public User getUser(Long id){
+		Optional<User> ans = userRepo.get(id);
+		return ans.orElse(null);
+	}
 	public Iterable<User> getUsers() {
 		return userRepo.getAll();
 	}
@@ -79,12 +81,14 @@ public class Service {
 			id2 = id1;
 			id1 = aux;
 		}
-		User u1 = userRepo.get(id1), u2 = userRepo.get(id2);
-		if (u1 == null || u2 == null)
+		Optional<User> uu1 = userRepo.get(id1), uu2 = userRepo.get(id2);
+		if (uu1.isEmpty() || uu2.isEmpty())
 			throw new BadValueException("Invalid users");
-		Friendship f = new Friendship();
-		f.setId(new Tuple<>(id1, id2));
-		if (friendshipRepo.add(f) != null)
+		User u1 = uu1.get(), u2 = uu2.get();
+//		Friendship f = new Friendship();
+//		f.setId(new Tuple<>(id1, id2));
+//		if (friendshipRepo.add(f) != null)
+		if (u1.getFriends().contains(u2))
 			throw new BadValueException("Users are already friends");
 		u1.addFriend(u2);
 		u2.addFriend(u1);
@@ -106,24 +110,26 @@ public class Service {
 			id2 = id1;
 			id1 = aux;
 		}
-		User u1 = userRepo.get(id1), u2 = userRepo.get(id2);
-		if (u1 == null || u2 == null)
+		Optional<User> uu1 = userRepo.get(id1), uu2 = userRepo.get(id2);
+		if (uu1.isEmpty() || uu2.isEmpty())
 			throw new BadValueException("Invalid users");
-		friendshipRepo.delete(new Tuple<>(id1, id2));
+		User u1 = uu1.get(), u2 = uu2.get();
+
+//		friendshipRepo.delete(new Tuple<>(id1, id2));
 		u2.removeFriend(u1);
 		u1.removeFriend(u2);
 		userRepo.update(u1);
 		userRepo.update(u2);
 	}
-
-	/**
-	 * Get a list of all friendships
-	 *
-	 * @return
-	 */
-	public Iterable<Friendship> getFriendships() {
-		return friendshipRepo.getAll();
-	}
+//
+//	/**
+//	 * Get a list of all friendships
+//	 *
+//	 * @return
+//	 */
+//	public Iterable<Friendship> getFriendships() {
+//		return friendshipRepo.getAll();
+//	}
 
 	/**
 	 * Get all friends of user
@@ -132,12 +138,22 @@ public class Service {
 	 * @return
 	 */
 	public Iterable<User> getFriends(User u) {
-		return userRepo.get(u.getId()).getFriends();
+		Optional<User> uu = userRepo.get(u.getId());
+		if (uu.isEmpty())
+			throw new BadValueException("User doesn't exist");
+		return uu.get().getFriends();
+	}
+
+	public void updateFriend(Long id, String firstName, String lastName) {
+		User u=new User(firstName, lastName);
+		u.setId(id);
+		userRepo.update(u);
 	}
 
 	/**
 	 * Get the "biggest" group of users (by length of longest path)
 	 * (Find the diameter of each connected component using BFS)
+	 *
 	 * @return
 	 */
 	public Iterable<User> getBiggestGroup() {
@@ -145,25 +161,23 @@ public class Service {
 		long curcomp = 0, nrcomp = -1L, size = 0L;
 		for (var user : getUsers())
 			if (!components.containsKey(user)) {
+				long cursize = 0;
 				components.put(user, ++curcomp);
 				Queue<User> queue = new LinkedList<>();
 				queue.add(user);
-				TreeMap<User, Long> distances = new TreeMap<>(Comparator.comparing(Entity::getId));
-				distances.put(user, 0L);
 				while (!queue.isEmpty()) {
+					++cursize;
 					User current = queue.remove();
 					for (var friend : getFriends(current))
 						if (!components.containsKey(friend)) {
 							components.put(friend, curcomp);
-							distances.put(friend, 1 + distances.get(current));
 							queue.add(friend);
 						}
 				}
-				for (var distance : distances.entrySet())
-					if (distance.getValue() > size) {
-						size = distance.getValue();
-						nrcomp = curcomp;
-					}
+				if (cursize > size) {
+					size = cursize;
+					nrcomp = curcomp;
+				}
 			}
 		ArrayList<User> ans = new ArrayList<>();
 		for (var v : components.entrySet())

@@ -1,6 +1,7 @@
 package ro.ubbcluj.map;
 
 import ro.ubbcluj.map.repository.*;
+import ro.ubbcluj.map.repository.memory.UserRepository;
 import ro.ubbcluj.map.service.Service;
 import ro.ubbcluj.map.ui.Console;
 import ro.ubbcluj.map.ui.UI;
@@ -8,9 +9,9 @@ import ro.ubbcluj.map.ui.UI;
 public class Main {
 
 	public static void main(String[] args) {
-//		Repository u = new UserFileRepository("users.txt"), f = new FriendshipFileRepository("friendships.txt");
-		Repository u = new UserRepository(), f = new InMemoryRepository();
-		Service s = new Service(u, f);
+		Repository u = new UserRepository();
+//		Repository u = new UserDBRepository();
+		Service s = new Service(u);
 //		s.addUser("a", "b");
 //		s.addUser("a", "b");
 //		s.addUser("a", "b");
@@ -33,6 +34,9 @@ public class Main {
 //		s.addFriendship(7L, 8L);
 //		s.addFriendship(8L, 9L);
 //		s.addFriendship(13L, 14L);
+
+
+
 
 		UI c = new Console(s);
 		c.run();

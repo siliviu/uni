@@ -1,13 +1,14 @@
-package ro.ubbcluj.map.repository;
+package ro.ubbcluj.map.repository.file;
 
 
 import ro.ubbcluj.map.domain.Entity;
+import ro.ubbcluj.map.repository.memory.InMemoryRepository;
 
 import java.io.*;
 
 import java.util.Arrays;
 import java.util.List;
-
+import java.util.Optional;
 
 
 public abstract class AbstractFileRepository<ID, E extends Entity<ID>> extends InMemoryRepository<ID,E> {
@@ -61,9 +62,9 @@ public abstract class AbstractFileRepository<ID, E extends Entity<ID>> extends I
     protected abstract String createEntityAsString(E entity); //Template Method
 
     @Override
-    public E add(E entity) {
-        E result = super.add(entity);
-        if (result == null)
+    public Optional<E> add(E entity) {
+        Optional<E> result = super.add(entity);
+        if (result.isEmpty())
             writeToFile(entity);
         return result;
 

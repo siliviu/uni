@@ -1,7 +1,7 @@
 package ro.ubbcluj.map.domain.validators;
 
 import ro.ubbcluj.map.domain.User;
-import ro.ubbcluj.map.domain.ValidationException;
+import ro.ubbcluj.map.domain.exceptions.ValidationException;
 
 public class UserValidator implements Validator<User> {
 	/**
