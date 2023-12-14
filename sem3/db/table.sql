@@ -26,7 +26,7 @@ name			VARCHAR(25)		NOT NULL
 
 CREATE TABLE Courses(
 course_id		INT				PRIMARY KEY		IDENTITY,
-name			VARCHAR(50)	NOT NULL		UNIQUE,
+name			VARCHAR(50)		NOT NULL		UNIQUE,
 description		VARCHAR(100),
 length			INT				NOT NULL,
 difficulty		VARCHAR(20)		NOT NULL,

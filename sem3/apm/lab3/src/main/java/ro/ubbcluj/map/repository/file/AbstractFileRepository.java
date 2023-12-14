@@ -14,12 +14,19 @@ import java.util.Optional;
 public abstract class AbstractFileRepository<ID, E extends Entity<ID>> extends InMemoryRepository<ID,E> {
     String fileName;
 
+    /**
+     *
+     * @param fileName
+     */
     public AbstractFileRepository(String fileName) {
         this.fileName = fileName;
         loadData();
 
     }
 
+    /**
+     *
+     */
     private void loadData() { //decorator pattern
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String newLine;
@@ -59,8 +66,19 @@ public abstract class AbstractFileRepository<ID, E extends Entity<ID>> extends I
     public abstract E extractEntity(List<String> attributes);  //Template Method
 
 
+    /**
+     *
+     * @param entity
+     * @return
+     */
     protected abstract String createEntityAsString(E entity); //Template Method
 
+    /**
+     *
+     * @param entity
+     *         entity must be not null
+     * @return
+     */
     @Override
     public Optional<E> add(E entity) {
         Optional<E> result = super.add(entity);
@@ -70,6 +88,10 @@ public abstract class AbstractFileRepository<ID, E extends Entity<ID>> extends I
 
     }
 
+    /**
+     *
+     * @param entity
+     */
     protected void writeToFile(E entity) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true))) {
 

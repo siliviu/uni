@@ -12,7 +12,6 @@ import java.util.Optional;
 public class UserDBRepository implements Repository<Long, User> {
 
 	/**
-	 *
 	 * @param id -the id of the entity to be returned
 	 *           id must not be null
 	 * @return
@@ -27,6 +26,12 @@ public class UserDBRepository implements Repository<Long, User> {
 			if (resultSet.next()) {
 				u = new User(resultSet.getString("first_name"), resultSet.getString("last_name"));
 				u.setId(id);
+				PreparedStatement statement2 = connection.prepareStatement("SELECT id2 id FROM friendships WHERE id1 = ? UNION SELECT id1 id FROM friendships WHERE id2 = ?");
+				statement2.setLong(1, id);
+				statement2.setLong(2, id);
+				ResultSet resultSet2 = statement2.executeQuery();
+				while (resultSet2.next())
+					u.addFriend(resultSet2.getLong("id"));
 			}
 			return Optional.ofNullable(u);
 		} catch (SQLException e) {
@@ -35,7 +40,6 @@ public class UserDBRepository implements Repository<Long, User> {
 	}
 
 	/**
-	 *
 	 * @return
 	 */
 	@Override
@@ -46,7 +50,14 @@ public class UserDBRepository implements Repository<Long, User> {
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {
 				User u = new User(resultSet.getString("first_name"), resultSet.getString("last_name"));
-				u.setId(resultSet.getLong("id"));
+				Long id = resultSet.getLong("id");
+				u.setId(id);
+				PreparedStatement statement2 = connection.prepareStatement("SELECT id2 id FROM friendships WHERE id1 = ? UNION SELECT id1 id FROM friendships WHERE id2 = ?");
+				statement2.setLong(1, id);
+				statement2.setLong(2, id);
+				ResultSet resultSet2 = statement2.executeQuery();
+				while (resultSet2.next())
+					u.addFriend(resultSet2.getLong("id"));
 				l.add(u);
 			}
 
@@ -57,9 +68,7 @@ public class UserDBRepository implements Repository<Long, User> {
 	}
 
 	/**
-	 *
-	 * @param entity
-	 *         entity must be not null
+	 * @param entity entity must be not null
 	 * @return
 	 */
 	@Override
@@ -78,9 +87,7 @@ public class UserDBRepository implements Repository<Long, User> {
 	}
 
 	/**
-	 *
-	 * @param id
-	 *      id must be not null
+	 * @param id id must be not null
 	 * @return
 	 */
 	@Override
@@ -96,9 +103,7 @@ public class UserDBRepository implements Repository<Long, User> {
 	}
 
 	/**
-	 *
-	 * @param entity
-	 *          entity must not be null
+	 * @param entity entity must not be null
 	 * @return
 	 */
 	@Override

@@ -1,6 +1,8 @@
 package ro.ubbcluj.map.service;
 
 import ro.ubbcluj.map.domain.Entity;
+import ro.ubbcluj.map.domain.Friendship;
+import ro.ubbcluj.map.domain.Tuple;
 import ro.ubbcluj.map.domain.User;
 import ro.ubbcluj.map.domain.exceptions.BadValueException;
 import ro.ubbcluj.map.domain.validators.UserValidator;
@@ -8,29 +10,27 @@ import ro.ubbcluj.map.domain.exceptions.ValidationException;
 import ro.ubbcluj.map.domain.validators.Validator;
 import ro.ubbcluj.map.repository.Repository;
 
+import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 public class Service {
 	private final Repository<Long, User> userRepo;
-	//	private final Repository<Tuple<Long, Long>, Friendship> friendshipRepo;
+	private final Repository<Tuple<Long, Long>, Friendship> friendshipRepo;
 	private static final Validator<User> validator = new UserValidator();
 
 	/**
 	 * Constructor initialising repos
 	 *
-	 * @param repository //	 * @param friendshipRepository
+	 * @param repository     //	 * @param friendshipRepository
+	 * @param friendshipRepo
 	 */
-	public Service(Repository<Long, User> repository) {
+	public Service(Repository<Long, User> repository, Repository<Tuple<Long, Long>, Friendship> friendshipRepo) {
 		this.userRepo = repository;
-//		this.friendshipRepo = friendshipRepository;
-
-//		for (var friendship : friendshipRepo.getAll()) {
-//			User u1 = userRepo.get(friendship.getId().getLeft()), u2 = userRepo.get(friendship.getId().getRight());
-//			u1.addFriend(u2);
-//			u2.addFriend(u1);
-//			userRepo.update(u1);
-//			userRepo.update(u2);
-//		}
+		this.friendshipRepo = friendshipRepo;
 	}
 
 	/**
@@ -60,10 +60,11 @@ public class Service {
 	 * @return
 	 */
 
-	public User getUser(Long id){
+	public User getUser(Long id) {
 		Optional<User> ans = userRepo.get(id);
 		return ans.orElse(null);
 	}
+
 	public Iterable<User> getUsers() {
 		return userRepo.getAll();
 	}
@@ -76,6 +77,8 @@ public class Service {
 	 * @throws ValidationException
 	 */
 	public void addFriendship(Long id1, Long id2) throws ValidationException {
+		if (id1 == id2)
+			throw new BadValueException("User cannot be friends with themselves");
 		if (id1 > id2) {
 			var aux = id2;
 			id2 = id1;
@@ -84,17 +87,10 @@ public class Service {
 		Optional<User> uu1 = userRepo.get(id1), uu2 = userRepo.get(id2);
 		if (uu1.isEmpty() || uu2.isEmpty())
 			throw new BadValueException("Invalid users");
-		User u1 = uu1.get(), u2 = uu2.get();
-//		Friendship f = new Friendship();
-//		f.setId(new Tuple<>(id1, id2));
-//		if (friendshipRepo.add(f) != null)
-		if (u1.getFriends().contains(u2))
+		Friendship f = new Friendship(LocalDateTime.now());
+		f.setId(new Tuple<>(id1, id2));
+		if (friendshipRepo.add(f).isPresent())
 			throw new BadValueException("Users are already friends");
-		u1.addFriend(u2);
-		u2.addFriend(u1);
-		userRepo.update(u1);
-		userRepo.update(u2);
-
 	}
 
 	/**
@@ -113,23 +109,18 @@ public class Service {
 		Optional<User> uu1 = userRepo.get(id1), uu2 = userRepo.get(id2);
 		if (uu1.isEmpty() || uu2.isEmpty())
 			throw new BadValueException("Invalid users");
-		User u1 = uu1.get(), u2 = uu2.get();
-
-//		friendshipRepo.delete(new Tuple<>(id1, id2));
-		u2.removeFriend(u1);
-		u1.removeFriend(u2);
-		userRepo.update(u1);
-		userRepo.update(u2);
+		if (friendshipRepo.delete(new Tuple<>(id1, id2)).isEmpty())
+			throw new BadValueException("Users are not friends");
 	}
-//
-//	/**
-//	 * Get a list of all friendships
-//	 *
-//	 * @return
-//	 */
-//	public Iterable<Friendship> getFriendships() {
-//		return friendshipRepo.getAll();
-//	}
+
+	/**
+	 * Get a list of all friendships
+	 *
+	 * @return
+	 */
+	public Iterable<Friendship> getFriendships() {
+		return friendshipRepo.getAll();
+	}
 
 	/**
 	 * Get all friends of user
@@ -141,18 +132,18 @@ public class Service {
 		Optional<User> uu = userRepo.get(u.getId());
 		if (uu.isEmpty())
 			throw new BadValueException("User doesn't exist");
-		return uu.get().getFriends();
+		ArrayList<User> ans = uu.get().getFriends().stream().map(userId -> userRepo.get(userId).get()).collect(Collectors.toCollection(ArrayList::new));
+		return ans;
 	}
 
-	public void updateFriend(Long id, String firstName, String lastName) {
-		User u=new User(firstName, lastName);
+	public void updateUser(Long id, String firstName, String lastName) {
+		User u = new User(firstName, lastName);
 		u.setId(id);
 		userRepo.update(u);
 	}
 
 	/**
-	 * Get the "biggest" group of users (by length of longest path)
-	 * (Find the diameter of each connected component using BFS)
+	 * Get the biggest group of users (biggest connected component)*
 	 *
 	 * @return
 	 */
@@ -212,5 +203,21 @@ public class Service {
 
 			}
 		return ans;
+	}
+
+	/**
+	 * @param id
+	 * @return
+	 */
+	public Iterable<Tuple<User,LocalDateTime>> filterFriendships(Long id, Long month) {
+		Optional<User> u = userRepo.get(id);
+		if (u.isEmpty())
+			throw new BadValueException("User doesn't exist");
+
+		return u.get().getFriends().stream()
+				.map(fid -> new Tuple<>(userRepo.get(fid).get(), friendshipRepo.get(new Tuple<>(Math.min(id, fid), Math.max(id, fid))).get()))
+				.filter(tuple -> tuple.getRight().getDate().getMonthValue()==month)
+				.map(tuple -> new Tuple<>(tuple.getLeft(),tuple.getRight().getDate()))
+				.collect(Collectors.toList());
 	}
 }

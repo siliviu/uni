@@ -45,7 +45,7 @@ public class FriendshipDBRepository implements Repository<Tuple<Long,Long>, Frie
 		try (Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/socialnetwork", "postgres", "piezisa");
 			 PreparedStatement statement = connection.prepareStatement("SELECT * FROM friendships")) {
 			ResultSet resultSet = statement.executeQuery();
-			if (resultSet.next()) {
+			while (resultSet.next()) {
 				Friendship f = new Friendship(resultSet.getTimestamp("date").toLocalDateTime());
 				f.setId(new Tuple<>(resultSet.getLong("id1"),resultSet.getLong("id2")));
 				l.add(f);

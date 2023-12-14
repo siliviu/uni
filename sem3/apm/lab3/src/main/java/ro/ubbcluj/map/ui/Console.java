@@ -5,6 +5,9 @@ import ro.ubbcluj.map.service.Service;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.time.LocalDateTime;
+import java.time.Month;
+import java.time.YearMonth;
 
 public class Console implements UI {
 	private Service service;
@@ -41,18 +44,17 @@ public class Console implements UI {
 				} else if (type == '-') {
 					Long id = Long.parseLong(s);
 					service.removeUser(id);
-				} else if(type=='?') {
+				} else if (type == '?') {
 					Long id = Long.parseLong(s);
 					System.out.println(service.getUser(id));
-				}else if(type=='=') {
+				} else if (type == '=') {
 					String[] splits = s.split(" ");
-					if(splits.length!=3)
+					if (splits.length != 3)
 						throw new ValidationException("Invalid command");
 					Long id = Long.parseLong(splits[0]);
-					service.updateFriend(id, splits[1],splits[2]);
+					service.updateUser(id, splits[1], splits[2]);
 					System.out.println(service.getUser(id));
-				}
-				else if (type == '0') return;
+				} else if (type == '0') return;
 				else throw new ValidationException(("Invalid operation"));
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
@@ -68,12 +70,13 @@ public class Console implements UI {
 					You can add/remove friendships as follows:
 					+ id1 id2
 					- id1 id1
+					? id
 					Enter 0 to exit the menu
 					""");
-//			System.out.println("The current friendships are: ");
-//			for (var friendship : service.getFriendships())
-//				System.out.println(friendship.getId().getLeft() + " " + friendship.getId().getRight());
-//			System.out.println();
+			System.out.println("The current friendships are: ");
+			for (var friendship : service.getFriendships())
+				System.out.println(friendship.getId().getLeft() + " " + friendship.getId().getRight() + " " + friendship.getDate());
+			System.out.println();
 		};
 		printFriendships.run();
 		while (true) {
@@ -89,6 +92,9 @@ public class Console implements UI {
 					String[] splits = s.split(" ");
 					if (splits.length != 2) throw new ValidationException("Invalid ids");
 					service.removeFriendship(Long.parseLong(splits[0]), Long.parseLong(splits[1]));
+				} else if (type == '?') {
+					Long id = Long.parseLong(s);
+					service.getFriends(service.getUser(id)).forEach(System.out::println);
 				} else if (type == '0') return;
 				else throw new ValidationException(("Invalid operation"));
 			} catch (Exception e) {
@@ -105,6 +111,7 @@ public class Console implements UI {
 					You can view information about your community:
 					1. See number of friend groups
 					2. See biggest friend group
+					3. See frienships of a user in a month
 					Enter 0 to exit the menu
 					""");
 		};
@@ -117,7 +124,11 @@ public class Console implements UI {
 				if (type == '1') System.out.println(service.getGroups());
 				else if (type == '2') {
 					service.getBiggestGroup().forEach(user -> System.out.println(user.getId().toString() + " " + user.getFirstName() + " " + user.getLastName()));
-				} else if (type == '0') return;
+				} else if (type == '3') {
+					String[] splits = s.split(" ");
+					Long id = Long.parseLong(splits[0]), month = Long.parseLong(splits[1]);
+					service.filterFriendships(id, month).forEach(tuple -> System.out.println(tuple.getLeft().getFirstName()+" | "+tuple.getLeft().getLastName()+" | "+tuple.getRight().toString()));
+				}else if (type == '0') return;
 				else throw new ValidationException(("Invalid operation"));
 			} catch (Exception e) {
 				System.out.println(e.getMessage());

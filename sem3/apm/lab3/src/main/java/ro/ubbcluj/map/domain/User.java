@@ -8,7 +8,7 @@ import java.util.Objects;
 public class User extends Entity<Long> {
     private String firstName;
     private String lastName;
-    private List<User> friends = new ArrayList<>();
+    private List<Long> friends = new ArrayList<>();
 
     public User(String firstName, String lastName) {
         this.firstName = firstName;
@@ -35,7 +35,7 @@ public class User extends Entity<Long> {
      * Add user as friend
      * @param u
      */
-    public void addFriend(User u) {
+    public void addFriend(Long u) {
         friends.add(u);
     }
 
@@ -43,10 +43,10 @@ public class User extends Entity<Long> {
      * Remove user as friend
      * @param u
      */
-    public void removeFriend(User u) {
+    public void removeFriend(Long u) {
         friends.remove(u);
     }
-    public List<User> getFriends() {
+    public List<Long> getFriends() {
         return friends;
     }
 

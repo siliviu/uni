@@ -1,0 +1,8 @@
+package map.lab7.domain.exceptions;
+
+public class ValidationException extends RuntimeException {
+
+    public ValidationException(String message) {
+        super(message);
+    }
+}
