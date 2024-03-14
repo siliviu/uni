@@ -13,6 +13,6 @@ module map.lab7 {
 	opens map.lab7.domain to javafx.fxml;
 	exports map.lab7.service;
 	opens map.lab7.service to javafx.fxml;
-	exports map.lab7.pagination;
-	opens map.lab7.pagination to javafx.fxml;
+	exports map.lab7.util.pagination;
+	opens map.lab7.util.pagination to javafx.fxml;
 }

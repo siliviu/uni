@@ -3,7 +3,8 @@ package map.lab7.service;
 import map.lab7.domain.Message;
 import map.lab7.domain.ReplyMessage;
 import map.lab7.repository.Repository;
-import map.lab7.util.Events.UpdateEvent;
+import map.lab7.repository.database.MessageDBRepository;
+import map.lab7.util.events.UpdateEvent;
 import map.lab7.util.Subject;
 
 import java.time.LocalDateTime;
@@ -13,8 +14,8 @@ import java.util.List;
 public class MessageService extends Subject {
 	private final Repository<Long, Message> messageRepo;
 
-	public MessageService(Repository<Long, Message> messageRepo) {
-		this.messageRepo = messageRepo;
+	public MessageService() {
+		this.messageRepo = new MessageDBRepository();
 	}
 
 	public Message getMessage(long id) {

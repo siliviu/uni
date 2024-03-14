@@ -115,7 +115,6 @@ public class MessageDBRepository implements Repository<Long, Message> {
 	 */
 	@Override
 	public Optional<Message> update(Message entity) {
-
 		try (Connection connection = DriverManager.getConnection(url, user, password);
 			 PreparedStatement statement = connection.prepareStatement("UPDATE messages SET idfrom=?, idto=?, message=?,date=? WHERE id=?")) {
 			statement.setLong(1, entity.getFrom());

@@ -3,7 +3,6 @@ package map.lab7.controller;
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -19,7 +18,7 @@ import map.lab7.service.ClientService;
 import map.lab7.service.FriendService;
 import map.lab7.service.MessageService;
 import map.lab7.service.UserService;
-import map.lab7.util.Events.UpdateEvent;
+import map.lab7.util.events.UpdateEvent;
 import map.lab7.util.Observer;
 
 import java.time.LocalDateTime;
@@ -220,10 +219,9 @@ public class UserController extends Observer {
 		update(UpdateEvent.USER);
 		update(UpdateEvent.FRIEND);
 		update(UpdateEvent.REQUESTS);
-		System.out.printf(service.getUser().toString());
 	}
 
-	public void sendMessage(ActionEvent actionEvent) {
+	public void sendMessage() {
 		String content = text.getText();
 		if (recipient != null && !content.isEmpty())
 			clientService.sendMessage(recipient.getId(), content, message_list.getSelectionModel().isEmpty() ? null : message_list.getSelectionModel().getSelectedItem().getId());

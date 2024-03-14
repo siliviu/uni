@@ -4,7 +4,8 @@ import map.lab7.domain.User;
 import map.lab7.domain.validators.UserValidator;
 import map.lab7.domain.validators.Validator;
 import map.lab7.repository.Repository;
-import map.lab7.util.Events.UpdateEvent;
+import map.lab7.repository.database.UserDBRepository;
+import map.lab7.util.events.UpdateEvent;
 import map.lab7.util.Subject;
 
 import java.util.Optional;
@@ -13,8 +14,8 @@ import java.util.Optional;
 public class UserService extends Subject {
 	protected final Repository<Long, User> userRepo;
 	private static final Validator<User> validator = new UserValidator();
-	public UserService(Repository<Long, User> userRepo) {
-		this.userRepo = userRepo;
+	public UserService() {
+		this.userRepo = new UserDBRepository();
 	}
 	/**
 	 * Add user to app (auto generate id, names inputted by user)

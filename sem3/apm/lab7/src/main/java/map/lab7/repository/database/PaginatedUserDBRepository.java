@@ -1,8 +1,8 @@
 package map.lab7.repository.database;
 
 import map.lab7.domain.User;
-import map.lab7.pagination.PaginatedRepository;
-import map.lab7.pagination.Pageable;
+import map.lab7.util.pagination.PaginatedRepository;
+import map.lab7.util.pagination.Pageable;
 
 import java.sql.*;
 import java.util.ArrayList;

@@ -1,0 +1,3 @@
+AA9988, 30/1/2024, Groceries
+AB1312, 4/11/2024, Utilities
+AB1412, 1/2/2024, Fashion

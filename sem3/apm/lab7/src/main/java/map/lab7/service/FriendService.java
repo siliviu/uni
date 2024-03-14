@@ -4,7 +4,10 @@ import map.lab7.domain.*;
 import map.lab7.domain.exceptions.BadValueException;
 import map.lab7.domain.exceptions.ValidationException;
 import map.lab7.repository.Repository;
-import map.lab7.util.Events.UpdateEvent;
+import map.lab7.repository.database.FriendRequestDBRepository;
+import map.lab7.repository.database.FriendshipDBRepository;
+import map.lab7.repository.database.UserDBRepository;
+import map.lab7.util.events.UpdateEvent;
 import map.lab7.util.Subject;
 
 import java.time.LocalDateTime;
@@ -18,10 +21,10 @@ public class FriendService extends Subject {
 	private final Repository<Tuple<Long, Long>, FriendRequest> friendRequestsRepo;
 	private final Repository<Long, User> userRepo;
 
-	public FriendService(Repository<Tuple<Long, Long>, Friendship> friendshipRepo, Repository<Tuple<Long, Long>, FriendRequest> friendRequestsRepo, Repository<Long, User> userRepo) {
-		this.friendshipRepo = friendshipRepo;
-		this.friendRequestsRepo = friendRequestsRepo;
-		this.userRepo = userRepo;
+	public FriendService() {
+		this.friendshipRepo = new FriendshipDBRepository();
+		this.friendRequestsRepo = new FriendRequestDBRepository();
+		this.userRepo = new UserDBRepository();
 	}
 
 	/**

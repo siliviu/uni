@@ -22,13 +22,10 @@ public class MasterGUI extends javafx.application.Application implements App {
 
 	@Override
 	public void start(Stage stage) throws IOException {
-		Repository<Long, User> userRepo = new UserDBRepository();
-		Repository<Tuple<Long, Long>, Friendship> friendshipRepo = new FriendshipDBRepository();
-		Repository<Tuple<Long, Long>, FriendRequest> friendRequestsRepo = new FriendRequestDBRepository();
 		Repository<Long, Message> messageRepo = new MessageDBRepository();
-		UserService userService = new UserService(userRepo);
-		FriendService friendService = new FriendService(friendshipRepo, friendRequestsRepo, userRepo);
-		MessageService messageService = new MessageService(messageRepo);
+		UserService userService = new UserService();
+		FriendService friendService = new FriendService();
+		MessageService messageService = new MessageService();
 		MasterService service = new MasterService(userService, friendService);
 		FXMLLoader fxmlLoader = new FXMLLoader(MasterGUI.class.getResource("master-view.fxml"));
 		setUserAgentStylesheet(new PrimerDark().getUserAgentStylesheet());

@@ -1,6 +1,6 @@
 package map.lab7.util;
 
-import map.lab7.util.Events.UpdateEvent;
+import map.lab7.util.events.UpdateEvent;
 
 import java.util.ArrayList;
 import java.util.List;

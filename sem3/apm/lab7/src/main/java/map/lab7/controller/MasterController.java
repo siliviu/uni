@@ -12,10 +12,10 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
 import map.lab7.MasterGUI;
 import map.lab7.domain.User;
-import map.lab7.pagination.PaginatedService;
+import map.lab7.util.pagination.PaginatedService;
 import map.lab7.repository.database.PaginatedUserDBRepository;
 import map.lab7.service.*;
-import map.lab7.util.Events.UpdateEvent;
+import map.lab7.util.events.UpdateEvent;
 import map.lab7.util.Observer;
 
 import java.io.IOException;
@@ -42,7 +42,7 @@ public class MasterController extends Observer {
 	public void update(UpdateEvent updateEvent) {
 		if (updateEvent == UpdateEvent.USER) {
 			ObservableList<User> users = FXCollections.observableArrayList();
-			for (User user : paginatedService.getUsers())
+			for (User user : paginatedService.getAll())
 				users.add(user);
 			table.setItems(users);
 			pageInfo.setText((paginatedService.getCurrentPageNumber() + 1) + "/" + (paginatedService.getMaximumPageNumber() + 1));
@@ -125,11 +125,12 @@ public class MasterController extends Observer {
 	}
 
 	public void setServices(MasterService masterService, UserService userService, FriendService friendService, MessageService messageService) {
-		this.paginatedService = new PaginatedService(new PaginatedUserDBRepository());
+		this.paginatedService = new PaginatedService<>(new PaginatedUserDBRepository());
 		this.masterService = masterService;
 		this.userService = userService;
 		this.friendService = friendService;
 		this.messageService = messageService;
+		this.userService.addObserver(paginatedService);
 		this.userService.addObserver(this);
 		this.friendService.addObserver(this);
 		this.messageService.addObserver(this);
@@ -143,6 +144,7 @@ public class MasterController extends Observer {
 		UserAddController controller = fxmlLoader.getController();
 		controller.setUserService(userService);
 		stage.setTitle("Add user");
+		stage.setResizable(false);
 		stage.setScene(scene);
 		stage.show();
 	}

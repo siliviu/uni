@@ -1,17 +1,17 @@
-//package map.lab7;
-//
-//import map.lab7.domain.exceptions.ValidationException;
-//import map.lab7.repository.Repository;
-//import map.lab7.repository.database.FriendshipDBRepository;
-//import map.lab7.repository.database.UserDBRepository;
-//import map.lab7.service.MasterService;
-//
-//import java.io.BufferedReader;
-//import java.io.InputStreamReader;
-//
-//public class Console implements App {
-//	private MasterService service;
-//	private final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+package map.lab7;
+
+import map.lab7.domain.exceptions.ValidationException;
+import map.lab7.repository.Repository;
+import map.lab7.repository.database.FriendshipDBRepository;
+import map.lab7.repository.database.UserDBRepository;
+import map.lab7.service.MasterService;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Console implements App {
+	private MasterService service;
+	private final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 //
 //	private void userMenu() {
 //		Runnable printUsers = () -> {
@@ -133,12 +133,12 @@
 //			}
 //		}
 //	}
-//
-//	/**
-//	 * Function to run the app
-//	 */
-//	@Override
-//	public void run() {
+
+	/**
+	 * Function to run the app
+	 */
+	@Override
+	public void run() {
 //		Repository userRepo = new UserDBRepository(), friendshipRepo = new FriendshipDBRepository();
 //		service = new MasterService(userRepo, friendshipRepo, null, null);
 //		System.out.println("Welcome to the social media app!\n");
@@ -165,5 +165,5 @@
 //				System.out.println(e.getMessage());
 //			}
 //		}
-//	}
-//}
+	}
+}
