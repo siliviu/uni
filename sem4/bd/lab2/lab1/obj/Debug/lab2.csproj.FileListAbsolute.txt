@@ -1,0 +1,11 @@
+C:\Users\Liviu\Documents\p\uni\sem4\bd\lab2\lab1\bin\Debug\lab2.exe.config
+C:\Users\Liviu\Documents\p\uni\sem4\bd\lab2\lab1\bin\Debug\lab2.exe
+C:\Users\Liviu\Documents\p\uni\sem4\bd\lab2\lab1\bin\Debug\lab2.pdb
+C:\Users\Liviu\Documents\p\uni\sem4\bd\lab2\lab1\obj\Debug\lab2.csproj.AssemblyReference.cache
+C:\Users\Liviu\Documents\p\uni\sem4\bd\lab2\lab1\obj\Debug\lab2.csproj.SuggestedBindingRedirects.cache
+C:\Users\Liviu\Documents\p\uni\sem4\bd\lab2\lab1\obj\Debug\lab1.Form1.resources
+C:\Users\Liviu\Documents\p\uni\sem4\bd\lab2\lab1\obj\Debug\lab2.Properties.Resources.resources
+C:\Users\Liviu\Documents\p\uni\sem4\bd\lab2\lab1\obj\Debug\lab2.csproj.GenerateResource.cache
+C:\Users\Liviu\Documents\p\uni\sem4\bd\lab2\lab1\obj\Debug\lab2.csproj.CoreCompileInputs.cache
+C:\Users\Liviu\Documents\p\uni\sem4\bd\lab2\lab1\obj\Debug\lab2.exe
+C:\Users\Liviu\Documents\p\uni\sem4\bd\lab2\lab1\obj\Debug\lab2.pdb
