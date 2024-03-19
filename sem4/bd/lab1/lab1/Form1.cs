@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace lab1 {
 	public partial class Form1 : Form {
-		SqlDataAdapter dataAdapter = new SqlDataAdapter(), dataAdapter2 = new SqlDataAdapter();
+		SqlDataAdapter dataAdapter = new SqlDataAdapter();
 		DataSet dataSet = new DataSet();
 		SqlConnection conn;
 		int lastRow = -1;
@@ -32,7 +32,7 @@ namespace lab1 {
 			parentTable.DataSource = dataSet.Tables["Parent"];
 			childTable.DataSource = dataSet.Tables["Child"];
 			parentTable.Columns[0].Visible = false;
-			childTable.UserDeletingRow += (sender,e) => Delete(null,null);
+			childTable.UserDeletingRow += (sender, e) => Delete(null, null);
 			childTable.RowHeadersVisible = false;
 		}
 
@@ -56,8 +56,6 @@ namespace lab1 {
 			conn.Close();
 			if (sender != null) {
 				childTable.Rows.RemoveAt(childTable.SelectedRows[0].Index);
-				//dataSet.Tables["Child"].Clear();
-				//dataAdapter.Fill(dataSet.Tables["Child"]);
 			}
 		}
 
@@ -76,7 +74,14 @@ namespace lab1 {
 				dataAdapter.InsertCommand.Parameters.AddWithValue("@diff", childTable[4, lastRow].Value.ToString());
 				dataAdapter.InsertCommand.Parameters.AddWithValue("@language_id", parentTable[0, parentTable.SelectedRows[0].Index].Value.ToString());
 				conn.Open();
-				dataAdapter.InsertCommand.ExecuteNonQuery();
+				try {
+					dataAdapter.InsertCommand.ExecuteNonQuery();
+				}
+				catch (Exception ee) {
+					MessageBox.Show(ee.Message);
+					dataSet.Tables["Child"].Clear();
+					dataAdapter.Fill(dataSet.Tables["Child"]);
+				}
 				conn.Close();
 				lastRow = -1;
 			}
@@ -88,7 +93,14 @@ namespace lab1 {
 				dataAdapter.UpdateCommand.Parameters.AddWithValue("@diff", childTable[4, e.RowIndex].Value.ToString());
 				dataAdapter.UpdateCommand.Parameters.AddWithValue("@course_id", childTable[0, e.RowIndex].Value.ToString());
 				conn.Open();
-				dataAdapter.UpdateCommand.ExecuteNonQuery();
+				try {
+					dataAdapter.UpdateCommand.ExecuteNonQuery();
+				}
+				catch (Exception ee) {
+					MessageBox.Show(ee.Message);
+					dataSet.Tables["Child"].Clear();
+					dataAdapter.Fill(dataSet.Tables["Child"]);
+				}
 				conn.Close();
 			}
 		}
