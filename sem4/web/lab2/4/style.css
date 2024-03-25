@@ -1,0 +1,57 @@
+.menu {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+}
+
+.vertical {
+  flex-direction: column;
+}
+
+.menu li {
+  width: 84px;
+  height: 84px;
+  filter: grayscale(100%);
+}
+
+.menu li:nth-child(1) {
+  --n: 0;
+}
+.menu li:nth-child(2) {
+  --n: 1;
+}
+.menu li:nth-child(3) {
+  --n: 2;
+}
+.menu li:nth-child(4) {
+  --n: 3;
+}
+.menu li:nth-child(5) {
+  --n: 4;
+}
+.menu li:nth-child(6) {
+  --n: 5;
+}
+.menu li:nth-child(7) {
+  --n: 6;
+}
+.menu li:nth-child(8) {
+  --n: 7;
+}
+.menu li:nth-child(9) {
+  --n: 8;
+}
+.menu li:nth-child(10) {
+  --n: 9;
+}
+.menu li:nth-child(11) {
+  --n: 10;
+}
+
+.menu li:nth-child(n) {
+  background: url(sprite.png) calc(var(--n) * 84px) 0;
+}
+
+.menu li:hover {
+  filter: grayscale(0%);
+}

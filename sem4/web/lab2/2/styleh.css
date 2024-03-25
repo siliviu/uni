@@ -1,0 +1,13 @@
+ul {
+  flex-direction: row;
+}
+
+
+.main {
+  flex-direction: column;
+}
+
+nav {
+  height: 5%;
+  width: 100%;
+}

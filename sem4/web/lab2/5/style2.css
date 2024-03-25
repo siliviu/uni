@@ -1,0 +1,11 @@
+.container {
+  grid-template-columns: auto auto;
+  width: 600px;
+}
+
+.box {
+  flex-direction: column;
+  margin: 10px 40px;
+  padding: 10px;
+  background-color: aqua;
+}

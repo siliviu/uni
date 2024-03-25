@@ -1,0 +1,41 @@
+.form {
+  display: flex;
+  margin: 6px 0;
+}
+
+input[maxlength="20"] {
+  --n: 20;
+}
+
+input[maxlength="13"] {
+  --n: 13;
+}
+
+input[maxlength] {
+  border: 1px solid black;
+  font-family: monospace;
+  letter-spacing: 1.75ch;
+  padding-left: 0.8ch;
+  width: calc((var(--n) + 1) * 20px);
+  background: repeating-linear-gradient(90deg, #fff 0, #fff 19px, #000 20px);
+  margin-right: -20px;
+}
+
+.form:after {
+  content: "";
+  width: 19px;
+  padding-left: 1px;
+  height: 20px;
+  border-left: 1px solid black;
+  background: white;
+}
+
+input {
+  outline: none;
+}
+
+.form > label {
+  margin-right: 10px;
+  width: 64px;
+  text-align: right;
+}

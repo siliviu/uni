@@ -1,0 +1,21 @@
+.box {
+  border: 1px solid black;
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+}
+
+.box * {
+  width: 200px;
+  margin: auto;
+}
+
+.left {
+  text-align: center;
+}
+
+.right {
+  justify-content: center;
+  display: flex;
+  height:auto;
+}
