@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ro.mpp2024.controller.UserController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PharmacistController">
     <children>
         <Button fx:id="log_btn" layoutX="331.0" layoutY="28.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
         <TableView fx:id="table" layoutX="14.0" layoutY="28.0" prefHeight="344.0" prefWidth="303.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="282.66666666666663" AnchorPane.topAnchor="28.0">

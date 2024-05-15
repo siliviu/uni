@@ -1,0 +1,19 @@
+body {
+    display: flex;
+}
+button {
+    margin: auto;
+    height: 10vw;
+    width: 20vw;
+}
+table {
+    margin: auto;
+    border: 1px solid black;
+}
+td {
+    width: 8vw;
+    height: 8vw;
+    text-align: center;
+    font-size: 3vw;
+    border: 1px solid black;
+}
