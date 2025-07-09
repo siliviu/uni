@@ -1,0 +1,27 @@
+subalgoritm adaugaInexistente(md1, md2):
+	{md1 - primul dictionar in care se adauga elemente}
+	{md2 - al doilea dictionar din care se adauga elementele inexistente in primul}
+	{complexitate O(n*m), θ(m) in cazul favorabil}
+
+	nr <- 0
+	iterator <- iterator(md2)
+	
+	cat timp valid(iterator) executa:
+		gasit <- 0
+		el <- element(iterator)
+
+		curent <- radacina
+		cat timp curent != NIL ^ gasit = 0 executa:
+			daca [curent].valoare = el atunci:
+				gasit <- 1
+			sfarsitDaca
+			curent <- [curent].urmator
+		sfarsitCatTimp
+
+		daca gasit = 0 atunci:
+			adauga(md1, el.cheie, el.valoare)
+		sfarsitDaca
+	sfarsitCatTimp
+
+	returneaza nr
+sfarsitSubalgoritm

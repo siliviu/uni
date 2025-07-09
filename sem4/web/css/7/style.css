@@ -1,0 +1,45 @@
+.dialog {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.dialog > * {
+  margin: 10px;
+  position: relative;
+  width:15%;
+  text-align: center;
+  background-color: lightgreen;
+  border-radius: 30px;
+  padding: 1em;
+  line-height: 1.25em;
+  margin-left: 35px;
+}
+
+.dialog > *:after {
+  content: " ";
+  position: absolute;
+  left: -20px;
+  top: 30%;
+  border: 12px solid;
+  border-color: lightgreen lightgreen transparent transparent;
+}
+
+.dialog > *:before {
+  content: " ";
+  position: absolute;
+  left: -75px;
+  top: 10%;
+  width: 50px;
+  height: 50px;
+}
+
+.bob:before {
+  background: url(bob.png);
+  background-size: 50px;
+}
+
+.alice:before {
+  background: url(alice.png);
+  background-size: 50px;
+}

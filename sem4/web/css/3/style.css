@@ -1,0 +1,32 @@
+* {
+  margin: auto;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  height: 100%;
+  padding: 0;
+}
+
+header {
+  background-color: red;
+  height: 100px;
+}
+
+nav {
+  background-color: yellow;
+  height: 25px;
+  width: 100%;
+}
+
+.content {
+  background-color: green;
+  width: 100%;
+  min-height: calc(100vh - 185px);
+}
+
+footer {
+  background-color: pink;
+  height: 60px;
+}

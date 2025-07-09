@@ -1,0 +1,14 @@
+body {
+    display: flex;
+}
+table {
+    margin: auto;
+    border: 1px solid black;
+}
+td {
+    width: 7vw;
+    height: 7vw;
+    text-align: center;
+    font-size: 3vw;
+    border: 1px solid black;
+}

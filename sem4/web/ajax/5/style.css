@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+}
+
+.left {
+    width: 20%;
+    padding: 1%;
+    border-right: 5px solid black;
+}
+
+.right {
+    width: 100%;
+    padding: 5%;
+    font-size: 2em;
+}
+
+.tree-root li {
+    list-style-type: none;
+    margin-top: 7px;
+}
+
+.tree-root span {
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.caret {
+    cursor: pointer;
+    user-select: none;
+} 
+
+.caret::before {
+    content: "\25B6";
+    color: black;
+    display: inline-block;
+    margin-right: 10px;
+    transition-duration: 150ms;
+}
+
+.caret-down::before {
+    transition-duration: 150ms;
+    transform: rotate(90deg);
+}
+
+.tree {
+    display: none;
+}
+
+.active {
+    display: block;
+}

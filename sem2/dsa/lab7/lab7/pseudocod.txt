@@ -1,0 +1,26 @@
+functie diferentaValoareMaxMin(dictionar D):
+	{D - dictionar reprezentat prin arbore binar de cautare cu inlantuiri pe tablou}
+	{complexitate θ(n) - n = numarul de elemente din dictionar}
+
+	daca vid(D) atunci
+		diferentaValoareMaxMin <- 1
+		returneaza
+	sfarsitDaca		
+
+	it <- iterator(D)
+	
+	catTimp valid(it) executa
+		daca element(it).valoare < min atunci
+			min <- element(it).valoare
+		sfarsitDaca		
+		daca element(it).valoare > max atunci
+			max <- element(it).valoare
+		sfarsitDaca
+
+		urmator(it)
+
+	sfarsitCatTimp
+
+	diferentaValoareMaxMin <- max-min
+
+sfarsitFunctie

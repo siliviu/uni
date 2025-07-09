@@ -1,0 +1,9 @@
+rootProject.name = 'prac1'
+include 'domain'
+include 'repository'
+include 'client'
+include 'services'
+include 'server'
+include 'networking'
+include 'rest'
+

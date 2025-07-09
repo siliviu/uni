@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\</FILEPATH>
+      <FILENAME>activity.h</FILENAME>
+      <LINE>13</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26432</DEFECTCODE>
+    <DESCRIPTION>If you define or delete any default operation in the type 'class Activity', define or delete them all (c.21).</DESCRIPTION>
+    <FUNCTION>Activity::{ctor}</FUNCTION>
+    <DECORATED>??0Activity@@QEAA@AEBV0@@Z</DECORATED>
+    <FUNCLINE>13</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\</FILEPATH>
+      <FILENAME>console.cpp</FILENAME>
+      <LINE>90</LINE>
+      <COLUMN>10</COLUMN>
+    </SFA>
+    <DEFECTCODE>26432</DEFECTCODE>
+    <DESCRIPTION>If you define or delete any default operation in the type 'class Console', define or delete them all (c.21).</DESCRIPTION>
+    <FUNCTION>Console::{dtor}</FUNCTION>
+    <DECORATED>??1Console@@QEAA@XZ</DECORATED>
+    <FUNCLINE>90</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\</FILEPATH>
+      <FILENAME>console.cpp</FILENAME>
+      <LINE>7</LINE>
+      <COLUMN>42</COLUMN>
+    </SFA>
+    <DEFECTCODE>26823</DEFECTCODE>
+    <DESCRIPTION>Dereferencing a possibly null pointer 'x' (lifetime.1).</DESCRIPTION>
+    <FUNCTION>PrintVector</FUNCTION>
+    <DECORATED>??$PrintVector@VActivity@@@@YAXAEBV?$vector@VActivity@@V?$allocator@VActivity@@@std@@@std@@@Z</DECORATED>
+    <FUNCLINE>4</FUNCLINE>
+    <PATH>
+      <SFA>
+        <FILEPATH>C:\Users\Liviu\Documents\p\uni\sem2\oop\lab6-7\lab6-7\</FILEPATH>
+        <FILENAME>console.cpp</FILENAME>
+        <LINE>7</LINE>
+        <COLUMN>42</COLUMN>
+      </SFA>
+    </PATH>
+  </DEFECT>
+</DEFECTS>

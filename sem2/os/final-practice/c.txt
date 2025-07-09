@@ -1,0 +1,9 @@
+a
+a
+
+Command 'echco' not found, did you mean:
+
+  command 'echo' from deb coreutils (8.30-3ubuntu2)
+
+Try: sudo apt install <deb name>
+

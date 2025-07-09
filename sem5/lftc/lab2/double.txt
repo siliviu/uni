@@ -1,0 +1,45 @@
+0 1 2 3 4 5 6 7 8 9 .
+start zero before dot after
+start
+zero before after
+start zero 0
+start before 1
+start before 2
+start before 3
+start before 4
+start before 5
+start before 6
+start before 7
+start before 8
+start before 9
+before before 0
+before before 1
+before before 2
+before before 3
+before before 4
+before before 5
+before before 6
+before before 7
+before before 8
+before before 9
+before dot .
+dot after 0
+dot after 1
+dot after 2
+dot after 3
+dot after 4
+dot after 5
+dot after 6
+dot after 7
+dot after 8
+dot after 9
+after after 0
+after after 1
+after after 2
+after after 3
+after after 4
+after after 5
+after after 6
+after after 7
+after after 8
+after after 9

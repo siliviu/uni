@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PharmacistController">
+    <children>
+        <Button fx:id="log_btn" alignment="TOP_RIGHT" layoutX="331.0" layoutY="28.0" mnemonicParsing="false" onAction="#logout" text="Logout" AnchorPane.rightAnchor="215.0" AnchorPane.topAnchor="28.0" />
+        <TableView fx:id="order_table" layoutX="14.0" layoutY="28.0" prefHeight="344.0" prefWidth="303.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="282.66666666666663" AnchorPane.topAnchor="28.0">
+            <columns>
+                <TableColumn fx:id="wardc" prefWidth="73.33331549167633" text="Ward" />
+                <TableColumn fx:id="oidc" maxWidth="153.33342742919922" minWidth="50.0" prefWidth="116.66667938232422" text="OrderId" />
+                <TableColumn fx:id="datec" maxWidth="163.33348083496094" minWidth="50.0" prefWidth="111.33341979980469" text="Date" />
+            </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+        </TableView>
+      <Button fx:id="btn" alignment="BOTTOM_RIGHT" layoutX="331.0" layoutY="346.0" mnemonicParsing="false" text="Fulfil order" AnchorPane.bottomAnchor="28.666666666666668" AnchorPane.rightAnchor="195.66666666666669" />
+      <TableView fx:id="medicinet" layoutX="331.0" layoutY="63.0" prefHeight="273.0" prefWidth="222.0" AnchorPane.bottomAnchor="64.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="63.0">
+         <columns>
+            <TableColumn fx:id="medicinec" prefWidth="119.99994468688965" text="Medicine name" />
+            <TableColumn fx:id="quantityc" maxWidth="163.33348083496094" minWidth="50.0" prefWidth="111.33341979980469" text="Quantity" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+    </children>
+</AnchorPane>

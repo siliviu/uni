@@ -1,0 +1,1 @@
+bison -d syntactic.y && flex lexical.l && g++ syntactic.tab.c lex.yy.c tree.cpp -o analyser -std=c++20

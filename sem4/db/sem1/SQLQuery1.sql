@@ -1,0 +1,12 @@
+CREATE DATABASE SGBDIR;
+GO
+USE SGBDIR;
+CREATE TABLE Cadouri
+( 
+cod_cadou INT PRIMARY KEY IDENTITY, 
+descriere VARCHAR(100),
+posesor VARCHAR(100),
+pret REAL	
+);
+
+SELECT * FROM Cadouri

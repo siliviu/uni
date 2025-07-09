@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WardController">
+    <children>
+        <Button fx:id="log_btn" layoutX="10.0" layoutY="14.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
+        <TableView fx:id="table" layoutX="232.0" layoutY="14.0" prefHeight="344.0" prefWidth="224.0" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="232.0" AnchorPane.rightAnchor="264.0" AnchorPane.topAnchor="14.0">
+            <columns>
+                <TableColumn fx:id="medicinec" prefWidth="146.0" text="Medicine name" />
+                <TableColumn fx:id="quantityc" maxWidth="150.0" minWidth="50.0" prefWidth="76.0" text="Quantity" />
+            </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+        </TableView>
+      <Button fx:id="sendbtn" layoutX="15.0" layoutY="332.0" mnemonicParsing="false" text="Send order" AnchorPane.bottomAnchor="42.66666666666667" AnchorPane.leftAnchor="15.0" />
+      <Label layoutX="13.0" layoutY="59.0" text="Medicine" />
+      <ChoiceBox fx:id="medicines" layoutX="78.0" layoutY="55.0" prefHeight="25.0" prefWidth="133.0" />
+      <Label fx:id="stock" layoutX="14.0" layoutY="87.0" prefHeight="17.0" prefWidth="195.0" text="Stock:" />
+      <Spinner fx:id="quantity" layoutX="78.0" layoutY="114.0" prefHeight="25.0" prefWidth="75.0" />
+      <Label layoutX="14.0" layoutY="118.0" text="Quantity" />
+      <Button fx:id="addbtn" layoutX="12.0" layoutY="155.0" mnemonicParsing="false" text="Add medicine" />
+      <TableView fx:id="ordert" layoutX="433.0" layoutY="14.0" prefHeight="344.0" prefWidth="238.0" AnchorPane.bottomAnchor="42.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="14.0">
+         <columns>
+            <TableColumn fx:id="oidc" prefWidth="56.0" text="OrderId" />
+            <TableColumn fx:id="datec" maxWidth="150.0" minWidth="50.0" prefWidth="127.3333740234375" text="Date" />
+            <TableColumn fx:id="statusc" maxWidth="150.0" minWidth="50.0" prefWidth="139.33328247070312" text="Status" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+    </children>
+</AnchorPane>

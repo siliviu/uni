@@ -1,0 +1,54 @@
+.row {
+    border: 1px solid black;
+    margin: 3px;
+}
+
+.header {
+    font-weight: bold;
+    border: 1px solid black;
+    margin: 4px;
+    position: relative;
+}
+
+.header a {
+    text-decoration: none;
+}
+
+.container {
+    border: 2px solid grey;
+    margin: 5px;
+    flex: 1 1 18%;
+}
+
+.row span {
+    white-space: nowrap;
+}
+
+.row input {
+    margin-left: 10%;
+    width: 100%;
+}
+
+.edit {
+    margin: 5px 0;
+    height: 100%;
+    text-align: center;
+}
+
+.row,
+.header {
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+}
+
+.nested {
+    flex-direction: column;
+    align-items: normal;
+}
+
+.delete {
+    display: inline-block;
+    position: absolute;
+    right: 5%;
+}

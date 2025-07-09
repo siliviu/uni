@@ -1,0 +1,15 @@
+.container {
+  background-color: yellow;
+  width: 440px;
+}
+
+.box {
+  margin: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+img {
+  margin-right: 30px;
+}

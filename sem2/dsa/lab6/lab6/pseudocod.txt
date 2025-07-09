@@ -1,0 +1,23 @@
+subalgoritm anterior(iterator i):
+	{i - iterator colectie repr sub form de hash, coalesced chaining}
+	{complexitate O(m) - m marimea tabelei}
+
+	daca i.index < 0 v i.index >= m atunci:
+		@arunca exceptie
+	sfarsitDaca
+		
+	i.frecv--
+
+	daca i.frecv < 0 atunci:
+		i.index--
+	sfarsitDaca
+
+	cat timp i.frecv >= 0 ^ i.tabela[i.index].frecv == -1 executa:
+		i.index--
+	sfarsitCatTimp
+
+	daca i.index >= 0 atunci:
+		i.frecv=i.tabela[i.index].frecv-1
+	sfarsitDaca
+
+sfarsitSubalgoritm

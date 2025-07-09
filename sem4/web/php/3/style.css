@@ -1,0 +1,19 @@
+td {
+    border: 1px solid black;
+}
+
+thead {
+    font-weight: bold;
+}
+
+table {
+    width: 50%;
+    margin-top: 10px;
+    border: 2px solid black;
+}
+
+form{
+    width:30%;
+    display:flex;
+    flex-direction: column;
+}

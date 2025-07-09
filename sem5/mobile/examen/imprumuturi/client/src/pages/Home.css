@@ -1,0 +1,84 @@
+.filter-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+
+.filter-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s;
+}
+
+.filter-button.all {
+  color: black;
+}
+
+.filter-button.red {
+  color: red;
+}
+
+.filter-button.green {
+  color: green;
+}
+
+.filter-button.yellow {
+  color: yellow;
+}
+
+.filter-button.white {
+  color: white;
+}
+
+.filter-button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.filter-button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.item {
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.item:hover {
+  transform: scale(1.02);
+}
+
+.item-name {
+  font-weight: bold;
+}
+
+.item-details {
+  margin-top: 10px;
+}
+
+.item-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.item-button:hover {
+  background-color: #0056b3;
+}

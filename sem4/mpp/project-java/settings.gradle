@@ -1,0 +1,9 @@
+rootProject.name = 'proiect'
+include 'domain'
+include 'repository'
+include 'client'
+include 'services'
+include 'server'
+include 'networking'
+include 'rest'
+

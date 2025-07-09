@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="RO">
+  <head>
+    <title>My Page</title>
+  </head>
+  <body>
+    <div>
+      <h1 title="Piezișa">Acasă</h1>
+      <img src="../home.jpg" alt="home" width="400" height="250" />
+      <div>
+        <p>Bine dacă vrei</p>
+        <ul>
+          <li>
+            Pagină realizată de <b><span class="haha">echipa</span> <a href="https://lett.ubbcluj.ro/">UBB</a></b
+            >.
+          </li>
+          <li>Bine ați venit!</li>
+          <li>
+            Pași
+            <ol start="0">
+              <li>Completați formularul</li>
+              <li>Apăsați butonul de trimitere</li>
+            </ol>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2>Formular Reclamație</h2>
+          <form target="_blank">
+            <table>
+              <tr>
+                <th colspan="8">Reclamant</th>
+              </tr>
+              <tr>
+                <td><strong>Nume</strong></td>
+                <td><input type="text" /></td>
+                <td><strong>Prenume</strong></td>
+                <td colspan="3"><input type="text" size="63" /></td>
+                <td><strong>Sex</strong></td>
+                <td>
+                  <label for="M">M</label>
+                  <input type="radio" name="sex" id="M" value="M" />
+                  <label for="F">F</label>
+                  <input type="radio" name="sex" id="F" value="F" />
+                  <label for="NA">Secret</label>
+                  <input type="radio" name="sex" id="NA" value="NA" />
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Oraș</strong></td>
+                <td><input type="text" /></td>
+                <td><strong>Adresă</strong></td>
+                <td colspan="3"><input type="text" size="63" /></td>
+                <td><strong>Cod poștal</strong></td>
+                <td><input type="text" maxlength="6" /></td>
+              </tr>
+              <tr>
+                <td><strong>Email</strong></td>
+                <td><input type="text" /></td>
+                <td><strong>Număr telefon</strong></td>
+                <td><input type="text" size="24" maxlength="10" /></td>
+                <td><strong>CI</strong></td>
+                <td><input type="text" size="24" /></td>
+                <td><strong>CNP</strong></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <th colspan="8">Reclamat</th>
+              </tr>
+              <tr>
+                <td><strong>Nume</strong></td>
+                <td><input type="text" /></td>
+                <td><strong>Prenume</strong></td>
+                <td colspan="2"><input type="text" size="33" /></td>
+                <td><strong>Funcție</strong></td>
+                <td colspan="2"><input type="text" size="32" /></td>
+              </tr>
+              <tr>
+                <th colspan="8">Reclamație</th>
+              </tr>
+              <tr>
+                <td><strong>Data</strong></td>
+                <td><input type="date" step="2" min="1970-01-01" max="2069-01-01" /></td>
+                <td><strong>Ora</strong></td>
+                <td><input type="time" /></td>
+                <td><strong>Locația</strong></td>
+                <td><input type="text" size="24" /></td>
+                <td><strong>Tip daune</strong></td>
+                <td><input type="text" readonly /></td>
+              </tr>
+              <tr>
+                <td colspan="3">
+                  <table>
+                    <tr>
+                      <th>Număr</th>
+                      <th>Nume martor</th>
+                      <th>Telefon martor</th>
+                    </tr>
+                    <tr>
+                      <td>1.</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>2.</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>3.</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </table>
+                </td>
+                <td colspan="5">
+                  <table>
+                    <tr>
+                      <th>Număr</th>
+                      <th>Prejudiciu</th>
+                    </tr>
+                    <tr>
+                      <td>1.</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>2.</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>3.</td>
+                      <td></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Descriere</strong></td>
+                <td colspan="7"><textarea cols="132" rows="5"></textarea></td>
+              </tr>
+              <tr>
+                <td rowspan="2"><strong>Tip</strong></td>
+                <td colspan="7">
+                  <label for="A">Plângere Anonimă</label>
+                  <input type="checkbox" name="type1" id="A" value="A" />
+                  <label for="P">Plângere Publică</label>
+                  <input type="checkbox" name="type2" id="P" value="P" />
+                </td>
+              </tr>
+              <tr>
+                <td colspan="7">
+                  <label for="Y">Am depus/voi depune plângere penală</label>
+                  <input disabled type="checkbox" name="type2" id="Y" value="Y" />
+                  <label for="N">Nu voi apela la mijloace legale</label>
+                  <input type="checkbox" name="type2" id="N" value="N" checked />
+                </td>
+              </tr>
+            </table>
+            <br />
+            <input type="submit" value="Trimite" />
+          </form>
+      </div>
+    </div>
+    <div>
+      <fieldset>
+        <legend>Informații esențiale</legend>
+        <ul>
+          <li>
+            Lucruri de făcut:
+            <ol type="I">
+              <li>Mâncat la Greco</li>
+              <li>Jucat biliard</li>
+              <li>Cumpărat lapte profi</li>
+              <li></li>
+              <li>Plecat acasă</li>
+            </ol>
+          </li>
+          <li>
+            <label>Club preferat</label>
+            <select multiple>
+              <option>Dolce Vita</option>
+              <option selected>Euphoria</option>
+              <option>After Eight</option>
+              <option>Form Space</option>
+            </select>
+          </li>
+        </ul>
+      </fieldset>
+    </div>
+  </body>
+</html>

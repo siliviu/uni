@@ -1,0 +1,54 @@
+P->#yzund;F
+F->t0(T)B
+T->@
+T->t0
+B->{L}
+L->IN
+N->@
+N->L
+I->DA;
+I->O
+I->C
+I->Y
+I->S
+I->X
+D->t0
+A->@
+A->aE
+O->0aE;
+O->i]0;
+O->o[E;
+E->UQ
+Q->1E
+Q->@
+U->GM
+M->2U
+M->@
+G->(E)
+G->3
+G->0
+C->f(W)B
+Y->w(W)B
+W->ErE
+S->s0{D};
+X->eE;
+
+instr: adecl | decl | op | instr_cond | instr_cicl | decl_struct | return
+
+adecl: TYPE la SEMICOLON
+la: ID ASSIGNMENT_OPERATOR expr | ID ASSIGNMENT_OPERATOR expr COMMA la 
+decl: TYPE ID SEMICOLON 
+
+op: atr | intrare | iesire
+atr: ID ASSIGNMENT_OPERATOR expr SEMICOLON
+intrare: INPUT INPUT_OPERATOR ID SEMICOLON
+iesire: OUTPUT OUTPUT_OPERATOR expr SEMICOLON
+expr: ID | INT | DOUBLE |
+                expr ARITHMETIC_OPERATOR_1 expr |
+                expr ARITHMETIC_OPERATOR_2 expr
+instr_cond: IF LEFT_BRACKET cond RIGHT_BRACKET ic
+instr_cicl: WHILE LEFT_BRACKET cond RIGHT_BRACKET ic
+
+cond: expr RELATION_OPERATOR expr
+decl_struct: STRUCT ID LEFT_BRACE decl RIGHT_BRACE SEMICOLON
+return: RETURN expr SEMICOLON

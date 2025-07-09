@@ -1,0 +1,6 @@
+AB1, Banane, 1, 14.98, AA9988
+AB2, Capsuni, 1, 20.56, AA9988
+ZY, Air Force 1, 1, 500, AB1412
+ZZ, Jordan, 2, 600, AB1412
+EE1, Curent, 32141, 0.005, AB1312
+EE2, Curent Beci, 148, 0.005, AB1312

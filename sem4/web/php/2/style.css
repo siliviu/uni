@@ -1,0 +1,30 @@
+td {
+    border:1px solid black;
+}
+table{
+    width:100%;
+    margin-top:10px;
+    border:2px solid black;
+}
+.container{
+    width:30vw;
+    padding:5px;
+    border:1px solid black;
+}
+.row {
+    display:flex;
+}
+.prev, .next{
+    text-decoration: none;
+    border:1px solid black;
+    padding: 2px;
+}
+
+.nav{
+    margin: 5px;
+}
+
+.select{
+    width:100%;
+    margin-right: 10px;
+}

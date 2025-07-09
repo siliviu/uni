@@ -1,0 +1,11 @@
+trial_no,program,test,threads,average_time
+1,sequential,1,1,146401005
+2,parallel,4,1,131078880
+3,parallel,6,1,245889626
+4,parallel,8,1,383391744
+5,parallel,16,1,742360989
+6,parallel,4,2,59257453
+7,parallel,6,2,60984567
+8,parallel,8,2,62634424
+9,parallel,16,2,72016937
+10,./parallel,4,2,40219583

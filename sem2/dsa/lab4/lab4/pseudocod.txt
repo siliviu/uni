@@ -1,0 +1,22 @@
+subalgoritm valoareMaxima(m):
+	{m - matricea rara, reprezentata sub forma unei LSI cu inlantuiri prin tablou}
+	{complexitate θ(n) - n numarul de elemente nenule din matricea rara}
+
+	maxim <- 0
+	curent <- m.prim
+
+	cat timp curent != -1 executa:
+
+		val <- lista[curent].element.valoare
+
+		daca val > maxim atunci:
+			maxim <- val
+		sfarsitDaca
+		
+		curent <- lista[curent].urmator
+	
+	sfarsitCatTimp
+
+	returneaza maxim
+
+sfarsitSubalgoritm
